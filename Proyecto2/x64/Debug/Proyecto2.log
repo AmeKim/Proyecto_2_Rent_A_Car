@@ -1,0 +1,56 @@
+﻿  cliente.cpp
+  colaborador.cpp
+  contratoAlquiler.cpp
+  entradaBitacora.cpp
+  espacioEstacionamiento.cpp
+  lista.cpp
+  main.cpp
+C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\lista.cpp(96,32): error C2039: "getId": no es un miembro de "cliente"
+      C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\cliente.h(2,7):
+      vea la declaración de 'cliente'
+  
+C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\lista.cpp(109,28): error C2039: "getId": no es un miembro de "cliente"
+      C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\cliente.h(2,7):
+      vea la declaración de 'cliente'
+  
+C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\lista.cpp(124,32): error C2039: "getId": no es un miembro de "cliente"
+      C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\cliente.h(2,7):
+      vea la declaración de 'cliente'
+  
+C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\lista.cpp(156,58): error C2039: "toString": no es un miembro de "cliente"
+      C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\cliente.h(2,7):
+      vea la declaración de 'cliente'
+  
+  matriz.cpp
+C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\matriz.cpp(118,56): error C2039: "getCodigo": no es un miembro de "espacioEstacionamiento"
+      C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\EspacioEstacionamiento.h(2,7):
+      vea la declaración de 'espacioEstacionamiento'
+  
+C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\matriz.cpp(129,56): error C2039: "getCodigo": no es un miembro de "espacioEstacionamiento"
+      C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\EspacioEstacionamiento.h(2,7):
+      vea la declaración de 'espacioEstacionamiento'
+  
+C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\matriz.cpp(151,60): error C2039: "estaOcupado": no es un miembro de "espacioEstacionamiento"
+      C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\EspacioEstacionamiento.h(2,7):
+      vea la declaración de 'espacioEstacionamiento'
+  
+C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\matriz.cpp(164,57): error C2039: "estaOcupado": no es un miembro de "espacioEstacionamiento"
+      C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\EspacioEstacionamiento.h(2,7):
+      vea la declaración de 'espacioEstacionamiento'
+  
+C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\matriz.cpp(176,38): error C2039: "getCodigo": no es un miembro de "espacioEstacionamiento"
+      C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\EspacioEstacionamiento.h(2,7):
+      vea la declaración de 'espacioEstacionamiento'
+  
+C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\matriz.cpp(190,34): error C2039: "estaOcupado": no es un miembro de "espacioEstacionamiento"
+      C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\EspacioEstacionamiento.h(2,7):
+      vea la declaración de 'espacioEstacionamiento'
+  
+  nodo.cpp
+  personaFisica.cpp
+  personaJuridica.cpp
+  plantel.cpp
+  solicitudAlquiler.cpp
+  sucursal.cpp
+  vehiculo.cpp
+  Generando código...
