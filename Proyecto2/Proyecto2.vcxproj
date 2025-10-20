@@ -138,6 +138,8 @@
     <ClCompile Include="personaFisica.cpp" />
     <ClCompile Include="personaJuridica.cpp" />
     <ClCompile Include="plantel.cpp" />
+    <ClCompile Include="registroBitacora.cpp" />
+    <ClCompile Include="SistemaRentACar.cpp" />
     <ClCompile Include="solicitudAlquiler.cpp" />
     <ClCompile Include="sucursal.cpp" />
     <ClCompile Include="utiles.cpp" />
@@ -158,6 +160,8 @@
     <ClInclude Include="personaFisica.h" />
     <ClInclude Include="personaJuridica.h" />
     <ClInclude Include="plantel.h" />
+    <ClInclude Include="registroBitacora.h" />
+    <ClInclude Include="SistemaRentACar.h" />
     <ClInclude Include="solicitudAlquiler.h" />
     <ClInclude Include="sucursal.h" />
     <ClInclude Include="utiles.h" />
