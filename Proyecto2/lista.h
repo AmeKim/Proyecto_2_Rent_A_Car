@@ -2,27 +2,25 @@
 #include <iostream>
 #include "nodo.h"
 #include "cliente.h"
+#include "espacioEstacionamiento.h"
 
 using namespace std;
 
 class lista{
 private:
-    nodo* cabeza;
-    int cantidad;
+    nodo* primero;
+    nodo* actual;
 
 public:
     lista();
     virtual ~lista();
 
     void vaciar();
-    void insertarInicio(cliente* dato);
-    void insertarFinal(cliente* dato);
-    bool eliminarPorPosicion(int pos);
-    cliente* obtener(int pos) const;
-    cliente* buscarPorId(string id) const;
+    void insertarInicio(espacioEstacionamiento* dato);
+    void insertarFinal(espacioEstacionamiento* dato);
+    espacioEstacionamiento* buscarPorId(string id) const;
     bool eliminarPorId(string id);
-    int getCantidad() const;
     bool estaVacia() const;
-    nodo* getCabeza() const;
+    nodo* getActual() const;
     void mostrar() const;
 };

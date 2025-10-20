@@ -5,8 +5,8 @@
 using namespace std;
 
 lista::lista() {
-    cabeza = nullptr;
-    cantidad = 0;
+	primero = nullptr;
+	actual = nullptr;
 }
 
 lista::~lista() {
@@ -14,7 +14,7 @@ lista::~lista() {
 }
 
 void lista::vaciar() {
-    nodo* actual = cabeza;
+    actual = primero;
     while (actual != nullptr) {
         nodo* siguiente = actual->getSiguiente();
         if (actual->getDato() != nullptr) {
@@ -23,77 +23,34 @@ void lista::vaciar() {
         delete actual;
         actual = siguiente;
     }
-    cabeza = nullptr;
-    cantidad = 0;
+    primero = nullptr;
+    actual = nullptr;
 }
 
-void lista::insertarInicio(cliente* dato) {
-    nodo* nuevo = new nodo(dato, cabeza);
-    cabeza = nuevo;
-    cantidad++;
+void lista::insertarInicio(espacioEstacionamiento* dato) {
+    nodo* nuevo = new nodo(dato, primero);
+    primero = nuevo;
 }
 
-void lista::insertarFinal(cliente* dato) {
+void lista::insertarFinal(espacioEstacionamiento* dato) {
     nodo* nuevo = new nodo(dato, nullptr);
 
-    if (cabeza == nullptr) {
-        cabeza = nuevo;
+    if (primero == nullptr) {
+        primero = nuevo;
     }
     else {
-        nodo* actual = cabeza;
+        actual = primero;
         while (actual->getSiguiente() != nullptr) {
             actual = actual->getSiguiente();
         }
         actual->setSiguiente(nuevo);
     }
-    cantidad++;
 }
 
-bool lista::eliminarPorPosicion(int pos) {
-    if (pos < 0 || pos >= cantidad || cabeza == nullptr) {
-        return false;
-    }
-
-    nodo* eliminar;
-
-    if (pos == 0) {
-        eliminar = cabeza;
-        cabeza = cabeza->getSiguiente();
-    }
-    else {
-        nodo* anterior = cabeza;
-        for (int i = 0; i < pos - 1; i++) {
-            anterior = anterior->getSiguiente();
-        }
-        eliminar = anterior->getSiguiente();
-        anterior->setSiguiente(eliminar->getSiguiente());
-    }
-
-    if (eliminar->getDato() != nullptr) {
-        delete eliminar->getDato();
-    }
-    delete eliminar;
-    cantidad--;
-    return true;
-}
-
-cliente* lista::obtener(int pos) const {
-    if (pos < 0 || pos >= cantidad || cabeza == nullptr) {
-        return nullptr;
-    }
-
-    nodo* actual = cabeza;
-    for (int i = 0; i < pos; i++) {
-        actual = actual->getSiguiente();
-    }
-    return actual->getDato();
-}
-
-cliente* lista::buscarPorId(string id) const {
-    nodo* actual = cabeza;
-
+espacioEstacionamiento* lista::buscarPorId(string id) const {
+    actual= primero;
     while (actual != nullptr) {
-        if (actual->getDato()->getId() == id) {
+        if (actual->getDato()->getCodigo() == id) {
             return actual->getDato();
         }
         actual = actual->getSiguiente();
@@ -102,32 +59,18 @@ cliente* lista::buscarPorId(string id) const {
 }
 
 bool lista::eliminarPorId(string id) {
-    if (cabeza == nullptr) {
-        return false;
-    }
-
-    if (cabeza->getDato()->getId() == id) {
-        nodo* eliminar = cabeza;
-        cabeza = cabeza->getSiguiente();
-        if (eliminar->getDato() != nullptr) {
-            delete eliminar->getDato();
-        }
-        delete eliminar;
-        cantidad--;
-        return true;
-    }
-
-    nodo* anterior = cabeza;
-    nodo* actual = cabeza->getSiguiente();
-
+    actual = primero;
+    nodo* anterior = nullptr;
     while (actual != nullptr) {
-        if (actual->getDato()->getId() == id) {
-            anterior->setSiguiente(actual->getSiguiente());
-            if (actual->getDato() != nullptr) {
-                delete actual->getDato();
+        if (actual->getDato()->getCodigo() == id) {
+            if (anterior == nullptr) {
+                primero = actual->getSiguiente();
             }
+            else {
+                anterior->setSiguiente(actual->getSiguiente());
+            }
+            delete actual->getDato();
             delete actual;
-            cantidad--;
             return true;
         }
         anterior = actual;
@@ -136,25 +79,17 @@ bool lista::eliminarPorId(string id) {
     return false;
 }
 
-int lista::getCantidad() const {
-    return cantidad;
-}
-
 bool lista::estaVacia() const {
-    return cabeza == nullptr;
+    return primero == nullptr;
 }
 
-nodo* lista::getCabeza() const {
-    return cabeza;
+nodo* lista::getActual() const {
+    return actual;
 }
-
 void lista::mostrar() const {
-    nodo* actual = cabeza;
-    int pos = 0;
-
+    actual = primero;
     while (actual != nullptr) {
-        cout << "[" << pos << "] " << actual->getDato()->toString() << endl;
+        cout << actual->getDato()->toString() << endl;
         actual = actual->getSiguiente();
-        pos++;
     }
 }

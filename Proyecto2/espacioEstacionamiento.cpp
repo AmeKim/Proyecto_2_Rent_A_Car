@@ -1,1 +1,34 @@
 #include "espacioEstacionamiento.h"
+
+espacioEstacionamiento::espacioEstacionamiento(){
+	codigo = "";
+	ocupado = false;
+}
+
+espacioEstacionamiento::espacioEstacionamiento(string codigo, bool ocupado){
+	this->codigo = codigo;
+	this->ocupado = ocupado;
+}
+
+espacioEstacionamiento::~espacioEstacionamiento(){
+}
+
+string espacioEstacionamiento::getCodigo() const{
+    return codigo;
+}
+
+void espacioEstacionamiento::setCodigo(string codigo){
+    this->codigo = codigo;
+}
+
+bool espacioEstacionamiento::estaOcupado() const    {
+    return ocupado;
+}
+
+void espacioEstacionamiento::ocupar(){
+    ocupado = true;
+}
+
+void espacioEstacionamiento::desocupar(){
+    ocupado = false;
+}

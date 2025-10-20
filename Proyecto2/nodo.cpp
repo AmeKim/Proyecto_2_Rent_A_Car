@@ -1,15 +1,12 @@
 #include "nodo.h"
 
-nodo::nodo(cliente* d, nodo* sig) {
-    dato = d;
-    siguiente = sig;
-}
+nodo::nodo(void* d, nodo* sig) : dato(d), siguiente(sig) {}
 
 nodo::~nodo() {
-    siguiente = nullptr;
+    // No eliminamos dato aquí porque no sabemos su tipo real
 }
 
-cliente* nodo::getDato() const {
+void* nodo::getDato() const {
     return dato;
 }
 
@@ -17,7 +14,7 @@ nodo* nodo::getSiguiente() const {
     return siguiente;
 }
 
-void nodo::setDato(cliente* d) {
+void nodo::setDato(void* d) {
     dato = d;
 }
 
