@@ -2,9 +2,9 @@
 
 solicitudAlquiler::solicitudAlquiler() {
     codigo = "";
-    cliente = nullptr;
-    colaborador = nullptr;
-    vehiculo = nullptr;
+    cli = nullptr;
+    col = nullptr;
+    veh = nullptr;
     dias = 0;
     fechaInicio = "";
     fechaEntrega = "";
@@ -13,43 +13,94 @@ solicitudAlquiler::solicitudAlquiler() {
     estado = "Pendiente";
 }
 
-solicitudAlquiler::solicitudAlquiler(const string& cod, cliente* cli, colaborador* col, vehiculo* veh,
-    int d, const string& fInicio, const string& fEntrega, double pDia) {
+solicitudAlquiler::solicitudAlquiler(const string& cod, cliente* cliente,
+    colaborador* colaborador, vehiculo* vehiculo, int d, const string& fInicio,
+    const string& fEntrega, double pDia) {
     codigo = cod;
-    cliente = cli;
-    colaborador = col;
-    vehiculo = veh;
+    cli = cliente;
+    col = colaborador;
+    veh = vehiculo;
     dias = d;
     fechaInicio = fInicio;
     fechaEntrega = fEntrega;
     precioDia = pDia;
-    precioTotal = d * pDia;
+    precioTotal = pDia * d;
     estado = "Pendiente";
 }
 
-string solicitudAlquiler::getCodigo() const { return codigo; }
-string solicitudAlquiler::getEstado() const { return estado; }
-double solicitudAlquiler::getPrecioTotal() const { return precioTotal; }
-int solicitudAlquiler::getDias() const { return dias; }
+string solicitudAlquiler::getCodigo() const {
+    return codigo;
+}
 
-void solicitudAlquiler::aprobar() { estado = "Aprobada"; }
-void solicitudAlquiler::rechazar() { estado = "Rechazada"; }
-void solicitudAlquiler::anular() { estado = "Anulada"; }
+string solicitudAlquiler::getEstado() const {
+    return estado;
+}
+
+double solicitudAlquiler::getPrecioTotal() const {
+    return precioTotal;
+}
+
+int solicitudAlquiler::getDias() const {
+    return dias;
+}
+
+string solicitudAlquiler::getFechaInicio() const {
+    return fechaInicio;
+}
+
+string solicitudAlquiler::getFechaEntrega() const {
+    return fechaEntrega;
+}
+
+double solicitudAlquiler::getPrecioDia() const {
+    return precioDia;
+}
+
+cliente* solicitudAlquiler::getCliente() const {
+    return cli;
+}
+
+colaborador* solicitudAlquiler::getColaborador() const {
+    return col;
+}
+
+vehiculo* solicitudAlquiler::getVehiculo() const {
+    return veh;
+}
+
+void solicitudAlquiler::aprobar() {
+    estado = "Aprobada";
+}
+
+void solicitudAlquiler::rechazar() {
+    estado = "Rechazada";
+}
+
+void solicitudAlquiler::anular() {
+    estado = "Anulada";
+}
 
 void solicitudAlquiler::mostrarInfo() const {
-    cout << "Solicitud #" << codigo << " | Estado: " << estado
-        << "\nCliente: " << (cliente ? cliente->getNombre() : "N/A")
-        << "\nVehículo: " << (vehiculo ? vehiculo->getPlaca() : "N/A")
-        << "\nDías: " << dias
-        << "\nPrecio diario: ?" << precioDia
-        << "\nTotal: ?" << precioTotal
-        << "\nFecha inicio: " << fechaInicio
-        << "\nFecha entrega: " << fechaEntrega
-        << "\n----------------------------------" << endl;
+    cout << "========================================" << endl;
+    cout << "        SOLICITUD DE ALQUILER" << endl;
+    cout << "========================================" << endl;
+    cout << "Código: " << codigo << endl;
+    cout << "Cliente: " << (cli ? cli->getNombre() : "N/A") << endl;
+    cout << "  ID: " << (cli ? cli->getCedula() : "N/A") << endl;
+    cout << "Colaborador: " << (col ? col->getNombre() : "N/A") << endl;
+    cout << "Vehículo: " << (veh ? veh->getPlaca() : "N/A") << endl;
+    cout << "Días de alquiler: " << dias << endl;
+    cout << "Fecha inicio: " << fechaInicio << endl;
+    cout << "Fecha entrega: " << fechaEntrega << endl;
+    cout << "Precio por día: $" << precioDia << endl;
+    cout << "Precio total: $" << precioTotal << endl;
+    cout << "Estado: " << estado << endl;
+    cout << "========================================" << endl;
 }
 
 string solicitudAlquiler::toString() const {
-    return "Solicitud #" + codigo + " | Estado: " + estado + " | Cliente: " +
-        (cliente ? cliente->getNombre() : "N/A") +
-        " | Vehículo: " + (vehiculo ? vehiculo->getPlaca() : "N/A");
+    stringstream ss;
+    ss << "Solicitud " << codigo << " - Estado: " << estado
+        << " - Cliente: " << (cli ? cli->getNombre() : "N/A");
+    return ss.str();
 }

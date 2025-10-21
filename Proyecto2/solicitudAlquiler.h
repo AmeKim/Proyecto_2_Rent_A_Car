@@ -10,24 +10,32 @@ using namespace std;
 class solicitudAlquiler {
 private:
     string codigo;
-    cliente* cliente;
-    colaborador* colaborador;
-    vehiculo* vehiculo;
+    cliente* cli;
+    colaborador* col;
+    vehiculo* veh;
     int dias;
     string fechaInicio;
     string fechaEntrega;
     double precioDia;
     double precioTotal;
-    string estado; // "Pendiente", "Aprobada", "Rechazada", "Anulada"
+    string estado;
 
 public:
     solicitudAlquiler();
-    solicitudAlquiler(const string& cod, cliente* cli, colaborador* col, vehiculo* veh,int dias, const string& fInicio, const string& fEntrega, double pDia);
+    solicitudAlquiler(const string& cod, cliente* cliente, colaborador* colaborador,
+        vehiculo* vehiculo, int dias, const string& fInicio,
+        const string& fEntrega, double pDia);
 
     string getCodigo() const;
     string getEstado() const;
     double getPrecioTotal() const;
     int getDias() const;
+    string getFechaInicio() const;
+    string getFechaEntrega() const;
+    double getPrecioDia() const;
+    cliente* getCliente() const;
+    colaborador* getColaborador() const;
+    vehiculo* getVehiculo() const;
 
     void aprobar();
     void rechazar();

@@ -1,11 +1,12 @@
 #include "personaFisica.h"
-#include <iostream>
 
 personaFisica::personaFisica() : cliente() {
     tipoLicencia = "";
 }
 
-personaFisica::personaFisica(const string& id, const string& nombre,const string& pais, const string& tipoLic): cliente(id, nombre, pais) {
+personaFisica::personaFisica(const string& id, const string& nombre,
+    const string& pais, const string& tipoLic)
+    : cliente(nombre, id, pais) {
     tipoLicencia = tipoLic;
 }
 
@@ -18,17 +19,13 @@ void personaFisica::setTipoLicencia(const string& tipo) {
 }
 
 string personaFisica::toString() const {
-    return "Persona Física - ID: " + getCedula() +
-        " | Nombre: " + getNombre() +
-        " | País: " + getPaisResidencia() +
-        " | Licencia: " + tipoLicencia;
+    stringstream ss;
+    ss << cliente::toString();
+    ss << "Tipo de Licencia: " << tipoLicencia << endl;
+    return ss.str();
 }
 
 void personaFisica::mostrarInfo() const {
-    cout << "Cliente Persona Física" << endl;
-    cout << "ID: " << getCedula() << endl;
-    cout << "Nombre: " << getNombre() << endl;
-    cout << "País: " << getPaisResidencia() << endl;
+    cliente::mostrarInfo();
     cout << "Tipo de Licencia: " << tipoLicencia << endl;
-    cout << "-------------------------------" << endl;
 }

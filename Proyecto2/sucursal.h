@@ -14,8 +14,6 @@ private:
     int idSucursal;
     string nombre;
     string provincia;
-
-    // Listas genéricas (usando punteros void*)
     lista planteles;
     lista clientes;
     lista colaboradores;
@@ -23,7 +21,8 @@ private:
 
 public:
     sucursal();
-    sucursal(int id, const string& nombre, const string& provincia);
+    sucursal(int id, const string& nom, const string& prov);
+    ~sucursal();
 
     int getIdSucursal() const;
     string getNombre() const;
@@ -33,6 +32,11 @@ public:
     void agregarCliente(cliente* c);
     void agregarColaborador(colaborador* c);
     void agregarVehiculo(vehiculo* v);
+
+    lista* getPlanteles();
+    lista* getClientes();
+    lista* getColaboradores();
+    lista* getVehiculos();
 
     void mostrarResumen() const;
     string toString() const;
