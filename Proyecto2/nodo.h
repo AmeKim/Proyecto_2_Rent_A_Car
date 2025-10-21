@@ -4,14 +4,15 @@ using namespace std;
 
 class nodo {
 private:
-    void* dato;
-    nodo* siguiente;
-public:
-    nodo(void* d = nullptr, nodo* sig = nullptr);
-    virtual ~nodo();
-    void* getDato() const;
-    nodo* getSiguiente() const;
-    void setDato(void* d);
-    void setSiguiente(nodo* sig);
-};
+    void* dato;        // Apunta a cualquier tipo de objeto
+    nodo* siguiente;   // Puntero al siguiente nodo
 
+public:
+    nodo(void* dato, nodo* sig = nullptr);
+    ~nodo();
+
+    void* getDato();
+    void setDato(void* d);
+    nodo* getSiguiente();
+    void setSiguiente(nodo* s);
+};

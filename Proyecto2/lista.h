@@ -6,21 +6,22 @@
 
 using namespace std;
 
-class lista{
+class lista {
 private:
     nodo* primero;
     nodo* actual;
+    int cantidad;
 
 public:
     lista();
-    virtual ~lista();
+    ~lista();
 
-    void vaciar();
-    void insertarInicio(espacioEstacionamiento* dato);
-    void insertarFinal(espacioEstacionamiento* dato);
-    espacioEstacionamiento* buscarPorId(string id) const;
-    bool eliminarPorId(string id);
+    void agregar(void* elemento);
+    bool eliminar(void* elemento);
+    void* buscar(void* elemento);
+    void reiniciar();
+    void* siguiente();
     bool estaVacia() const;
-    nodo* getActual() const;
-    void mostrar() const;
+    int getCantidad() const;
+    string toString(string(*toStringFn)(void*)); // recibe una función para imprimir
 };

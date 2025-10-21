@@ -1,95 +1,85 @@
 #include "lista.h"
-#include "cliente.h"
-#include <iostream>
-
-using namespace std;
 
 lista::lista() {
-	primero = nullptr;
-	actual = nullptr;
+    primero = nullptr;
+    actual = nullptr;
+    cantidad = 0;
 }
 
 lista::~lista() {
-    vaciar();
-}
-
-void lista::vaciar() {
-    actual = primero;
-    while (actual != nullptr) {
-        nodo* siguiente = actual->getSiguiente();
-        if (actual->getDato() != nullptr) {
-            delete actual->getDato();
-        }
-        delete actual;
-        actual = siguiente;
+    nodo* aux;
+    while (primero != nullptr) {
+        aux = primero;
+        primero = primero->getSiguiente();
+        delete aux;
     }
-    primero = nullptr;
-    actual = nullptr;
 }
 
-void lista::insertarInicio(espacioEstacionamiento* dato) {
-    nodo* nuevo = new nodo(dato, primero);
-    primero = nuevo;
-}
-
-void lista::insertarFinal(espacioEstacionamiento* dato) {
-    nodo* nuevo = new nodo(dato, nullptr);
-
+void lista::agregar(void* elemento) {
+    nodo* nuevo = new nodo(elemento);
     if (primero == nullptr) {
         primero = nuevo;
     }
     else {
-        actual = primero;
-        while (actual->getSiguiente() != nullptr) {
-            actual = actual->getSiguiente();
+        nodo* aux = primero;
+        while (aux->getSiguiente() != nullptr) {
+            aux = aux->getSiguiente();
         }
-        actual->setSiguiente(nuevo);
+        aux->setSiguiente(nuevo);
     }
+    cantidad++;
 }
 
-espacioEstacionamiento* lista::buscarPorId(string id) const {
-    actual= primero;
-    while (actual != nullptr) {
-        if (actual->getDato()->getCodigo() == id) {
-            return actual->getDato();
-        }
-        actual = actual->getSiguiente();
-    }
-    return nullptr;
-}
+bool lista::eliminar(void* elemento) {
+    if (primero == nullptr) return false;
+    nodo* aux = primero;
+    nodo* ant = nullptr;
 
-bool lista::eliminarPorId(string id) {
-    actual = primero;
-    nodo* anterior = nullptr;
-    while (actual != nullptr) {
-        if (actual->getDato()->getCodigo() == id) {
-            if (anterior == nullptr) {
-                primero = actual->getSiguiente();
+    while (aux != nullptr) {
+        if (aux->getDato() == elemento) {
+            if (ant == nullptr) {
+                primero = aux->getSiguiente();
             }
             else {
-                anterior->setSiguiente(actual->getSiguiente());
+                ant->setSiguiente(aux->getSiguiente());
             }
-            delete actual->getDato();
-            delete actual;
+            delete aux;
+            cantidad--;
             return true;
         }
-        anterior = actual;
-        actual = actual->getSiguiente();
+        ant = aux;
+        aux = aux->getSiguiente();
     }
     return false;
 }
 
-bool lista::estaVacia() const {
-    return primero == nullptr;
+void* lista::buscar(void* elemento) {
+    nodo* aux = primero;
+    while (aux != nullptr) {
+        if (aux->getDato() == elemento) return aux->getDato();
+        aux = aux->getSiguiente();
+    }
+    return nullptr;
 }
 
-nodo* lista::getActual() const {
-    return actual;
+void lista::reiniciar() { actual = primero; }
+
+void* lista::siguiente() {
+    if (actual == nullptr) return nullptr;
+    void* dato = actual->getDato();
+    actual = actual->getSiguiente();
+    return dato;
 }
-void lista::mostrar() const {
-    actual = primero;
-    while (actual != nullptr) {
-        cout << actual->getDato()->toString() << endl;
-        actual = actual->getSiguiente();
+
+bool lista::estaVacia() const { return primero == nullptr; }
+int lista::getCantidad() const { return cantidad; }
+
+string lista::toString(string(*toStringFn)(void*)) {
+    string texto = "";
+    nodo* aux = primero;
+    while (aux != nullptr) {
+        texto += toStringFn(aux->getDato()) + "\n";
+        aux = aux->getSiguiente();
     }
+    return texto;
 }

@@ -1,23 +1,13 @@
 #include "nodo.h"
 
-nodo::nodo(void* d, nodo* sig) : dato(d), siguiente(sig) {}
-
-nodo::~nodo() {
-    // No eliminamos dato aquí porque no sabemos su tipo real
-}
-
-void* nodo::getDato() const {
-    return dato;
-}
-
-nodo* nodo::getSiguiente() const {
-    return siguiente;
-}
-
-void nodo::setDato(void* d) {
+nodo::nodo(void* d, nodo* sig) {
     dato = d;
-}
-
-void nodo::setSiguiente(nodo* sig) {
     siguiente = sig;
 }
+
+nodo::~nodo() {}
+
+void* nodo::getDato() { return dato; }
+void nodo::setDato(void* d) { dato = d; }
+nodo* nodo::getSiguiente() { return siguiente; }
+void nodo::setSiguiente(nodo* s) { siguiente = s; }
