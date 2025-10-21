@@ -30,10 +30,6 @@ void sucursal::agregarPlantel(plantel* p) {
     planteles.agregar((void*)p);
 }
 
-void sucursal::agregarCliente(cliente* c) {
-    clientes.agregar((void*)c);
-}
-
 void sucursal::agregarColaborador(colaborador* c) {
     colaboradores.agregar((void*)c);
 }
