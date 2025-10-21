@@ -33,5 +33,15 @@ string cliente::toString(){
 	s << "Cedula: " << cedula << endl;
 	s << "Pais de Residencia : " << paisResidencia << endl;
 	return s.str();	
-   
+}
+void cliente::mostrarInfo() const {
+    cout << "Cliente" << endl;
+    cout << "ID: " << getCedula() << endl;
+    cout << "Nombre: " << getNombre() << endl;
+    cout << "País: " << getPaisResidencia() << endl;
+    cout << "-------------------------------" << endl;
+}
+
+string cliente::toString() const {
+    return "Cliente - ID: " + getCedula() + " | Nombre: " + getNombre() + " | País: " + getPaisResidencia();
 }

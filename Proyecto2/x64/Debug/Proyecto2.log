@@ -33,8 +33,8 @@ C:\Users\MEGA0418\Documents\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\contratoAlqui
       C:\Users\MEGA0418\Documents\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\solicitudAlquiler.h(10,7):
       vea la declaración de 'solicitudAlquiler'
   
-C:\Users\MEGA0418\Documents\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\contratoAlquiler.cpp(22,45): error C3861: 'getIdSolicitud': no se encontró el identificador
-C:\Users\MEGA0418\Documents\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\contratoAlquiler.cpp(22,15): error C2593: 'operator <<' es ambiguo
+C:\Users\MEGA0418\Documents\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\contratoAlquiler.cpp(22,40): error C3861: 'getIdSolicitud': no se encontró el identificador
+C:\Users\MEGA0418\Documents\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\contratoAlquiler.cpp(22,10): error C2593: 'operator <<' es ambiguo
       C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_ostream.hpp(480,39):
       puede ser 'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(std::basic_streambuf<char,std::char_traits<char>> *)'
       C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_ostream.hpp(448,39):
@@ -87,7 +87,7 @@ C:\Users\MEGA0418\Documents\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\contratoAlqui
       o       'std::basic_ostream<char,std::char_traits<char>> &std::operator <<<char,std::char_traits<char>>(std::basic_ostream<char,std::char_traits<char>> &,char)'
       C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_ostream.hpp(688,32):
       o       'std::basic_ostream<char,std::char_traits<char>> &std::operator <<<char,std::char_traits<char>>(std::basic_ostream<char,std::char_traits<char>> &,const char *)'
-      C:\Users\MEGA0418\Documents\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\contratoAlquiler.cpp(22,15):
+      C:\Users\MEGA0418\Documents\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\contratoAlquiler.cpp(22,10):
       al hacer coincidir la lista de argumentos '(std::basic_ostream<char,std::char_traits<char>>, <error type>)'
   
   entradaBitacora.cpp

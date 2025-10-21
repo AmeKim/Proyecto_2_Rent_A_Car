@@ -19,7 +19,7 @@ void contratoAlquiler::finalizarContrato(int diasUtilizados) {
 }
 
 void contratoAlquiler::mostrarInfo() const {
-    std::cout << "Contrato (Solicitud #" << getIdSolicitud()
+    cout << "Contrato (Solicitud #" << getIdSolicitud()
         << ") - Estado: " << estadoContrato
-        << ", Días usados: " << diasRealesUso << std::endl;
+        << ", Días usados: " << diasRealesUso << endl;
 }

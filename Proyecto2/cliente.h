@@ -21,5 +21,6 @@ public:
     void setPaisResidencia(string paisResidencia);
     string toString();
 
+    virtual void mostrarInfo() const;
+    virtual string toString() const;
 };
-
