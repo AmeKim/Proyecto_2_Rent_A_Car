@@ -22,9 +22,8 @@ private:
 
 public:
     solicitudAlquiler();
-    solicitudAlquiler(const string& cod, cliente* cliente, colaborador* colaborador,
-    vehiculo* vehiculo, int dias, const string& fInicio,
-    const string& fEntrega, double pDia);
+    solicitudAlquiler(const string cod, cliente* cliente, colaborador* colaborador,
+    vehiculo* vehiculo, int dias, const string fInicio, const string fEntrega, double pDia);
 
     string getCodigo() const;
     string getEstado() const;

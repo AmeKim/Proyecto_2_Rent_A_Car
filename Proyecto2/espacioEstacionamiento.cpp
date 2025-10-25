@@ -32,3 +32,11 @@ void espacioEstacionamiento::ocupar(){
 void espacioEstacionamiento::desocupar(){
     ocupado = false;
 }
+
+string espacioEstacionamiento::toString(){
+    stringstream s;
+    s << "Codigo: " << codigo << endl;
+	s << "Ocupado: " << (ocupado ? "Si" : "No") << endl;
+	return s.str();
+}
+

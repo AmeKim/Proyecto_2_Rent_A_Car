@@ -1,211 +1,85 @@
 #include "inventarioVehiculos.h"
 
-inventarioVehiculos::inventarioVehiculos(int f, int c ) {
-	filas = f;
-	columnas = c;
-	datos = nullptr;
-	if (filas > 0 && columnas > 0) {
-		datos = new vehiculo** [filas];
-		for (int i = 0; i < filas; i++) {
-			datos[i] = new vehiculo * [columnas];
-			for (int j = 0; j < columnas; j++) {
-				datos[i][j] = nullptr;
-			}
-		}
-	}
+inventarioVehiculos::inventarioVehiculos() {
+	primero = nullptr;
+	actual = nullptr;
 }
 
 inventarioVehiculos::~inventarioVehiculos() {
-	liberarMemoria();
+	while (!estaVacia()) {
+		eliminarInicio();
+	}
 }
-
-void inventarioVehiculos::liberarMemoria() {
-	if (datos != nullptr) {
-		for (int i = 0; i < filas; i++) {
-			if (datos[i] != nullptr) {
-				for (int j = 0; j < columnas; j++) {
-					if (datos[i][j] != nullptr) {
-						delete datos[i][j];
-						datos[i][j] = nullptr;
-					}
-				}
-				delete[] datos[i];
-				datos[i] = nullptr;
-			}
+void inventarioVehiculos::agregarVehiculo(vehiculo* v) {
+	if(v == nullptr) {
+		return;
+	}
+	agregarFinal(v);
+}
+void inventarioVehiculos::eliminarVehiculo(vehiculo* v) {
+	if (estaVacia() || v == nullptr) {
+		return;
+	}
+	if(primero->getElemento() == v) {
+		eliminarInicio();
+		return;
+	}
+	nodoBase<vehiculo>* actual = primero;
+	while (actual->getSiguiente() != nullptr) {
+		if (actual->getSiguiente()->getElemento() == v) {
+			nodoBase<vehiculo>* temp = actual->getSiguiente();
+			actual->setSiguiente(temp->getSiguiente());
+			delete temp->getElemento();
+			delete temp;
+			return;
 		}
-		delete[] datos;
-		datos = nullptr;
+		actual = actual->getSiguiente();
 	}
 }
 
-bool inventarioVehiculos::setElemento(int f, int c, vehiculo* elemento) {
-	if (f < 0 || f >= filas || c < 0 || c >= columnas) {
-		return false;
+string inventarioVehiculos::mostrarVehiculos() const {
+	nodoBase<vehiculo>* actual = primero;
+	stringstream s;
+	int i = 1;
+	while (actual != nullptr) {
+		s << i << ". " << actual->getElemento()->toString() << endl;
+		actual = actual->getSiguiente();
+		i++;
 	}
-	if (datos[f][c] != nullptr) {
-		delete datos[f][c];
+	if (i == 1) {
+		s << "No hay vehiculos registrados.\n";
 	}
-	datos[f][c] = elemento;
-	return true;
+	return s.str();
 }
 
-vehiculo* inventarioVehiculos::getElemento(int f, int c) const {
-	if (f < 0 || f >= filas || c < 0 || c >= columnas) {
-		return nullptr;
-	}
-	return datos[f][c];
-}
-
-bool inventarioVehiculos::eliminarElemento(int f, int c) {
-	if (f < 0 || f >= filas || c < 0 || c >= columnas) {
-		return false;
-	}
-	if (datos[f][c] != nullptr) {
-		delete datos[f][c];
-		datos[f][c] = nullptr;
-	}
-	return true;
-}
-
-void inventarioVehiculos::vaciar() {
-	for (int i = 0; i < filas; i++) {
-		for (int j = 0; j < columnas; j++) {
-			if (datos[i][j] != nullptr) {
-				delete datos[i][j];
-				datos[i][j] = nullptr;
-			}
+string inventarioVehiculos::mostrarTotalDeEstados() {
+	stringstream s;
+	int disponibles = 0;
+	int enMantenimiento = 0;
+	int alquilados = 0;
+	int devueltos = 0;
+	int lavados = 0;
+	nodoBase<vehiculo>* actual = primero;
+	while (actual != nullptr) {
+		string estado = actual->getElemento()->getEstado();
+		if (estado == "disponible") {
+			disponibles++;
+		} else if (estado == "en mantenimiento") {
+			enMantenimiento++;
+		} else if (estado == "alquilado") {
+			alquilados++;
+		} else if (estado == "devuelto") {
+			devueltos++;
+		} else if (estado == "lavado") {
+			lavados++;
 		}
+		actual = actual->getSiguiente();
 	}
+	s << "Total de Vehiculos por Estado:\n";
+	s<< "Disponibles: " << disponibles << endl;
+	s<< "En Mantenimiento: " << enMantenimiento << endl;
+	s<< "Alquilados: " << alquilados << endl;
+	s<< "Devueltos: " << devueltos << endl;
+	s<< "Lavados: " << lavados << endl;
+	return s.str();
 }
-
-bool inventarioVehiculos::estaVacio(int f, int c) const {
-	for(int i = 0; i < filas; i++) {
-		for(int j = 0; j < columnas; j++) {
-			if (datos[i][j] != nullptr) {
-				return false;
-			}
-		}
-	}
-	return true;
-}
-
-int inventarioVehiculos::contarElementos() const {
-	int contador = 0;
-	for (int i = 0; i < filas; i++) {
-		for (int j = 0; j < columnas; j++) {
-			if (datos[i][j] != nullptr) {
-				contador++;
-			}
-		}
-	}
-	return contador;
-}
-
-vehiculo* inventarioVehiculos::buscarPorCodigo(string codigo) const {
-	for (int i = 0; i < filas; i++) {
-		for (int j = 0; j < columnas; j++) {
-			if (datos[i][j] != nullptr && datos[i][j]->getPlaca() == codigo) {
-				return datos[i][j];
-			}
-		}
-	}
-	return nullptr;
-}
-
-bool inventarioVehiculos::obtenerPosicionPorCodigo(string codigo, int& fila, int& columna) const {
-	for (int i = 0; i < filas; i++) {
-		for (int j = 0; j < columnas; j++) {
-			if (datos[i][j] != nullptr && datos[i][j]->getPlaca() == codigo) {
-				fila = i;
-				columna = j;
-				return true;
-			}
-		}
-	}
-	return false;
-}
-
-int inventarioVehiculos::contarVecinos(int f, int c) const {
-	if (f < 0 || f >= filas || c < 0 || c >= columnas) {
-		return -1;
-	}
-	int contador = 0;
-	for (int i = f - 1; i <= f + 1; i++) {
-		for (int j = c - 1; j <= c + 1; j++) {
-			if (i == f && j == c) {
-				continue;
-			}
-			if (i >= 0 && i < filas && j >= 0 && j < columnas) {
-				if (datos[i][j] != nullptr) {
-					contador++;
-				}
-			}
-		}
-	}
-	return contador;
-}
-
-int inventarioVehiculos::contarDisponibles() const {
-	int contador = 0;
-	for (int i = 0; i < filas; i++) {
-		for (int j = 0; j < columnas; j++) {
-			if (datos[i][j] != nullptr && datos[i][j]->getEstado() == "disponible") {
-				contador++;
-			}
-		}
-	}
-	return contador;
-}
-
-void inventarioVehiculos::mostrar() const {
-	for (int i = 0; i < filas; i++) {
-		for (int j = 0; j < columnas; j++) {
-			if (datos[i][j] != nullptr) {
-				cout << datos[i][j]->toString() << endl;
-			}
-			else {
-				cout << "[Vacío]" << endl;
-			}
-		}
-	}
-}
-
-void inventarioVehiculos::mostrarEstados() const {
-	for (int i = 0; i < filas; i++) {
-		for (int j = 0; j < columnas; j++) {
-			if (datos[i][j] != nullptr) {
-				cout << "Vehículo en posición (" << i << ", " << j << "): " << datos[i][j]->getEstado() << endl;
-			}
-			else {
-				cout << "Posición (" << i << ", " << j << "): [Vacío]" << endl;
-			}
-		}
-	}
-}
-
-void inventarioVehiculos::redimensionar(int nuevasFilas, int nuevasColumnas) {
-	vehiculo*** nuevosDatos = nullptr;
-	if (nuevasFilas > 0 && nuevasColumnas > 0) {
-		nuevosDatos = new vehiculo** [nuevasFilas];
-		for (int i = 0; i < nuevasFilas; i++) {
-			nuevosDatos[i] = new vehiculo * [nuevasColumnas];
-			for (int j = 0; j < nuevasColumnas; j++) {
-				nuevosDatos[i][j] = nullptr;
-			}
-		}
-		int minFilas = (nuevasFilas < filas) ? nuevasFilas : filas;
-		int minColumnas = (nuevasColumnas < columnas) ? nuevasColumnas : columnas;
-		for (int i = 0; i < minFilas; i++) {
-			for (int j = 0; j < minColumnas; j++) {
-				nuevosDatos[i][j] = datos[i][j];
-			}
-		}
-	}
-	liberarMemoria();
-	datos = nuevosDatos;
-	filas = nuevasFilas;
-	columnas = nuevasColumnas;
-}
-
-
-

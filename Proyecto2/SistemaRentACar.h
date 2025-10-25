@@ -1,18 +1,18 @@
 #pragma once
 #include <string>
-#include "lista.h"
+#include "listaBase.h"
 #include "sucursal.h"
 using namespace std;
 
 class SistemaRentACar {
 private:
-    lista sucursales;
+    listaBase<sucursal*> sucursales;
 
 public:
     SistemaRentACar();
     ~SistemaRentACar();
 
     void registrarSucursal(sucursal* s);
-    void mostrarSucursales();
+    string mostrarSucursales();
     sucursal* buscarSucursalPorId(int id);
 };

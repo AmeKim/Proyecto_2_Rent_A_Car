@@ -24,6 +24,7 @@ public:
     void setCedula(string cedula);
     void setPaisResidencia(string paisResidencia);
 
-    virtual void mostrarInfo() const;
     virtual string toString() const;
+
+    
 };

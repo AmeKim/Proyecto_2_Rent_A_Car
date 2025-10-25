@@ -13,9 +13,9 @@ solicitudAlquiler::solicitudAlquiler() {
     estado = "Pendiente";
 }
 
-solicitudAlquiler::solicitudAlquiler(const string& cod, cliente* cliente,
-    colaborador* colaborador, vehiculo* vehiculo, int d, const string& fInicio,
-    const string& fEntrega, double pDia) {
+solicitudAlquiler::solicitudAlquiler(const string cod, cliente* cliente,
+    colaborador* colaborador, vehiculo* vehiculo, int d, const string fInicio,
+    const string fEntrega, double pDia) {
     codigo = cod;
     cli = cliente;
     col = colaborador;

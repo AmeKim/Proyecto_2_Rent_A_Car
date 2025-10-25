@@ -12,7 +12,7 @@ private:
 
 public:
     contratoAlquiler();
-    contratoAlquiler(const solicitudAlquiler& solicitudAprobada);
+    contratoAlquiler(const solicitudAlquiler* solicitudAprobada);
 
     string getEstadoContrato() const;
     int getDiasRealesUso() const;

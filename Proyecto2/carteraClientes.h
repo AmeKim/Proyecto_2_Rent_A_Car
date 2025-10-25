@@ -2,30 +2,30 @@
 #include <iostream>
 #include <string>
 #include <sstream>
-#include "lista.h"
+#include "listaBase.h"
 #include "cliente.h"
 #include "personaFisica.h"
 #include "personaJuridica.h"
+
 using namespace std;
-class carteraClientes{
+class carteraClientes: public listaBase<cliente>{
 	private:
-		lista* clientes;
-		
+		nodoBase<cliente>* primero;
+		nodoBase<cliente>* actual;
 public:
 	carteraClientes();
 	~carteraClientes();
 
-	void agregarCliente(cliente* nuevoCliente);
-	void eliminarCliente(const string& dni);
-	cliente* buscarCliente(const string& dni) const;
+	bool agregarClienteFisico(personaFisica * fis);
+	bool agregarClienteJuridico(personaJuridica * jur);
 
-	int getCantidadClientes() const;
-	int getCantidadPersonasFisicas() const;
-	int getCantidadPersonasJuridicas() const;
+	bool eliminarCliente(string id);
 
-	void mostrarClientesFisicos() const;
-	void mostrarClientesJuridicos() const;
-	void mostrarClienteEspecifico(const string& dni) const;
-	void mostrarClientes() const;
+	personaFisica* buscarporCedula(string id);
+	personaJuridica* buscarporCedulaJuridica(string id);
+
+	string mostrarClientesFisicos();
+	string mostrarClientesJuridicos();
+	string mostrarTodosLosClientes();
 };
 

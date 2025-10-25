@@ -3,8 +3,60 @@
   "WorkspaceRootPath": "C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\matriz.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|solutionrelative:Proyecto2\\matriz.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\sucursal.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|solutionrelative:Proyecto2\\sucursal.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\sucursal.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|solutionrelative:Proyecto2\\sucursal.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\vehiculo.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|solutionrelative:Proyecto2\\vehiculo.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\vehiculo.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|solutionrelative:Proyecto2\\vehiculo.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\plantel.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|solutionrelative:Proyecto2\\plantel.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\SistemaRentACar.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|solutionrelative:Proyecto2\\SistemaRentACar.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\listaBase.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|solutionrelative:Proyecto2\\listaBase.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\listaBase.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|solutionrelative:Proyecto2\\listaBase.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\SistemaRentACar.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|solutionrelative:Proyecto2\\SistemaRentACar.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\registroBitacora.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|solutionrelative:Proyecto2\\registroBitacora.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\registroBitacora.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|solutionrelative:Proyecto2\\registroBitacora.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\cliente.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|solutionrelative:Proyecto2\\cliente.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\inventarioVehiculos.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|solutionrelative:Proyecto2\\inventarioVehiculos.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\inventarioVehiculos.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|solutionrelative:Proyecto2\\inventarioVehiculos.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\carteraClientes.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -15,40 +67,44 @@
       "RelativeMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|solutionrelative:Proyecto2\\carteraClientes.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\utiles.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|solutionrelative:Proyecto2\\utiles.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\utiles.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|solutionrelative:Proyecto2\\utiles.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\matriz.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|solutionrelative:Proyecto2\\matriz.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\nodo.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|solutionrelative:Proyecto2\\nodo.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\nodo.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|solutionrelative:Proyecto2\\nodo.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\lista.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|solutionrelative:Proyecto2\\lista.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\lista.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|solutionrelative:Proyecto2\\lista.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\contratoAlquiler.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|solutionrelative:Proyecto2\\contratoAlquiler.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\conjuntoColaboradores.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|solutionrelative:Proyecto2\\conjuntoColaboradores.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\conjuntoColaboradores.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|solutionrelative:Proyecto2\\conjuntoColaboradores.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\listaEstacionamiento.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|solutionrelative:Proyecto2\\listaEstacionamiento.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\listaEstacionamiento.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|solutionrelative:Proyecto2\\listaEstacionamiento.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\colaborador.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|solutionrelative:Proyecto2\\colaborador.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\espacioEstacionamiento.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|solutionrelative:Proyecto2\\espacioEstacionamiento.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\nodoBase.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|solutionrelative:Proyecto2\\nodoBase.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\contratoAlquiler.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|solutionrelative:Proyecto2\\contratoAlquiler.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\nodoBase.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|solutionrelative:Proyecto2\\nodoBase.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\solicitudAlquiler.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -57,10 +113,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\solicitudAlquiler.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|solutionrelative:Proyecto2\\solicitudAlquiler.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\colaborador.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|solutionrelative:Proyecto2\\colaborador.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\colaborador.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -73,14 +125,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\entradaBitacora.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|solutionrelative:Proyecto2\\entradaBitacora.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\vehiculo.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|solutionrelative:Proyecto2\\vehiculo.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\vehiculo.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|solutionrelative:Proyecto2\\vehiculo.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\personaJuridica.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -103,64 +147,28 @@
       "RelativeMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|solutionrelative:Proyecto2\\espacioEstacionamiento.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\espacioEstacionamiento.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|solutionrelative:Proyecto2\\espacioEstacionamiento.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\plantel.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|solutionrelative:Proyecto2\\plantel.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\plantel.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|solutionrelative:Proyecto2\\plantel.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\sucursal.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|solutionrelative:Proyecto2\\sucursal.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\cliente.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|solutionrelative:Proyecto2\\cliente.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\cliente.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|solutionrelative:Proyecto2\\cliente.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\matriz.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|solutionrelative:Proyecto2\\matriz.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\SistemaRentACar.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|solutionrelative:Proyecto2\\SistemaRentACar.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\utiles.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|solutionrelative:Proyecto2\\utiles.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\sucursal.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|solutionrelative:Proyecto2\\sucursal.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\utiles.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|solutionrelative:Proyecto2\\utiles.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\SistemaRentACar.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|solutionrelative:Proyecto2\\SistemaRentACar.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\conjuntoColaboradores.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|solutionrelative:Proyecto2\\conjuntoColaboradores.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\registroBitacora.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|solutionrelative:Proyecto2\\registroBitacora.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\registroBitacora.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|solutionrelative:Proyecto2\\registroBitacora.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\inventarioVehiculos.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|solutionrelative:Proyecto2\\inventarioVehiculos.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\inventarioVehiculos.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|solutionrelative:Proyecto2\\inventarioVehiculos.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\conjuntoColaboradores.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|solutionrelative:Proyecto2\\conjuntoColaboradores.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\matriz.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|solutionrelative:Proyecto2\\matriz.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -174,7 +182,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 15,
+          "SelectedChildIndex": 40,
           "Children": [
             {
               "$type": "Bookmark",
@@ -186,7 +194,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 6,
+              "Title": "listaBase.cpp",
+              "DocumentMoniker": "C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\listaBase.cpp",
+              "RelativeDocumentMoniker": "Proyecto2\\listaBase.cpp",
+              "ToolTip": "C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\listaBase.cpp",
+              "RelativeToolTip": "Proyecto2\\listaBase.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-10-25T17:23:52.839Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "listaBase.h",
+              "DocumentMoniker": "C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\listaBase.h",
+              "RelativeDocumentMoniker": "Proyecto2\\listaBase.h",
+              "ToolTip": "C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\listaBase.h",
+              "RelativeToolTip": "Proyecto2\\listaBase.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-10-25T17:10:51.502Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "SistemaRentACar.cpp",
               "DocumentMoniker": "C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\SistemaRentACar.cpp",
               "RelativeDocumentMoniker": "Proyecto2\\SistemaRentACar.cpp",
@@ -194,11 +228,12 @@
               "RelativeToolTip": "Proyecto2\\SistemaRentACar.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-10-21T00:01:48.998Z"
+              "WhenOpened": "2025-10-21T00:01:48.998Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 9,
               "Title": "registroBitacora.cpp",
               "DocumentMoniker": "C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\registroBitacora.cpp",
               "RelativeDocumentMoniker": "Proyecto2\\registroBitacora.cpp",
@@ -206,23 +241,25 @@
               "RelativeToolTip": "Proyecto2\\registroBitacora.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-10-20T23:24:46.908Z"
+              "WhenOpened": "2025-10-20T23:24:46.908Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 5,
               "Title": "SistemaRentACar.h",
               "DocumentMoniker": "C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\SistemaRentACar.h",
               "RelativeDocumentMoniker": "Proyecto2\\SistemaRentACar.h",
               "ToolTip": "C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\SistemaRentACar.h",
               "RelativeToolTip": "Proyecto2\\SistemaRentACar.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAHAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-10-20T23:07:11.276Z"
+              "WhenOpened": "2025-10-20T23:07:11.276Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 10,
               "Title": "registroBitacora.h",
               "DocumentMoniker": "C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\registroBitacora.h",
               "RelativeDocumentMoniker": "Proyecto2\\registroBitacora.h",
@@ -230,84 +267,90 @@
               "RelativeToolTip": "Proyecto2\\registroBitacora.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-10-20T23:05:49.679Z"
+              "WhenOpened": "2025-10-20T23:05:49.679Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 18,
               "Title": "conjuntoColaboradores.cpp",
               "DocumentMoniker": "C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\conjuntoColaboradores.cpp",
               "RelativeDocumentMoniker": "Proyecto2\\conjuntoColaboradores.cpp",
               "ToolTip": "C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\conjuntoColaboradores.cpp",
               "RelativeToolTip": "Proyecto2\\conjuntoColaboradores.cpp",
-              "ViewState": "AgIAABoAAAAAAAAAAIAwwCsAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACUAAAAAAAAAAAAuwDIAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-10-19T23:55:37.679Z"
+              "WhenOpened": "2025-10-19T23:55:37.679Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 17,
               "Title": "conjuntoColaboradores.h",
               "DocumentMoniker": "C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\conjuntoColaboradores.h",
               "RelativeDocumentMoniker": "Proyecto2\\conjuntoColaboradores.h",
               "ToolTip": "C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\conjuntoColaboradores.h",
               "RelativeToolTip": "Proyecto2\\conjuntoColaboradores.h",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAAABAAAAAnAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-10-19T23:52:20.229Z"
+              "WhenOpened": "2025-10-19T23:52:20.229Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 12,
               "Title": "inventarioVehiculos.cpp",
               "DocumentMoniker": "C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\inventarioVehiculos.cpp",
               "RelativeDocumentMoniker": "Proyecto2\\inventarioVehiculos.cpp",
               "ToolTip": "C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\inventarioVehiculos.cpp",
               "RelativeToolTip": "Proyecto2\\inventarioVehiculos.cpp",
-              "ViewState": "AgIAAEcAAAAAAAAAAAAAANEAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACsAAAAAAAAAAAAAADMAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-10-20T00:17:56.246Z"
+              "WhenOpened": "2025-10-20T00:17:56.246Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 13,
               "Title": "inventarioVehiculos.h",
               "DocumentMoniker": "C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\inventarioVehiculos.h",
               "RelativeDocumentMoniker": "Proyecto2\\inventarioVehiculos.h",
               "ToolTip": "C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\inventarioVehiculos.h",
               "RelativeToolTip": "Proyecto2\\inventarioVehiculos.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAoAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAuwBMAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-10-19T23:51:39.783Z"
+              "WhenOpened": "2025-10-19T23:51:39.783Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 14,
               "Title": "carteraClientes.cpp",
               "DocumentMoniker": "C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\carteraClientes.cpp",
               "RelativeDocumentMoniker": "Proyecto2\\carteraClientes.cpp",
               "ToolTip": "C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\carteraClientes.cpp",
               "RelativeToolTip": "Proyecto2\\carteraClientes.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAAtAAAAAAAAAA==",
+              "ViewState": "AgIAAGsAAAAAAAAAAAAAAHkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-10-20T00:17:50.926Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 15,
               "Title": "carteraClientes.h",
               "DocumentMoniker": "C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\carteraClientes.h",
               "RelativeDocumentMoniker": "Proyecto2\\carteraClientes.h",
               "ToolTip": "C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\carteraClientes.h",
               "RelativeToolTip": "Proyecto2\\carteraClientes.h",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAABEAAAAUAAAAAAAAAA==",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAAAAoAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-10-19T23:50:10.584Z"
+              "WhenOpened": "2025-10-19T23:50:10.584Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 39,
               "Title": "utiles.cpp",
               "DocumentMoniker": "C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\utiles.cpp",
               "RelativeDocumentMoniker": "Proyecto2\\utiles.cpp",
@@ -319,7 +362,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 40,
               "Title": "utiles.h",
               "DocumentMoniker": "C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\utiles.h",
               "RelativeDocumentMoniker": "Proyecto2\\utiles.h",
@@ -331,7 +374,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 41,
               "Title": "matriz.cpp",
               "DocumentMoniker": "C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\matriz.cpp",
               "RelativeDocumentMoniker": "Proyecto2\\matriz.cpp",
@@ -343,7 +386,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 38,
               "Title": "matriz.h",
               "DocumentMoniker": "C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\matriz.h",
               "RelativeDocumentMoniker": "Proyecto2\\matriz.h",
@@ -356,103 +399,111 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "nodo.cpp",
-              "DocumentMoniker": "C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\nodo.cpp",
-              "RelativeDocumentMoniker": "Proyecto2\\nodo.cpp",
-              "ToolTip": "C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\nodo.cpp",
-              "RelativeToolTip": "Proyecto2\\nodo.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "DocumentIndex": 25,
+              "Title": "nodoBase.cpp",
+              "DocumentMoniker": "C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\nodoBase.cpp",
+              "RelativeDocumentMoniker": "Proyecto2\\nodoBase.cpp",
+              "ToolTip": "C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\nodoBase.cpp",
+              "RelativeToolTip": "Proyecto2\\nodoBase.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-10-12T00:42:18.769Z"
+              "WhenOpened": "2025-10-25T17:12:30.343Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "nodo.h",
-              "DocumentMoniker": "C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\nodo.h",
-              "RelativeDocumentMoniker": "Proyecto2\\nodo.h",
-              "ToolTip": "C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\nodo.h",
-              "RelativeToolTip": "Proyecto2\\nodo.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 23,
+              "Title": "nodoBase.h",
+              "DocumentMoniker": "C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\nodoBase.h",
+              "RelativeDocumentMoniker": "Proyecto2\\nodoBase.h",
+              "ToolTip": "C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\nodoBase.h",
+              "RelativeToolTip": "Proyecto2\\nodoBase.h",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-10-12T00:38:52.289Z"
+              "WhenOpened": "2025-10-12T00:38:52.289Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "lista.cpp",
-              "DocumentMoniker": "C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\lista.cpp",
-              "RelativeDocumentMoniker": "Proyecto2\\lista.cpp",
-              "ToolTip": "C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\lista.cpp",
-              "RelativeToolTip": "Proyecto2\\lista.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADUAAAABAAAAAAAAAA==",
+              "DocumentIndex": 20,
+              "Title": "listaEstacionamiento.cpp",
+              "DocumentMoniker": "C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\listaEstacionamiento.cpp",
+              "RelativeDocumentMoniker": "Proyecto2\\listaEstacionamiento.cpp",
+              "ToolTip": "C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\listaEstacionamiento.cpp",
+              "RelativeToolTip": "Proyecto2\\listaEstacionamiento.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-10-12T00:58:30.927Z"
+              "WhenOpened": "2025-10-12T00:58:30.927Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "lista.h",
-              "DocumentMoniker": "C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\lista.h",
-              "RelativeDocumentMoniker": "Proyecto2\\lista.h",
-              "ToolTip": "C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\lista.h",
-              "RelativeToolTip": "Proyecto2\\lista.h",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAAAAUAAAAjAAAAAAAAAA==",
+              "DocumentIndex": 19,
+              "Title": "listaEstacionamiento.h",
+              "DocumentMoniker": "C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\listaEstacionamiento.h",
+              "RelativeDocumentMoniker": "Proyecto2\\listaEstacionamiento.h",
+              "ToolTip": "C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\listaEstacionamiento.h",
+              "RelativeToolTip": "Proyecto2\\listaEstacionamiento.h",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-10-12T00:38:45.873Z"
+              "WhenOpened": "2025-10-12T00:38:45.873Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 16,
               "Title": "contratoAlquiler.cpp",
               "DocumentMoniker": "C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\contratoAlquiler.cpp",
               "RelativeDocumentMoniker": "Proyecto2\\contratoAlquiler.cpp",
               "ToolTip": "C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\contratoAlquiler.cpp",
               "RelativeToolTip": "Proyecto2\\contratoAlquiler.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFgAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-10-19T22:18:01.337Z"
+              "WhenOpened": "2025-10-19T22:18:01.337Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 24,
               "Title": "contratoAlquiler.h",
               "DocumentMoniker": "C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\contratoAlquiler.h",
               "RelativeDocumentMoniker": "Proyecto2\\contratoAlquiler.h",
               "ToolTip": "C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\contratoAlquiler.h",
               "RelativeToolTip": "Proyecto2\\contratoAlquiler.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAACAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAawA4AAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-10-12T00:37:55.433Z"
+              "WhenOpened": "2025-10-12T00:37:55.433Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 26,
               "Title": "solicitudAlquiler.cpp",
               "DocumentMoniker": "C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\solicitudAlquiler.cpp",
               "RelativeDocumentMoniker": "Proyecto2\\solicitudAlquiler.cpp",
               "ToolTip": "C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\solicitudAlquiler.cpp",
               "RelativeToolTip": "Proyecto2\\solicitudAlquiler.cpp",
-              "ViewState": "AgIAAF0AAAAAAAAAAAAAAGkAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAAABEAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-10-19T22:18:08.737Z"
+              "WhenOpened": "2025-10-19T22:18:08.737Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 27,
               "Title": "solicitudAlquiler.h",
               "DocumentMoniker": "C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\solicitudAlquiler.h",
               "RelativeDocumentMoniker": "Proyecto2\\solicitudAlquiler.h",
               "ToolTip": "C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\solicitudAlquiler.h",
               "RelativeToolTip": "Proyecto2\\solicitudAlquiler.h",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAAABoAAAAEAAAAAAAAAA==",
+              "ViewState": "AgIAABwAAAAAAAAAAAAAABkAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-10-12T00:37:34.031Z"
+              "WhenOpened": "2025-10-12T00:37:34.031Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 21,
               "Title": "colaborador.cpp",
               "DocumentMoniker": "C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\colaborador.cpp",
               "RelativeDocumentMoniker": "Proyecto2\\colaborador.cpp",
@@ -460,11 +511,12 @@
               "RelativeToolTip": "Proyecto2\\colaborador.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAC8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-10-19T22:18:00.631Z"
+              "WhenOpened": "2025-10-19T22:18:00.631Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 28,
               "Title": "colaborador.h",
               "DocumentMoniker": "C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\colaborador.h",
               "RelativeDocumentMoniker": "Proyecto2\\colaborador.h",
@@ -472,11 +524,12 @@
               "RelativeToolTip": "Proyecto2\\colaborador.h",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAABEAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-10-12T00:37:26.949Z"
+              "WhenOpened": "2025-10-12T00:37:26.949Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 29,
               "Title": "entradaBitacora.cpp",
               "DocumentMoniker": "C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\entradaBitacora.cpp",
               "RelativeDocumentMoniker": "Proyecto2\\entradaBitacora.cpp",
@@ -484,11 +537,12 @@
               "RelativeToolTip": "Proyecto2\\entradaBitacora.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-10-19T22:18:01.972Z"
+              "WhenOpened": "2025-10-19T22:18:01.972Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 30,
               "Title": "entradaBitacora.h",
               "DocumentMoniker": "C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\entradaBitacora.h",
               "RelativeDocumentMoniker": "Proyecto2\\entradaBitacora.h",
@@ -496,23 +550,25 @@
               "RelativeToolTip": "Proyecto2\\entradaBitacora.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-10-12T00:37:07.778Z"
+              "WhenOpened": "2025-10-12T00:37:07.778Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 2,
               "Title": "vehiculo.cpp",
               "DocumentMoniker": "C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\vehiculo.cpp",
               "RelativeDocumentMoniker": "Proyecto2\\vehiculo.cpp",
               "ToolTip": "C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\vehiculo.cpp",
               "RelativeToolTip": "Proyecto2\\vehiculo.cpp",
-              "ViewState": "AgIAAFQAAAAAAAAAAAAqwGkAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAABMAAAAAAAAAAAAAAGkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-10-19T22:18:10.085Z"
+              "WhenOpened": "2025-10-19T22:18:10.085Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 3,
               "Title": "vehiculo.h",
               "DocumentMoniker": "C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\vehiculo.h",
               "RelativeDocumentMoniker": "Proyecto2\\vehiculo.h",
@@ -520,11 +576,12 @@
               "RelativeToolTip": "Proyecto2\\vehiculo.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-10-12T00:36:53.864Z"
+              "WhenOpened": "2025-10-12T00:36:53.864Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 31,
               "Title": "personaJuridica.cpp",
               "DocumentMoniker": "C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\personaJuridica.cpp",
               "RelativeDocumentMoniker": "Proyecto2\\personaJuridica.cpp",
@@ -532,11 +589,12 @@
               "RelativeToolTip": "Proyecto2\\personaJuridica.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-10-19T22:00:00.35Z"
+              "WhenOpened": "2025-10-19T22:00:00.35Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 32,
               "Title": "personaJuridica.h",
               "DocumentMoniker": "C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\personaJuridica.h",
               "RelativeDocumentMoniker": "Proyecto2\\personaJuridica.h",
@@ -544,59 +602,64 @@
               "RelativeToolTip": "Proyecto2\\personaJuridica.h",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAAA4AAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-10-12T00:36:42.812Z"
+              "WhenOpened": "2025-10-12T00:36:42.812Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 33,
               "Title": "personaFisica.cpp",
               "DocumentMoniker": "C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\personaFisica.cpp",
               "RelativeDocumentMoniker": "Proyecto2\\personaFisica.cpp",
               "ToolTip": "C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\personaFisica.cpp",
               "RelativeToolTip": "Proyecto2\\personaFisica.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAABkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-10-19T21:54:17.563Z"
+              "WhenOpened": "2025-10-19T21:54:17.563Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 34,
               "Title": "personaFisica.h",
               "DocumentMoniker": "C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\personaFisica.h",
               "RelativeDocumentMoniker": "Proyecto2\\personaFisica.h",
               "ToolTip": "C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\personaFisica.h",
               "RelativeToolTip": "Proyecto2\\personaFisica.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAwBUAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABIAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-10-12T00:36:30.103Z"
+              "WhenOpened": "2025-10-12T00:36:30.103Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 35,
               "Title": "espacioEstacionamiento.cpp",
               "DocumentMoniker": "C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\espacioEstacionamiento.cpp",
               "RelativeDocumentMoniker": "Proyecto2\\espacioEstacionamiento.cpp",
               "ToolTip": "C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\espacioEstacionamiento.cpp",
               "RelativeToolTip": "Proyecto2\\espacioEstacionamiento.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAoAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-10-19T22:11:28.055Z"
+              "WhenOpened": "2025-10-19T22:11:28.055Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 22,
               "Title": "espacioEstacionamiento.h",
               "DocumentMoniker": "C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\espacioEstacionamiento.h",
               "RelativeDocumentMoniker": "Proyecto2\\espacioEstacionamiento.h",
               "ToolTip": "C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\espacioEstacionamiento.h",
               "RelativeToolTip": "Proyecto2\\espacioEstacionamiento.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAATAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-10-12T00:36:00.081Z"
+              "WhenOpened": "2025-10-12T00:36:00.081Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 36,
               "Title": "plantel.cpp",
               "DocumentMoniker": "C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\plantel.cpp",
               "RelativeDocumentMoniker": "Proyecto2\\plantel.cpp",
@@ -604,11 +667,12 @@
               "RelativeToolTip": "Proyecto2\\plantel.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-10-19T22:17:52.573Z"
+              "WhenOpened": "2025-10-19T22:17:52.573Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 4,
               "Title": "plantel.h",
               "DocumentMoniker": "C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\plantel.h",
               "RelativeDocumentMoniker": "Proyecto2\\plantel.h",
@@ -616,59 +680,64 @@
               "RelativeToolTip": "Proyecto2\\plantel.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-10-12T00:35:41.508Z"
+              "WhenOpened": "2025-10-12T00:35:41.508Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 0,
               "Title": "sucursal.cpp",
               "DocumentMoniker": "C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\sucursal.cpp",
               "RelativeDocumentMoniker": "Proyecto2\\sucursal.cpp",
               "ToolTip": "C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\sucursal.cpp",
               "RelativeToolTip": "Proyecto2\\sucursal.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEEAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAABMAAAAAAAAAAAAAACAAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-10-19T22:18:09.431Z"
+              "WhenOpened": "2025-10-19T22:18:09.431Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 1,
               "Title": "sucursal.h",
               "DocumentMoniker": "C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\sucursal.h",
               "RelativeDocumentMoniker": "Proyecto2\\sucursal.h",
               "ToolTip": "C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\sucursal.h",
               "RelativeToolTip": "Proyecto2\\sucursal.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAACAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAcAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-10-12T00:35:28.494Z"
+              "WhenOpened": "2025-10-12T00:35:28.494Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 37,
               "Title": "cliente.cpp",
               "DocumentMoniker": "C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\cliente.cpp",
               "RelativeDocumentMoniker": "Proyecto2\\cliente.cpp",
               "ToolTip": "C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\cliente.cpp",
               "RelativeToolTip": "Proyecto2\\cliente.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADQAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAACIAAAAAAAAAAAAAACgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-10-19T21:50:21.218Z"
+              "WhenOpened": "2025-10-19T21:50:21.218Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 11,
               "Title": "cliente.h",
               "DocumentMoniker": "C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\cliente.h",
               "RelativeDocumentMoniker": "Proyecto2\\cliente.h",
               "ToolTip": "C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\cliente.h",
               "RelativeToolTip": "Proyecto2\\cliente.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-10-12T00:36:12.955Z"
+              "WhenOpened": "2025-10-12T00:36:12.955Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 42,
               "Title": "main.cpp",
               "DocumentMoniker": "C:\\Users\\ailem\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\main.cpp",
               "RelativeDocumentMoniker": "Proyecto2\\main.cpp",

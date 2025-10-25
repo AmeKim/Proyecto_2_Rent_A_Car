@@ -3,34 +3,19 @@
 #include <string>
 #include <sstream>
 #include "vehiculo.h"
+#include "listaBase.h"
 
 using namespace std;
 
-class inventarioVehiculos {
+class inventarioVehiculos : public listaBase<vehiculo> {
 private:
-    vehiculo*** datos;
-    int filas;
-    int columnas;
-    void liberarMemoria();
+	nodoBase<vehiculo>* primero;
+    nodoBase<vehiculo>* actual;
 public:
-    inventarioVehiculos(int f = 0, int c = 0);
-    virtual ~inventarioVehiculos();
-
-    bool setElemento(int f, int c, vehiculo* elemento);
-    vehiculo* getElemento(int f, int c) const;
-    bool eliminarElemento(int f, int c);
-
-    void vaciar();
-    bool estaVacio(int f, int c) const;
-    int contarElementos() const;
-
-    vehiculo* buscarPorCodigo(string codigo) const;
-    bool obtenerPosicionPorCodigo(string codigo, int& fila, int& columna) const;
-
-    int contarVecinos(int f, int c) const;
-    int contarDisponibles() const;
-
-    void mostrar() const;
-    void mostrarEstados() const;
-    void redimensionar(int nuevasFilas, int nuevasColumnas);
+    inventarioVehiculos();
+    ~inventarioVehiculos();
+    void agregarVehiculo(vehiculo* v);
+    void eliminarVehiculo(vehiculo* v);
+    string mostrarVehiculos() const;
+    string mostrarTotalDeEstados();
 };

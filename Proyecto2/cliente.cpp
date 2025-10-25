@@ -38,12 +38,6 @@ void cliente::setPaisResidencia(string pais) {
     paisResidencia = pais;
 }
 
-void cliente::mostrarInfo() const {
-    cout << "Nombre: " << nombre << endl;
-    cout << "Cédula: " << cedula << endl;
-    cout << "País: " << paisResidencia << endl;
-}
-
 string cliente::toString() const {
     stringstream ss;
     ss << "Nombre: " << nombre << endl;

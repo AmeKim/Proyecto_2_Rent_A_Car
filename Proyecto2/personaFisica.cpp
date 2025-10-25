@@ -24,8 +24,3 @@ string personaFisica::toString() const {
     ss << "Tipo de Licencia: " << tipoLicencia << endl;
     return ss.str();
 }
-
-void personaFisica::mostrarInfo() const {
-    cliente::mostrarInfo();
-    cout << "Tipo de Licencia: " << tipoLicencia << endl;
-}

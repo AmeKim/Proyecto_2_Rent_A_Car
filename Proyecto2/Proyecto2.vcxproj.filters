@@ -51,10 +51,10 @@
     <ClCompile Include="contratoAlquiler.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="lista.cpp">
+    <ClCompile Include="listaEstacionamiento.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="nodo.cpp">
+    <ClCompile Include="nodoBase.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
     <ClCompile Include="matriz.cpp">
@@ -76,6 +76,9 @@
       <Filter>Archivos de origen</Filter>
     </ClCompile>
     <ClCompile Include="SistemaRentACar.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="listaBase.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>
@@ -113,10 +116,10 @@
     <ClInclude Include="contratoAlquiler.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="lista.h">
+    <ClInclude Include="listaEstacionamiento.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="nodo.h">
+    <ClInclude Include="nodoBase.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="matriz.h">
@@ -138,6 +141,9 @@
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="SistemaRentACar.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="listaBase.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>

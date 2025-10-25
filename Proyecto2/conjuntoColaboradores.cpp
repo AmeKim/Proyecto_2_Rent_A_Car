@@ -1,49 +1,51 @@
 #include "conjuntoColaboradores.h"
 
-conjuntoColaboradores::conjuntoColaboradores(int capacidad){
-	this->capacidad = capacidad;
-	this->cantidad = 0;
-	this->colaboradores = new colaborador*[capacidad];
+conjuntoColaboradores:: conjuntoColaboradores() : listaBase<colaborador>() {
+	primero = nullptr;
+	actual = nullptr;
 }
 
-conjuntoColaboradores::~conjuntoColaboradores(){
-	for (int i = 0; i < cantidad; i++) {
-		delete colaboradores[i];
-	}
-	delete[] colaboradores;
+conjuntoColaboradores::~conjuntoColaboradores() {
+}
+void conjuntoColaboradores::agregarColaborador(colaborador* col) {
+	agregarFinal(col);
 }
 
-void conjuntoColaboradores::agregarColaborador(const colaborador* colab){
-	if (cantidad < capacidad) {
-		colaboradores[cantidad] = new colaborador(*colab);
-		cantidad++;
-	}
-}
-
-bool conjuntoColaboradores::eliminarColaborador(const string cedula){
-	for(int i = 0; i < cantidad; i++) {
-		if (colaboradores[i]->getCedula() == cedula) {
-			delete colaboradores[i];
-			for (int j = i; j < cantidad - 1; j++) {
-				colaboradores[j] = colaboradores[j + 1];
+void conjuntoColaboradores::eliminarColaborador(string id) {
+	actual = primero;
+	nodoBase<colaborador>* prev = nullptr;
+	while (actual != nullptr) {
+		if (actual->getElemento()->getCedula() == id) {
+			if (prev == nullptr) {
+				primero = actual->getSiguiente();
+			} else {
+				prev->setSiguiente(actual->getSiguiente());
 			}
-			cantidad--;
-			return true;
+			delete actual;
+			return;
 		}
-	}
-	return false;
-}
-
-colaborador* conjuntoColaboradores::buscarColaborador(const string cedula){
-	for(int i = 0; i < cantidad; i++) {
-		if (colaboradores[i]->getCedula() == cedula) {
-			return colaboradores[i];
-		}
+		prev = actual;
+		actual = actual->getSiguiente();
 	}
 }
 
-void conjuntoColaboradores::mostrarColaboradores(){
-	for(int i = 0; i < cantidad; i++) {
-		cout << colaboradores[i]->toString() << endl;
+colaborador* conjuntoColaboradores::buscarColaborador(string id) {
+	actual = primero;
+	while (actual != nullptr) {
+		if (actual->getElemento()->getCedula() == id) {
+			return actual->getElemento();
+		}
+		actual = actual->getSiguiente();
 	}
+	return nullptr;
+}
+
+string conjuntoColaboradores::toString() {
+	stringstream ss;
+	actual = primero;
+	while (actual != nullptr) {
+		ss << actual->getElemento()->toString() << endl;
+		actual = actual->getSiguiente();
+	}
+	return ss.str();
 }

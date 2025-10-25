@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
 #include <iostream>
-#include "lista.h"
+#include "listaBase.h"
 #include "plantel.h"
 #include "cliente.h"
 #include "colaborador.h"
@@ -14,10 +14,10 @@ private:
     int idSucursal;
     string nombre;
     string provincia;
-    lista planteles;
-    lista clientes;
-    lista colaboradores;
-    lista vehiculos;
+	listaBase<plantel*> planteles;
+	listaBase<cliente*> clientes;
+	listaBase<colaborador*> colaboradores;
+    listaBase<vehiculo*> vehiculos;
 
 public:
     sucursal();
@@ -28,15 +28,10 @@ public:
     string getNombre() const;
     string getProvincia() const;
 
-    void agregarPlantel(plantel* p);
-    void agregarCliente(cliente* c);
-    void agregarColaborador(colaborador* c);
-    void agregarVehiculo(vehiculo* v);
-
-    lista* getPlanteles();
-    lista* getClientes();
-    lista* getColaboradores();
-    lista* getVehiculos();
+    bool agregarPlantel(plantel* p);
+    bool agregarCliente(cliente* c);
+    bool agregarColaborador(colaborador* c);
+    bool agregarVehiculo(vehiculo* v);
 
     void mostrarResumen() const;
     string toString() const;

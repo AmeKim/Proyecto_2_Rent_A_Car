@@ -17,5 +17,4 @@ public:
     void setTipoLicencia(const string& tipo);
 
     string toString() const;
-    void mostrarInfo() const override;
 };

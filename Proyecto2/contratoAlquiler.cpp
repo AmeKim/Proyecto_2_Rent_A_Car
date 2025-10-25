@@ -5,8 +5,8 @@ contratoAlquiler::contratoAlquiler() : solicitudAlquiler() {
     diasRealesUso = 0;
 }
 
-contratoAlquiler::contratoAlquiler(const solicitudAlquiler& solicitudAprobada)
-    : solicitudAlquiler(solicitudAprobada) {
+contratoAlquiler::contratoAlquiler(const solicitudAlquiler* solicitudAprobada)
+	: solicitudAlquiler(*solicitudAprobada) {
     estadoContrato = "Aprobado en alquiler";
     diasRealesUso = 0;
 }
