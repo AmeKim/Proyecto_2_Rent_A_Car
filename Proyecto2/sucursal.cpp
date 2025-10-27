@@ -12,7 +12,7 @@ sucursal::sucursal() {
     contratos = new listaBase<contratoAlquiler>();
 }
 
-sucursal::sucursal(int id, const string& nom, const string& prov) {
+sucursal::sucursal(int id, const string nom, const string prov) {
     idSucursal = id;
     nombre = nom;
     provincia = prov;

@@ -26,7 +26,7 @@ private:
 
 public:
     sucursal();
-    sucursal(int id, const string& nom, const string& prov);
+    sucursal(int id, const string nom, const string prov);
     ~sucursal();
 
     int getIdSucursal() const;
