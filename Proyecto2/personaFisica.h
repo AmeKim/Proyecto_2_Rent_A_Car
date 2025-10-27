@@ -1,20 +1,22 @@
 #pragma once
 #include <string>
 #include <iostream>
+#include <sstream>
 #include "cliente.h"
 
 using namespace std;
 
 class personaFisica : public cliente {
 private:
-    string tipoLicencia;  // Tipo de licencia de conducir (ej: B1, B2, etc.)
+    string tipoLicencia;
 
 public:
     personaFisica();
-    personaFisica(const string& id, const string& nombre,const string& pais, const string& tipoLicencia);
+    personaFisica(const string& cedula, const string& nombre, const string& pais, const string& tipoLicencia);
+    ~personaFisica();
 
     string getTipoLicencia() const;
     void setTipoLicencia(const string& tipo);
 
-    string toString() const;
+    string toString() const override;
 };

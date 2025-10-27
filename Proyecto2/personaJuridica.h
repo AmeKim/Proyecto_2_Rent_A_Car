@@ -6,17 +6,21 @@
 
 using namespace std;
 
-class personaJuridica : public cliente{
-	string actividadEconomica;
-	float porcDescuento;
-public:
-	personaJuridica();
-	personaJuridica(string, string, string, string , float);
-	~personaJuridica();
-	void setActividadEconomica(string);
-	string getActividadEconomica() const;
-	void setPorcDescuento(float descuento);
-	float getPorcDescuento() const;
-	string toString();
-};
+class personaJuridica : public cliente {
+private:
+    string actividadEconomica;
+    float porcDescuento;
 
+public:
+    personaJuridica();
+    personaJuridica(string cedula, string nombre, string paisResidencia,
+        string actividadEconomica, float porcDescuento);
+    ~personaJuridica();
+
+    void setActividadEconomica(string actividad);
+    string getActividadEconomica() const;
+    void setPorcDescuento(float descuento);
+    float getPorcDescuento() const;
+
+    string toString() const override;
+};

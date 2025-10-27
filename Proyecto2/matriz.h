@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include <sstream>
 
 using namespace std;
 
@@ -21,4 +22,5 @@ public:
     int getColumnas() const;
 
     void mostrar(string(*mostrarFn)(void*));
+    string mostrarMatrizTexto(string(*mostrarFn)(void*));
 };

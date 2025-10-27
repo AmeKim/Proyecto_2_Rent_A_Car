@@ -54,9 +54,6 @@
     <ClCompile Include="listaEstacionamiento.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="nodoBase.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
     <ClCompile Include="matriz.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
@@ -76,9 +73,6 @@
       <Filter>Archivos de origen</Filter>
     </ClCompile>
     <ClCompile Include="SistemaRentACar.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="listaBase.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>

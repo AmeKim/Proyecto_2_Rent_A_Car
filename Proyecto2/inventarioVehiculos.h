@@ -8,14 +8,15 @@
 using namespace std;
 
 class inventarioVehiculos : public listaBase<vehiculo> {
-private:
-	nodoBase<vehiculo>* primero;
-    nodoBase<vehiculo>* actual;
 public:
     inventarioVehiculos();
     ~inventarioVehiculos();
+
     void agregarVehiculo(vehiculo* v);
-    void eliminarVehiculo(vehiculo* v);
+    bool eliminarVehiculoPorPlaca(string placa);
+    vehiculo* buscarVehiculoPorPlaca(string placa);
+
     string mostrarVehiculos() const;
+    string mostrarVehiculosDisponibles() const;
     string mostrarTotalDeEstados();
 };

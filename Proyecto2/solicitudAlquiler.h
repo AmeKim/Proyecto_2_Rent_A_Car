@@ -1,14 +1,16 @@
 #pragma once
 #include <string>
 #include <iostream>
+#include <sstream>
 #include "cliente.h"
 #include "colaborador.h"
 #include "vehiculo.h"
+#include "personaJuridica.h"
 
 using namespace std;
 
 class solicitudAlquiler {
-private:
+protected:
     string codigo;
     cliente* cli;
     colaborador* col;
@@ -22,8 +24,10 @@ private:
 
 public:
     solicitudAlquiler();
-    solicitudAlquiler(const string cod, cliente* cliente, colaborador* colaborador,
-    vehiculo* vehiculo, int dias, const string fInicio, const string fEntrega, double pDia);
+    solicitudAlquiler(const string& cod, cliente* cliente, colaborador* colaborador,
+        vehiculo* vehiculo, int dias, const string& fInicio,
+        const string& fEntrega, double pDia);
+    virtual ~solicitudAlquiler();
 
     string getCodigo() const;
     string getEstado() const;
@@ -40,6 +44,5 @@ public:
     void rechazar();
     void anular();
 
-    void mostrarInfo() const;
-    string toString() const;
+    virtual string toString() const;
 };

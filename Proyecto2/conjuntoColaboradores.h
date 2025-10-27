@@ -7,14 +7,12 @@
 using namespace std;
 
 class conjuntoColaboradores : public listaBase<colaborador> {
-private:
-		nodoBase<colaborador>* primero;
-		nodoBase<colaborador>* actual;
 public:
-		conjuntoColaboradores();
-		~conjuntoColaboradores();
-		void agregarColaborador(colaborador* col);
-		void eliminarColaborador(string id);
-		colaborador* buscarColaborador(string id);
-		string toString();
+    conjuntoColaboradores();
+    ~conjuntoColaboradores();
+
+    void agregarColaborador(colaborador* col);
+    void eliminarColaborador(string id);
+    colaborador* buscarColaborador(string id);
+    string mostrarColaboradores();
 };

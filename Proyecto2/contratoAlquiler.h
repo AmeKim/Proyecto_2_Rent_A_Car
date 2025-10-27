@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include <iostream>
+#include <sstream>
 #include "solicitudAlquiler.h"
 
 using namespace std;
@@ -12,7 +13,7 @@ private:
 
 public:
     contratoAlquiler();
-    contratoAlquiler(const solicitudAlquiler* solicitudAprobada);
+    contratoAlquiler(const solicitudAlquiler& solicitudAprobada);
 
     string getEstadoContrato() const;
     int getDiasRealesUso() const;
@@ -20,6 +21,5 @@ public:
     void finalizarContrato(int diasUtilizados);
     double calcularMontoFinal() const;
 
-    void mostrarInfo() const;
-    string toString() const;
+    string toString() const override;
 };

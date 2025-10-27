@@ -1,34 +1,40 @@
 #include "personaJuridica.h"
 
-personaJuridica::personaJuridica(){
+personaJuridica::personaJuridica() : cliente() {
     actividadEconomica = "";
-	porcDescuento = 0.0;
-
+    porcDescuento = 0.0;
 }
 
-personaJuridica::personaJuridica(string nombre, string cedula, string paisResidencia, string actividadEconomica, float porcDescuento){
-    setNombre(nombre);
-    setCedula(cedula);
-    setPaisResidencia(paisResidencia);
-    setActividadEconomica(actividadEconomica);
-    setPorcDescuento(porcDescuento);
+personaJuridica::personaJuridica(string cedula, string nombre, string paisResidencia,
+    string actividadEconomica, float porcDescuento)
+    : cliente(nombre, cedula, paisResidencia) {
+    this->actividadEconomica = actividadEconomica;
+    this->porcDescuento = porcDescuento;
 }
 
-personaJuridica::~personaJuridica(){
+personaJuridica::~personaJuridica() {}
+
+void personaJuridica::setActividadEconomica(string actividad) {
+    actividadEconomica = actividad;
 }
 
-void personaJuridica::setActividadEconomica(string actividad) {actividadEconomica = actividad;}
+string personaJuridica::getActividadEconomica() const {
+    return actividadEconomica;
+}
 
-string personaJuridica::getActividadEconomica() const {	return actividadEconomica; }
+void personaJuridica::setPorcDescuento(float descuento) {
+    porcDescuento = descuento;
+}
 
-void personaJuridica::setPorcDescuento(float descuento) { porcDescuento = descuento; }
+float personaJuridica::getPorcDescuento() const {
+    return porcDescuento;
+}
 
-float personaJuridica::getPorcDescuento() const { return porcDescuento; }
-
-string personaJuridica::toString(){
+string personaJuridica::toString() const {
     stringstream s;
+    s << "===== Cliente Persona Juridica =====\n";
     s << cliente::toString();
     s << "Actividad Economica: " << actividadEconomica << endl;
     s << "Porcentaje de Descuento: " << porcDescuento << "%" << endl;
-    return s.str();	
+    return s.str();
 }

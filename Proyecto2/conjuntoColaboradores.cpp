@@ -1,51 +1,65 @@
 #include "conjuntoColaboradores.h"
 
-conjuntoColaboradores:: conjuntoColaboradores() : listaBase<colaborador>() {
-	primero = nullptr;
-	actual = nullptr;
-}
+conjuntoColaboradores::conjuntoColaboradores() : listaBase<colaborador>() {}
 
-conjuntoColaboradores::~conjuntoColaboradores() {
-}
+conjuntoColaboradores::~conjuntoColaboradores() {}
+
 void conjuntoColaboradores::agregarColaborador(colaborador* col) {
-	agregarFinal(col);
+    if (col != nullptr) {
+        agregarFinal(col);
+    }
 }
 
 void conjuntoColaboradores::eliminarColaborador(string id) {
-	actual = primero;
-	nodoBase<colaborador>* prev = nullptr;
-	while (actual != nullptr) {
-		if (actual->getElemento()->getCedula() == id) {
-			if (prev == nullptr) {
-				primero = actual->getSiguiente();
-			} else {
-				prev->setSiguiente(actual->getSiguiente());
-			}
-			delete actual;
-			return;
-		}
-		prev = actual;
-		actual = actual->getSiguiente();
-	}
+    if (estaVacia()) {
+        return;
+    }
+
+    nodoBase<colaborador>* actual = primero;
+    nodoBase<colaborador>* anterior = nullptr;
+
+    while (actual != nullptr) {
+        if (actual->getElemento()->getCedula() == id) {
+            if (anterior == nullptr) {
+                primero = actual->getSiguiente();
+            }
+            else {
+                anterior->setSiguiente(actual->getSiguiente());
+            }
+            delete actual->getElemento();
+            delete actual;
+            cantidad--;
+            return;
+        }
+        anterior = actual;
+        actual = actual->getSiguiente();
+    }
 }
 
 colaborador* conjuntoColaboradores::buscarColaborador(string id) {
-	actual = primero;
-	while (actual != nullptr) {
-		if (actual->getElemento()->getCedula() == id) {
-			return actual->getElemento();
-		}
-		actual = actual->getSiguiente();
-	}
-	return nullptr;
+    nodoBase<colaborador>* actual = primero;
+    while (actual != nullptr) {
+        if (actual->getElemento()->getCedula() == id) {
+            return actual->getElemento();
+        }
+        actual = actual->getSiguiente();
+    }
+    return nullptr;
 }
 
-string conjuntoColaboradores::toString() {
-	stringstream ss;
-	actual = primero;
-	while (actual != nullptr) {
-		ss << actual->getElemento()->toString() << endl;
-		actual = actual->getSiguiente();
-	}
-	return ss.str();
+string conjuntoColaboradores::mostrarColaboradores() {
+    if (estaVacia()) {
+        return "No hay colaboradores registrados.\n";
+    }
+
+    stringstream ss;
+    ss << "\n===== COLABORADORES REGISTRADOS =====\n\n";
+    nodoBase<colaborador>* actual = primero;
+    int i = 1;
+    while (actual != nullptr) {
+        ss << i << ". " << actual->getElemento()->toString() << endl;
+        actual = actual->getSiguiente();
+        i++;
+    }
+    return ss.str();
 }

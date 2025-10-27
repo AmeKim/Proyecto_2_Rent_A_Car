@@ -1,27 +1,140 @@
 #pragma once
 #include "nodoBase.h"
+#include <sstream>
+#include <string>
 
 template <class T>
-class listaBase{
+class listaBase {
 protected:
-	nodoBase<T>* primero;
-	int cantidad;
+    nodoBase<T>* primero;
+    nodoBase<T>* actual;
+    int cantidad;
+
 public:
-	listaBase();
-	~listaBase();
+    listaBase() {
+        primero = nullptr;
+        actual = nullptr;
+        cantidad = 0;
+    }
 
-	bool agregarInicio(T* elemento);
-	bool agregarFinal(T* elemento);
+    virtual ~listaBase() {
+        while (!estaVacia()) {
+            eliminarInicio();
+        }
+        cantidad = 0;
+    }
 
-	bool eliminarInicio();
-	bool eliminarFinal();
+    bool agregarInicio(T* elemento) {
+        nodoBase<T>* nuevo = new nodoBase<T>(elemento);
+        if (nuevo == nullptr) {
+            return false;
+        }
+        nuevo->setSiguiente(primero);
+        primero = nuevo;
+        cantidad++;
+        return true;
+    }
 
-	bool estaVacia() const;
+    bool agregarFinal(T* elemento) {
+        nodoBase<T>* nuevo = new nodoBase<T>(elemento);
+        if (nuevo == nullptr) {
+            return false;
+        }
+        if (estaVacia()) {
+            primero = nuevo;
+        }
+        else {
+            nodoBase<T>* temp = primero;
+            while (temp->getSiguiente() != nullptr) {
+                temp = temp->getSiguiente();
+            }
+            temp->setSiguiente(nuevo);
+        }
+        cantidad++;
+        return true;
+    }
 
-	string toStringLista();
+    bool eliminarInicio() {
+        if (estaVacia()) {
+            return false;
+        }
+        nodoBase<T>* temp = primero;
+        primero = primero->getSiguiente();
+        delete temp->getElemento();
+        delete temp;
+        cantidad--;
+        return true;
+    }
 
-	nodoBase<T>* retornarPrimero();
-	nodoBase<T>* retornarUltimo();
+    bool eliminarFinal() {
+        if (estaVacia()) {
+            return false;
+        }
+        if (primero->getSiguiente() == nullptr) {
+            delete primero->getElemento();
+            delete primero;
+            primero = nullptr;
+        }
+        else {
+            nodoBase<T>* temp = primero;
+            while (temp->getSiguiente()->getSiguiente() != nullptr) {
+                temp = temp->getSiguiente();
+            }
+            delete temp->getSiguiente()->getElemento();
+            delete temp->getSiguiente();
+            temp->setSiguiente(nullptr);
+        }
+        cantidad--;
+        return true;
+    }
 
+    bool estaVacia() const {
+        return primero == nullptr;
+    }
+
+    int getCantidad() const {
+        return cantidad;
+    }
+
+    string toStringLista() {
+        stringstream s;
+        s << "Imprimiendo lista:\n";
+        nodoBase<T>* temp = primero;
+        int i = 1;
+        while (temp != nullptr) {
+            s << i << ". " << temp->getElemento()->toString() << "\n";
+            temp = temp->getSiguiente();
+            i++;
+        }
+        return s.str();
+    }
+
+    nodoBase<T>* retornarPrimero() {
+        return primero;
+    }
+
+    nodoBase<T>* retornarUltimo() {
+        nodoBase<T>* temp = primero;
+        if (estaVacia()) {
+            return nullptr;
+        }
+        while (temp->getSiguiente() != nullptr) {
+            temp = temp->getSiguiente();
+        }
+        return temp;
+    }
+
+    // Para iterar manualmente
+    void reiniciar() {
+        actual = primero;
+    }
+
+    T* siguiente() {
+        if (actual == nullptr) {
+            return nullptr;
+        }
+        T* elemento = actual->getElemento();
+        actual = actual->getSiguiente();
+        return elemento;
+    }
 };
-

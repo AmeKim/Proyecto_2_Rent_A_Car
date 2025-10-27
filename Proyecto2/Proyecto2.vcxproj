@@ -132,10 +132,8 @@
     <ClCompile Include="espacioEstacionamiento.cpp" />
     <ClCompile Include="inventarioVehiculos.cpp" />
     <ClCompile Include="listaEstacionamiento.cpp" />
-    <ClCompile Include="listaBase.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="matriz.cpp" />
-    <ClCompile Include="nodoBase.cpp" />
     <ClCompile Include="personaFisica.cpp" />
     <ClCompile Include="personaJuridica.cpp" />
     <ClCompile Include="plantel.cpp" />

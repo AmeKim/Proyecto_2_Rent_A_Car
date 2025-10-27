@@ -8,24 +8,21 @@
 #include "personaJuridica.h"
 
 using namespace std;
-class carteraClientes: public listaBase<cliente>{
-	private:
-		nodoBase<cliente>* primero;
-		nodoBase<cliente>* actual;
+
+class carteraClientes : public listaBase<cliente> {
 public:
-	carteraClientes();
-	~carteraClientes();
+    carteraClientes();
+    ~carteraClientes();
 
-	bool agregarClienteFisico(personaFisica * fis);
-	bool agregarClienteJuridico(personaJuridica * jur);
+    bool agregarClienteFisico(personaFisica* fis);
+    bool agregarClienteJuridico(personaJuridica* jur);
+    bool eliminarCliente(string id);
 
-	bool eliminarCliente(string id);
+    personaFisica* buscarporCedula(string id);
+    personaJuridica* buscarporCedulaJuridica(string id);
+    cliente* buscarClientePorCedula(string id);
 
-	personaFisica* buscarporCedula(string id);
-	personaJuridica* buscarporCedulaJuridica(string id);
-
-	string mostrarClientesFisicos();
-	string mostrarClientesJuridicos();
-	string mostrarTodosLosClientes();
+    string mostrarClientesFisicos();
+    string mostrarClientesJuridicos();
+    string mostrarTodosLosClientes();
 };
-

@@ -1,14 +1,23 @@
 #include "contratoAlquiler.h"
 
 contratoAlquiler::contratoAlquiler() : solicitudAlquiler() {
-    estadoContrato = "Aprobado pendiente de ejecución";
+    estadoContrato = "Aprobado pendiente de ejecucion";
     diasRealesUso = 0;
 }
 
-contratoAlquiler::contratoAlquiler(const solicitudAlquiler* solicitudAprobada)
-	: solicitudAlquiler(*solicitudAprobada) {
-    estadoContrato = "Aprobado en alquiler";
-    diasRealesUso = 0;
+contratoAlquiler::contratoAlquiler(const solicitudAlquiler& solicitudAprobada) {
+    this->codigo = solicitudAprobada.getCodigo();
+    this->cli = solicitudAprobada.getCliente();
+    this->col = solicitudAprobada.getColaborador();
+    this->veh = solicitudAprobada.getVehiculo();
+    this->dias = solicitudAprobada.getDias();
+    this->fechaInicio = solicitudAprobada.getFechaInicio();
+    this->fechaEntrega = solicitudAprobada.getFechaEntrega();
+    this->precioDia = solicitudAprobada.getPrecioDia();
+    this->precioTotal = solicitudAprobada.getPrecioTotal();
+    this->estado = "Aprobada";
+    this->estadoContrato = "Aprobado pendiente de ejecucion";
+    this->diasRealesUso = 0;
 }
 
 string contratoAlquiler::getEstadoContrato() const {
@@ -21,69 +30,45 @@ int contratoAlquiler::getDiasRealesUso() const {
 
 void contratoAlquiler::finalizarContrato(int diasUtilizados) {
     diasRealesUso = diasUtilizados;
-    int diasContratados = getDias();
 
-    if (diasUtilizados < diasContratados) {
+    if (diasUtilizados < dias) {
+        // Devolución anticipada: reintegro del 70%
+        int diasNoUsados = dias - diasUtilizados;
+        double reintegro = diasNoUsados * precioDia * 0.70;
+        precioTotal = precioTotal - reintegro;
         estadoContrato = "Finalizado con reintegro";
     }
-    else if (diasUtilizados > diasContratados) {
+    else if (diasUtilizados > dias) {
+        // Devolución tardía: multa del 130%
+        int diasAtraso = diasUtilizados - dias;
+        double multa = diasAtraso * precioDia * 1.30;
+        precioTotal = precioTotal + multa;
         estadoContrato = "Finalizado con multa";
     }
     else {
+        // Devolución a tiempo
         estadoContrato = "Finalizado sin cargos adicionales";
     }
 }
 
 double contratoAlquiler::calcularMontoFinal() const {
-    int diasContratados = getDias();
-    double precioDia = getPrecioDia();
-
-    if (diasRealesUso < diasContratados) {
-        // Devolución anticipada: reintegro del 70% por día no usado
-        int diasNoUsados = diasContratados - diasRealesUso;
-        double reintegro = diasNoUsados * precioDia * 0.70;
-        return (diasRealesUso * precioDia) + reintegro;
-    }
-    else if (diasRealesUso > diasContratados) {
-        // Devolución tardía: multa del 130% por día extra
-        int diasExtra = diasRealesUso - diasContratados;
-        double multa = diasExtra * precioDia * 1.30;
-        return (diasContratados * precioDia) + multa;
-    }
-    else {
-        // Devolución a tiempo
-        return getPrecioTotal();
-    }
-}
-
-void contratoAlquiler::mostrarInfo() const {
-    cout << "========================================" << endl;
-    cout << "        CONTRATO DE ALQUILER" << endl;
-    cout << "========================================" << endl;
-    cout << "Código: " << getCodigo() << endl;
-    cout << "Cliente: " << (getCliente() ? getCliente()->getNombre() : "N/A") << endl;
-    cout << "  ID: " << (getCliente() ? getCliente()->getCedula() : "N/A") << endl;
-    cout << "Colaborador: " << (getColaborador() ? getColaborador()->getNombre() : "N/A") << endl;
-    cout << "Vehículo: " << (getVehiculo() ? getVehiculo()->getPlaca() : "N/A") << endl;
-    cout << "Días contratados: " << getDias() << endl;
-    cout << "Días reales de uso: " << diasRealesUso << endl;
-    cout << "Fecha inicio: " << getFechaInicio() << endl;
-    cout << "Fecha entrega: " << getFechaEntrega() << endl;
-    cout << "Precio por día: $" << getPrecioDia() << endl;
-    cout << "Precio total original: $" << getPrecioTotal() << endl;
-
-    if (diasRealesUso > 0) {
-        cout << "Monto final: $" << calcularMontoFinal() << endl;
-    }
-
-    cout << "Estado del contrato: " << estadoContrato << endl;
-    cout << "Estado solicitud: " << getEstado() << endl;
-    cout << "========================================" << endl;
+    return precioTotal;
 }
 
 string contratoAlquiler::toString() const {
-    stringstream ss;
-    ss << "Contrato " << getCodigo() << " - " << estadoContrato
-        << " - Cliente: " << (getCliente() ? getCliente()->getNombre() : "N/A");
-    return ss.str();
+    stringstream s;
+    s << "===== Contrato de Alquiler =====\n";
+    s << "Codigo: " << codigo << endl;
+    s << "Cliente: " << (cli ? cli->getNombre() : "N/A") << " (ID: "
+        << (cli ? cli->getCedula() : "N/A") << ")" << endl;
+    s << "Colaborador: " << (col ? col->getNombre() : "N/A") << endl;
+    s << "Vehiculo: " << (veh ? veh->getPlaca() : "N/A") << endl;
+    s << "Dias Contratados: " << dias << endl;
+    s << "Dias Reales de Uso: " << diasRealesUso << endl;
+    s << "Fecha Inicio: " << fechaInicio << endl;
+    s << "Fecha Entrega: " << fechaEntrega << endl;
+    s << "Precio por Dia: " << precioDia << endl;
+    s << "Precio Total Final: " << precioTotal << endl;
+    s << "Estado Contrato: " << estadoContrato << endl;
+    return s.str();
 }

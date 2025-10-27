@@ -1,14 +1,22 @@
 ﻿  carteraClientes.cpp
   cliente.cpp
+  colaborador.cpp
+  conjuntoColaboradores.cpp
   contratoAlquiler.cpp
   entradaBitacora.cpp
-  lista.cpp
+  espacioEstacionamiento.cpp
+  inventarioVehiculos.cpp
+  listaEstacionamiento.cpp
+  main.cpp
   matriz.cpp
   personaFisica.cpp
   personaJuridica.cpp
+  plantel.cpp
+  registroBitacora.cpp
   SistemaRentACar.cpp
   solicitudAlquiler.cpp
   sucursal.cpp
   utiles.cpp
+  vehiculo.cpp
   Generando código...
-  Proyecto2.vcxproj -> C:\Users\MEGA0418\Documents\GitHub\Proyecto_2_Rent_A_Car\x64\Debug\Proyecto2.exe
+  Proyecto2.vcxproj -> C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\x64\Debug\Proyecto2.exe
