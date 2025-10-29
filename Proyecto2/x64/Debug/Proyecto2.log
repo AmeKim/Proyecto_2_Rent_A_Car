@@ -1,68 +1,52 @@
-﻿  carteraClientes.cpp
-  cliente.cpp
-  colaborador.cpp
-  conjuntoColaboradores.cpp
-  contratoAlquiler.cpp
-  controller.cpp
+﻿  controller.cpp
+C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\controller.cpp(220,1): error C2059: error de sintaxis: '}'
   entradaBitacora.cpp
-  espacioEstacionamiento.cpp
-C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\controller.cpp(405,56): error C2039: "getVehiculo": no es un miembro de "espacioEstacionamiento"
-      C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\espacioEstacionamiento.h(6,7):
-      vea la declaración de 'espacioEstacionamiento'
-  
-C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\controller.cpp(406,38): error C2039: "liberarEspacio": no es un miembro de "espacioEstacionamiento"
-      C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\espacioEstacionamiento.h(6,7):
-      vea la declaración de 'espacioEstacionamiento'
-  
-C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\controller.cpp(417,64): error C2039: "recomendarEspacios": no es un miembro de "plantel"
-      C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\plantel.h(10,7):
-      vea la declaración de 'plantel'
-  
-C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\controller.cpp(434,31): error C2039: "asignarEspacioManual": no es un miembro de "plantel"
-      C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\plantel.h(10,7):
-      vea la declaración de 'plantel'
-  
-C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\controller.cpp(648,67): error C2039: "recomendarEspacios": no es un miembro de "plantel"
-      C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\plantel.h(10,7):
-      vea la declaración de 'plantel'
-  
-C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\controller.cpp(892,28): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
   interfaz.cpp
+C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\interfaz.cpp(181,16): error C2039: "crearSolicitudAlquiler": no es un miembro de "Interfaz"
+      C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\Interfaz.h(14,7):
+      vea la declaración de 'Interfaz'
+  
+C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\interfaz.cpp(184,16): error C2039: "mostrarSolicitudesPorSucursal": no es un miembro de "Interfaz"
+      C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\Interfaz.h(14,7):
+      vea la declaración de 'Interfaz'
+  
+C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\interfaz.cpp(187,16): error C2039: "mostrarSolicitudEspecifica": no es un miembro de "Interfaz"
+      C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\Interfaz.h(14,7):
+      vea la declaración de 'Interfaz'
+  
+C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\interfaz.cpp(190,16): error C2039: "aprobarRechazarSolicitud": no es un miembro de "Interfaz"
+      C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\Interfaz.h(14,7):
+      vea la declaración de 'Interfaz'
+  
+C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\interfaz.cpp(193,16): error C2039: "recibirVehiculoAlquilado": no es un miembro de "Interfaz"
+      C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\Interfaz.h(14,7):
+      vea la declaración de 'Interfaz'
+  
+C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\interfaz.cpp(196,16): error C2039: "generarReporteContratos": no es un miembro de "Interfaz"
+      C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\Interfaz.h(14,7):
+      vea la declaración de 'Interfaz'
+  
+C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\interfaz.cpp(201,20): error C2039: "agregarCliente": no es un miembro de "Interfaz"
+      C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\Interfaz.h(14,7):
+      vea la declaración de 'Interfaz'
+  
+C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\interfaz.cpp(206,18): error C2039: "mostrarCliente": no es un miembro de "Interfaz"
+      C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\Interfaz.h(14,7):
+      vea la declaración de 'Interfaz'
+  
+C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\interfaz.cpp(210,16): error C2039: "eliminarCliente": no es un miembro de "Interfaz"
+      C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\Interfaz.h(14,7):
+      vea la declaración de 'Interfaz'
+  
+C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\interfaz.cpp(213,16): error C2039: "historialAlquileresCliente": no es un miembro de "Interfaz"
+      C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\Interfaz.h(14,7):
+      vea la declaración de 'Interfaz'
+  
+C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\interfaz.cpp(216,16): error C2039: "reporteCantidadContratosPorCliente": no es un miembro de "Interfaz"
+      C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\Interfaz.h(14,7):
+      vea la declaración de 'Interfaz'
+  
   inventarioVehiculos.cpp
-  listaEstacionamiento.cpp
-  main.cpp
-  matriz.cpp
-  personaFisica.cpp
-  personaJuridica.cpp
-  plantel.cpp
-  registroBitacora.cpp
-  SistemaRentACar.cpp
-  solicitudAlquiler.cpp
   sucursal.cpp
-C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\sucursal.cpp(364,43): error C2248: 'listaBase<vehiculo>::primero': no se puede obtener acceso al miembro protected miembro declarado en la clase 'listaBase<vehiculo>'
-      C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\listaBase.h(9,18):
-      vea la declaración de 'listaBase<vehiculo>::primero'
-      C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\listaBase.h(7,7):
-      vea la declaración de 'listaBase<vehiculo>'
-  
-C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\sucursal.cpp(370,26): error C2248: 'listaBase<vehiculo>::primero': no se puede obtener acceso al miembro protected miembro declarado en la clase 'listaBase<vehiculo>'
-      C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\listaBase.h(9,18):
-      vea la declaración de 'listaBase<vehiculo>::primero'
-      C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\listaBase.h(7,7):
-      vea la declaración de 'listaBase<vehiculo>'
-  
-C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\sucursal.cpp(378,22): error C2248: 'listaBase<vehiculo>::cantidad': no se puede obtener acceso al miembro protected miembro declarado en la clase 'listaBase<vehiculo>'
-      C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\listaBase.h(11,9):
-      vea la declaración de 'listaBase<vehiculo>::cantidad'
-      C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\listaBase.h(7,7):
-      vea la declaración de 'listaBase<vehiculo>'
-  
-C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\sucursal.cpp(399,13): error C2039: "asignarEspacioManual": no es un miembro de "plantel"
-      C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\plantel.h(10,7):
-      vea la declaración de 'plantel'
-  
-  Generando código...
-  Compilando...
-  utiles.cpp
   vehiculo.cpp
   Generando código...

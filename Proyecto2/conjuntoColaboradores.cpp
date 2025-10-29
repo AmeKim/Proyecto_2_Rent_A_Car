@@ -34,7 +34,7 @@ bool conjuntoColaboradores::eliminarColaborador(string id) {
         anterior = actual;
         actual = actual->getSiguiente();
     }
-	return false;
+    return false;
 }
 
 colaborador* conjuntoColaboradores::buscarColaborador(string id) {

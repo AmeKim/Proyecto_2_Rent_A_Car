@@ -1,25 +1,34 @@
 #pragma once
-#include <iostream>
 #include <string>
 #include <sstream>
 #include "listaBase.h"
 #include "sucursal.h"
-
 using namespace std;
 
-class SistemaRentACar : public listaBase<sucursal> {
+class SistemaRentACar {
+private:
+    listaBase<sucursal>* sucursales;
+    int contadorCodigoSolicitud;
+    int contadorCodigoContrato;
+
 public:
     SistemaRentACar();
     ~SistemaRentACar();
 
-    void agregarSucursal(sucursal* suc);
+    // Sucursales
+    void registrarSucursal(sucursal* s);
     bool eliminarSucursal(int id);
-    sucursal* buscarSucursal(int id);
+    sucursal* buscarSucursalPorId(int id);
+    string mostrarSucursales();
 
-    string mostrarSucursales() const;
-    string reporteOcupacionPlanteles();
+    bool buscarIDEntreSucursales(int id);
+    bool estaVacio();
 
-    // Traslado de vehículos entre sucursales
-    bool trasladarVehiculos(int idSucursalOrigen, int idSucursalDestino,
-        int cantidadVehiculos);
+    // Generadores de códigos únicos
+    string generarCodigoSolicitud();
+    string generarCodigoContrato();
+
+    // Reportes globales
+    string reporteClientesPorContratos();
+    string reporteAlquileresPorColaborador(string cedulaColaborador);
 };

@@ -1,12 +1,12 @@
 #include "Interfaz.h"
 
-void Interfaz::imprimirMensaje(string m) {
-    cout << m << endl;
-}
+
+
+void Interfaz::imprimirMensaje(string m) { cout << m << endl; }
 
 void Interfaz::imprimirTitulo(string t) {
     limpiar();
-    cout << "=============" << t << "=============" << endl;
+    cout << "-------------" << t << "-------------" << endl;
 }
 
 int Interfaz::menuPrincipal() {
@@ -169,4 +169,50 @@ string Interfaz::solicitarIDColaborador() {
     string id = digPalabra();
     limpiar();
     return id;
+}
+
+//------------------Metodos para Carros y Planteles---------------------
+void Interfaz::capturarDatosPlantel() {
+    print("Ingrese el nombre del Plantel: ");
+}
+
+//--------------Metodos para Solicitudes y Contratos--------------------
+
+void Interfaz::crearSolicitudAlquiler() {
+    // Implementacion pendiente
+}
+void Interfaz::mostrarSolicitudesPorSucursal() {
+    // Implementacion pendiente
+}
+void Interfaz::mostrarSolicitudEspecifica() {
+    // Implementacion pendiente
+}
+void Interfaz::aprobarRechazarSolicitud() {
+    // Implementacion pendiente
+}
+void Interfaz::recibirVehiculoAlquilado() {
+    // Implementacion pendiente
+}
+void Interfaz::generarReporteContratos() {
+    // Implementacion pendiente
+}
+
+//----------------------Metodos para Clientes----------------------------
+cliente* Interfaz::agregarCliente() {
+    //Implementacion pendiente
+    return nullptr;
+}
+
+string Interfaz::mostrarCliente() {
+    //Implementacion pendiente
+    return "";
+}
+void Interfaz::eliminarCliente() {
+    //Implementacion pendiente
+}
+void Interfaz::historialAlquileresCliente() {
+    //Implementacion pendiente
+}
+void Interfaz::reporteCantidadContratosPorCliente() {
+    //Implementacion pendiente
 }

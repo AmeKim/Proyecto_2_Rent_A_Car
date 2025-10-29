@@ -13,25 +13,24 @@
 
 using namespace std;
 
-class controller{
-	private:
-		SistemaRentACar* sucursales;
-		conjuntoColaboradores* colaboradores;
-		carteraClientes* clientes;
-		inventarioVehiculos* vehiculos;
+class controller {
+private:
+	SistemaRentACar* sucursales;
+	conjuntoColaboradores* colaboradores;
+	carteraClientes* clientes;
+	inventarioVehiculos* vehiculos;
 
-		//metodos privados para gestionar cada modulo
-		void gestionarSucursales();
-		void gestionarColaboradores();
-		void gestionarVehiculos();
-		void gestionarSolicitudes();
-		void gestionarClientes();
+	//metodos privados para gestionar cada modulo
+	void gestionarSucursales();
+	void gestionarColaboradores();
+	void gestionarVehiculos();
+	void gestionarSolicitudes();
+	void gestionarClientes();
 
-		int seleccionarSucursal();
+	int seleccionarSucursal();
 public:
 	controller();
 	virtual ~controller();
 	int iniciarSistema();
-	
-};
 
+};
