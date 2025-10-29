@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include <sstream>
+#include <vector>
 #include "matriz.h"
 #include "espacioEstacionamiento.h"
 
@@ -36,6 +37,12 @@ public:
 
     int contarEspaciosLibres() const;
     double calcularPorcentajeOcupacion() const;
+
+    // NUEVOS MÉTODOS REQUERIDOS
+    vector<string> recomendarEspacios() const;
+    bool asignarEspacioManual(string codigoEspacio, string placaVehiculo);
+    bool liberarEspacio(string codigoEspacio);
+    string getVehiculo(string codigoEspacio) const;
 
     string obtenerCodigoEspacio(int fila, int col) const;
     string mostrarGrafico() const;

@@ -1,6 +1,6 @@
 #pragma once
-#include <iostream>
 #include <string>
+#include <iostream>
 #include <sstream>
 #include "listaBase.h"
 #include "plantel.h"
@@ -14,7 +14,7 @@ using namespace std;
 
 class sucursal {
 private:
-    int id;
+    int idSucursal;
     string nombre;
     string provincia;
     listaBase<plantel>* planteles;
@@ -26,62 +26,39 @@ private:
 
 public:
     sucursal();
-    sucursal(int id, string nombre, string provincia);
+    sucursal(int id, const string nom, const string prov);
     ~sucursal();
 
-    int getId() const;
+    int getIdSucursal() const;
     string getNombre() const;
     string getProvincia() const;
 
-    void setId(int id);
-    void setNombre(string nombre);
-    void setProvincia(string provincia);
-
-    // Gestión de planteles
-    void agregarPlantel(plantel* p);
+    // Planteles
+    bool agregarPlantel(plantel* p);
     plantel* buscarPlantel(string nombre);
     string mostrarPlanteles() const;
-    string reporteOcupacionPlanteles();
 
-    // Gestión de clientes
-    carteraClientes* getClientes();
-    void agregarClienteFisico(personaFisica* pf);
-    void agregarClienteJuridico(personaJuridica* pj);
-    bool eliminarCliente(string id);
-    string mostrarClientes();
+    // Clientes
+    carteraClientes* getCarteraClientes();
 
-    // Gestión de colaboradores
-    conjuntoColaboradores* getColaboradores();
-    void agregarColaborador(colaborador* col);
-    bool eliminarColaborador(string id);
-    string mostrarColaboradores();
+    // Colaboradores
+    conjuntoColaboradores* getConjuntoColaboradores();
 
-    // Gestión de vehículos
-    inventarioVehiculos* getVehiculos();
-    void agregarVehiculo(vehiculo* v);
-    bool eliminarVehiculo(string placa);
-    string mostrarVehiculos();
-    vehiculo* buscarVehiculo(string placa);
+    // Vehiculos
+    inventarioVehiculos* getInventarioVehiculos();
+    vehiculo* buscarVehiculoPorPlaca(string placa);
 
-    // Gestión de solicitudes y contratos
-    void agregarSolicitud(solicitudAlquiler* sol);
-    void agregarContrato(contratoAlquiler* con);
-    solicitudAlquiler* buscarSolicitud(string codigo);
-    contratoAlquiler* buscarContrato(string codigo);
-    string mostrarSolicitudes();
-    string mostrarContratos();
-    string mostrarContratosOrdenados();
+    // Solicitudes y contratos
+    bool agregarSolicitud(solicitudAlquiler* sol);
+    bool agregarContrato(contratoAlquiler* con);
+    solicitudAlquiler* buscarSolicitudPorCodigo(string codigo);
+    contratoAlquiler* buscarContratoPorCodigo(string codigo);
+    string mostrarSolicitudes() const;
+    string mostrarContratos() const;
 
-    // Reportes
-    string historialCliente(string idCliente);
-    string reporteClientesPorContratos();
-    string reporteContratosVehiculo(string placa);
-    string reporteAlquileresPorColaborador(string idColaborador);
+    // Recomendación de espacios
+    string recomendarEspacioEstacionamiento();
 
-    // Traslado de vehículos
-    listaBase<vehiculo>* obtenerVehiculosDisponiblesParaTraslado();
-    bool removerVehiculo(vehiculo* v);
-    bool agregarVehiculoDeTraslado(vehiculo* v, string nombrePlantel, string espacioEstacionamiento);
-
+    void mostrarResumen() const;
     string toString() const;
 };

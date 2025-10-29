@@ -66,6 +66,7 @@ bool plantel::ocuparEspacio(int fila, int col, string placaVehiculo) {
     }
 
     espacio->ocupar();
+    espacio->setPlacaVehiculo(placaVehiculo);
     return true;
 }
 
@@ -80,6 +81,7 @@ bool plantel::desocuparEspacio(int fila, int col) {
     }
 
     espacio->desocupar();
+    espacio->setPlacaVehiculo("");
     return true;
 }
 
@@ -106,6 +108,129 @@ int plantel::contarEspaciosLibres() const {
 double plantel::calcularPorcentajeOcupacion() const {
     int ocupados = capacidadMax - contarEspaciosLibres();
     return (double)ocupados / capacidadMax * 100.0;
+}
+
+// IMPLEMENTACIÓN DE NUEVOS MÉTODOS
+
+vector<string> plantel::recomendarEspacios() const {
+    vector<string> recomendaciones;
+
+    // Contar vehículos alrededor de cada espacio disponible
+    struct EspacioScore {
+        string codigo;
+        int fila;
+        int col;
+        int vecinosOcupados;
+    };
+
+    vector<EspacioScore> espaciosDisponibles;
+
+    // Analizar cada espacio
+    for (int i = 0; i < filas; i++) {
+        for (int j = 0; j < columnas; j++) {
+            espacioEstacionamiento* espacio = (espacioEstacionamiento*)espacios->getValor(i, j);
+            if (espacio != nullptr && !espacio->estaOcupado()) {
+                // Contar vecinos ocupados (arriba, abajo, izquierda, derecha)
+                int vecinos = 0;
+
+                // Arriba
+                if (i > 0) {
+                    espacioEstacionamiento* arriba = (espacioEstacionamiento*)espacios->getValor(i - 1, j);
+                    if (arriba && arriba->estaOcupado()) vecinos++;
+                }
+                // Abajo
+                if (i < filas - 1) {
+                    espacioEstacionamiento* abajo = (espacioEstacionamiento*)espacios->getValor(i + 1, j);
+                    if (abajo && abajo->estaOcupado()) vecinos++;
+                }
+                // Izquierda
+                if (j > 0) {
+                    espacioEstacionamiento* izq = (espacioEstacionamiento*)espacios->getValor(i, j - 1);
+                    if (izq && izq->estaOcupado()) vecinos++;
+                }
+                // Derecha
+                if (j < columnas - 1) {
+                    espacioEstacionamiento* der = (espacioEstacionamiento*)espacios->getValor(i, j + 1);
+                    if (der && der->estaOcupado()) vecinos++;
+                }
+
+                EspacioScore score;
+                score.codigo = espacio->getCodigo();
+                score.fila = i;
+                score.col = j;
+                score.vecinosOcupados = vecinos;
+                espaciosDisponibles.push_back(score);
+            }
+        }
+    }
+
+    // Ordenar por menor cantidad de vecinos ocupados
+    for (size_t i = 0; i < espaciosDisponibles.size(); i++) {
+        for (size_t j = i + 1; j < espaciosDisponibles.size(); j++) {
+            if (espaciosDisponibles[j].vecinosOcupados < espaciosDisponibles[i].vecinosOcupados) {
+                EspacioScore temp = espaciosDisponibles[i];
+                espaciosDisponibles[i] = espaciosDisponibles[j];
+                espaciosDisponibles[j] = temp;
+            }
+        }
+    }
+
+    // Retornar los 3 mejores (o menos si no hay suficientes)
+    int maxRecomendaciones = 3;
+    for (size_t i = 0; i < espaciosDisponibles.size() && i < maxRecomendaciones; i++) {
+        recomendaciones.push_back(espaciosDisponibles[i].codigo);
+    }
+
+    return recomendaciones;
+}
+
+bool plantel::asignarEspacioManual(string codigoEspacio, string placaVehiculo) {
+    // Buscar el espacio por código
+    for (int i = 0; i < filas; i++) {
+        for (int j = 0; j < columnas; j++) {
+            espacioEstacionamiento* espacio = (espacioEstacionamiento*)espacios->getValor(i, j);
+            if (espacio != nullptr && espacio->getCodigo() == codigoEspacio) {
+                if (espacio->estaOcupado()) {
+                    return false; // Ya está ocupado
+                }
+                espacio->ocupar();
+                espacio->setPlacaVehiculo(placaVehiculo);
+                return true;
+            }
+        }
+    }
+    return false; // No se encontró el espacio
+}
+
+bool plantel::liberarEspacio(string codigoEspacio) {
+    // Buscar el espacio por código
+    for (int i = 0; i < filas; i++) {
+        for (int j = 0; j < columnas; j++) {
+            espacioEstacionamiento* espacio = (espacioEstacionamiento*)espacios->getValor(i, j);
+            if (espacio != nullptr && espacio->getCodigo() == codigoEspacio) {
+                if (!espacio->estaOcupado()) {
+                    return false; // Ya está libre
+                }
+                espacio->desocupar();
+                espacio->setPlacaVehiculo("");
+                return true;
+            }
+        }
+    }
+    return false; // No se encontró el espacio
+}
+
+string plantel::getVehiculo(string codigoEspacio) const {
+    // Buscar el espacio por código y retornar la placa del vehículo
+    for (int i = 0; i < filas; i++) {
+        for (int j = 0; j < columnas; j++) {
+            espacioEstacionamiento* espacio = (espacioEstacionamiento*)espacios->getValor(i, j);
+            if (espacio != nullptr && espacio->getCodigo() == codigoEspacio) {
+                return espacio->getPlacaVehiculo();
+            }
+        }
+    }
+    return ""; // No se encontró el espacio
 }
 
 string plantel::obtenerCodigoEspacio(int fila, int col) const {
