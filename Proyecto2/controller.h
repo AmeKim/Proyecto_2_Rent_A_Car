@@ -19,10 +19,19 @@ class controller{
 		conjuntoColaboradores* colaboradores;
 		carteraClientes* clientes;
 		inventarioVehiculos* vehiculos;
+
+		//metodos privados para gestionar cada modulo
+		void gestionarSucursales();
+		void gestionarColaboradores();
+		void gestionarVehiculos();
+		void gestionarSolicitudes();
+		void gestionarClientes();
+
+		int seleccionarSucursal();
 public:
 	controller();
 	virtual ~controller();
-	void iniciarSistema();
-
+	int iniciarSistema();
+	
 };
 

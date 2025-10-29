@@ -1,23 +1,12 @@
-﻿  carteraClientes.cpp
-  cliente.cpp
-  colaborador.cpp
-  conjuntoColaboradores.cpp
-  contratoAlquiler.cpp
+﻿  conjuntoColaboradores.cpp
+  controller.cpp
   entradaBitacora.cpp
-  espacioEstacionamiento.cpp
-  inventarioVehiculos.cpp
-  listaEstacionamiento.cpp
-  main.cpp
-  matriz.cpp
-  personaFisica.cpp
-  personaJuridica.cpp
-  plantel.cpp
-  registroBitacora.cpp
+  interfaz.cpp
   SistemaRentACar.cpp
-  solicitudAlquiler.cpp
   sucursal.cpp
-  utiles.cpp
   vehiculo.cpp
   Generando código...
-  LINK : no se encontró C:\Users\ailem\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\x64\Debug\Proyecto2.exe o no lo generó el último vínculo incremental; ejecutando vínculo completo
-  Proyecto2.vcxproj -> C:\Users\ailem\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\x64\Debug\Proyecto2.exe
+controller.obj : error LNK2019: símbolo externo "private: void __cdecl controller::gestionarVehiculos(void)" (?gestionarVehiculos@controller@@AEAAXXZ) sin resolver al que se hace referencia en la función "public: int __cdecl controller::iniciarSistema(void)" (?iniciarSistema@controller@@QEAAHXZ)
+controller.obj : error LNK2019: símbolo externo "private: void __cdecl controller::gestionarSolicitudes(void)" (?gestionarSolicitudes@controller@@AEAAXXZ) sin resolver al que se hace referencia en la función "public: int __cdecl controller::iniciarSistema(void)" (?iniciarSistema@controller@@QEAAHXZ)
+controller.obj : error LNK2019: símbolo externo "private: void __cdecl controller::gestionarClientes(void)" (?gestionarClientes@controller@@AEAAXXZ) sin resolver al que se hace referencia en la función "public: int __cdecl controller::iniciarSistema(void)" (?iniciarSistema@controller@@QEAAHXZ)
+C:\Users\ailem\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\x64\Debug\Proyecto2.exe : fatal error LNK1120: 3 externos sin resolver

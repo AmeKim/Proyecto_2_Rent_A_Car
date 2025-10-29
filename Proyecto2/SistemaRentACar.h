@@ -21,6 +21,9 @@ public:
     sucursal* buscarSucursalPorId(int id);
     string mostrarSucursales();
 
+    bool buscarIDEntreSucursales(int id);
+	bool estaVacio();
+
     // Generadores de códigos únicos
     string generarCodigoSolicitud();
     string generarCodigoContrato();

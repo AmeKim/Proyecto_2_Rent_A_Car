@@ -1,5 +1,14 @@
 #include "Interfaz.h"
 
+
+
+void Interfaz::imprimirMensaje(string m) { cout << m << endl; }
+
+void Interfaz::imprimirTitulo(string t) {
+    limpiar();
+    cout << "-------------" << t << "-------------" << endl;
+}
+
 int Interfaz::menuPrincipal() {
     int opcion;
     limpiar();
@@ -114,8 +123,8 @@ int Interfaz::submenuClientes() {
 }
 
 //--------------------Metodos para Sucursales--------------------------
-void Interfaz::agregarSucursal() {
-	print("Ingrese el ID de la sucursal: ");
+sucursal* Interfaz::capturarDatosSucursal(){
+    print("Ingrese el ID de la sucursal: ");
     int id = digNum();
     limpiar();
     print("Ingrese el nombre de la sucursal: ");
@@ -126,64 +135,49 @@ void Interfaz::agregarSucursal() {
     string provincia;
     getline(cin, provincia);
     limpiar();
-    // Crear la sucursal
+
     sucursal* nuevaSucursal = new sucursal(id, nombre, provincia);
-    // Agregar la sucursal al sistema (implementacion pendiente)
-	print("Sucursal agregada exitosamente.\n");
+
+    return nuevaSucursal;
 }
 
-void Interfaz::mostrarSucursales() {
-	// Implementacion pendiente
-}
-
-void Interfaz::eliminarSucursal() {
-    // Implementacion pendiente
+int Interfaz::solicitarIDSucursal(){
+    print("Ingrese el ID de la Sucursal: ");
+    int id = digNum();
+    limpiar();
+    return id;
 }
 
 //--------------------Metodos para Colaboradores-----------------------
-void Interfaz::agregarColaborador() {
-    // Implementacion pendiente
+colaborador* Interfaz::capturarDatosColaborador() {
+    print("Ingrese el nombre del Colaborador: ");
+    string nombre = digPalabra();
+    limpiar();
+    print("Ingrese el ID del Colaborador: ");
+    string id = digPalabra();
+    print("Ingrese la Fecha de Ingreso del Colaborador (DD/MM/AAAA): ");
+    string fechaIngreso = digPalabra();
+    limpiar();
+
+    colaborador* nuevoColaborador = new colaborador(nombre, id, fechaIngreso);
+
+    return nuevoColaborador;
 }
-void Interfaz::mostrarColaboradorEspecifico() {
-    // Implementacion pendiente
+
+string Interfaz::solicitarIDColaborador() {
+    print("Ingrese el ID del Colaborador: ");
+    string id = digPalabra();
+    limpiar();
+    return id;
 }
-void Interfaz::eliminarColaborador() {
-    // Implementacion pendiente
-}
-string Interfaz::reportesPorColaborador() {
-    // Implementacion pendiente
-    return "";
-}
+
 //------------------Metodos para Carros y Planteles---------------------
-void Interfaz::agregarPlantel() {
-    // Implementacion pendiente
+void Interfaz::capturarDatosPlantel() {
+	print("Ingrese el nombre del Plantel: ");
 }
-    
-void Interfaz::visualizarPlantel() {
-    // Implementacion pendiente
-}
-void Interfaz::agregarVehiculo() {
-    // Implementacion pendiente
-}
-void Interfaz::eliminarVehiculo() {
-    // Implementacion pendiente
-}
-void Interfaz::reasignarVehiculo() {
-    // Implementacion pendiente
-}
-void Interfaz::cambiarEstadoVehiculo() {
-    // Implementacion pendiente
-}
-void Interfaz::visualizarEstadoVehiculo() {
-    // Implementacion pendiente
-}
-void Interfaz::generarReportePorcentajeOcupacion() {
-    // Implementacion pendiente
-}
-void Interfaz::trasladoVehiculosASucursal() {
-    // Implementacion pendiente
-}
+
 //--------------Metodos para Solicitudes y Contratos--------------------
+
 void Interfaz::crearSolicitudAlquiler() {
     // Implementacion pendiente
 }
@@ -202,3 +196,25 @@ void Interfaz::recibirVehiculoAlquilado() {
 void Interfaz::generarReporteContratos() {
     // Implementacion pendiente
 }
+
+//----------------------Metodos para Clientes----------------------------
+cliente* Interfaz::agregarCliente() {
+    //Implementacion pendiente
+    return nullptr;
+}
+
+string Interfaz::mostrarCliente() {
+    //Implementacion pendiente
+    return "";
+}
+void Interfaz::eliminarCliente() {
+    //Implementacion pendiente
+}
+void Interfaz::historialAlquileresCliente() {
+    //Implementacion pendiente
+}
+void Interfaz::reporteCantidadContratosPorCliente() {
+    //Implementacion pendiente
+}
+
+

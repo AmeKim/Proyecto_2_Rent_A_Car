@@ -71,6 +71,24 @@ string SistemaRentACar::mostrarSucursales() {
     return s.str();
 }
 
+bool SistemaRentACar::buscarIDEntreSucursales(int id) {
+    nodoBase<sucursal>* actual = sucursales->retornarPrimero();
+    while (actual != nullptr) {
+        if (actual->getElemento()->getIdSucursal() == id) {
+            return true;
+        }
+        actual = actual->getSiguiente();
+    }
+    return false;
+}
+
+bool SistemaRentACar::estaVacio(){
+    if(sucursales->retornarPrimero() == nullptr){
+        return true;
+	}
+    return false;
+}
+
 string SistemaRentACar::generarCodigoSolicitud() {
     stringstream ss;
     ss << "SOL-" << contadorCodigoSolicitud;

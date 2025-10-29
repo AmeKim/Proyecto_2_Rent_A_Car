@@ -10,9 +10,9 @@ void conjuntoColaboradores::agregarColaborador(colaborador* col) {
     }
 }
 
-void conjuntoColaboradores::eliminarColaborador(string id) {
+bool conjuntoColaboradores::eliminarColaborador(string id) {
     if (estaVacia()) {
-        return;
+        return false;
     }
 
     nodoBase<colaborador>* actual = primero;
@@ -29,11 +29,12 @@ void conjuntoColaboradores::eliminarColaborador(string id) {
             delete actual->getElemento();
             delete actual;
             cantidad--;
-            return;
+            return true;
         }
         anterior = actual;
         actual = actual->getSiguiente();
     }
+	return false;
 }
 
 colaborador* conjuntoColaboradores::buscarColaborador(string id) {

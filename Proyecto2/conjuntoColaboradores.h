@@ -12,7 +12,7 @@ public:
     ~conjuntoColaboradores();
 
     void agregarColaborador(colaborador* col);
-    void eliminarColaborador(string id);
+    bool eliminarColaborador(string id);
     colaborador* buscarColaborador(string id);
     string mostrarColaboradores();
 };

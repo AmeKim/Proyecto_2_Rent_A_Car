@@ -13,6 +13,10 @@
 using namespace std;
 class Interfaz {
 public:
+
+	static void imprimirMensaje(string m);
+	static void imprimirTitulo(string t);
+
 	static int menuPrincipal();
 	static int submenuSucursal();
 	static int submenuColaborador();
@@ -22,40 +26,23 @@ public:
 
 	//--------------------Metodos para Sucursales--------------------------
 
-	static void agregarSucursal();
-	static void mostrarSucursales();
-	static void eliminarSucursal();
+	static sucursal* capturarDatosSucursal();
+	static int solicitarIDSucursal();
+	
 
 	//--------------------Metodos para Colaboradores-----------------------
-	static void agregarColaborador();
-	static void mostrarColaboradorEspecifico();
-	static void eliminarColaborador();
-	static string reportesPorColaborador();
+	static colaborador* capturarDatosColaborador();
+	static string solicitarIDColaborador();
 
 
 	//------------------Metodos para Carros y Planteles---------------------
-	static void agregarPlantel();
-	static void visualizarPlantel();
-	static void agregarVehiculo();
-	static void eliminarVehiculo();
-	static void reasignarVehiculo();
-	static void cambiarEstadoVehiculo();
-	static void visualizarEstadoVehiculo();
-	static void generarReportePorcentajeOcupacion();
-	static void trasladoVehiculosASucursal();
+	static void capturarDatosPlantel();
+	static vehiculo* CapturarDatosVehiculo();
+	
 
 	//--------------Metodos para Solicitudes y Contratos--------------------
-	static void crearSolicitudAlquiler();
-	static void mostrarSolicitudesPorSucursal();
-	static void mostrarSolicitudEspecifica();
-	static void aprobarRechazarSolicitud();
-	static void recibirVehiculoAlquilado();
-	static void generarReporteContratos();
+
 
 	//----------------------Metodos para Clientes----------------------------
-	static void agregarCliente();
-	static void mostrarCliente();
-	static void eliminarCliente();
-	static void historialAlquileresCliente();
-	static void reporteCantidadContratosPorCliente();
+
 };
