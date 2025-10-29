@@ -1,52 +1,29 @@
-﻿  controller.cpp
-C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\controller.cpp(220,1): error C2059: error de sintaxis: '}'
+﻿  carteraClientes.cpp
+  cliente.cpp
+  colaborador.cpp
+  conjuntoColaboradores.cpp
+  contratoAlquiler.cpp
+  controller.cpp
+C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\controller.cpp(801,92): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
   entradaBitacora.cpp
-  interfaz.cpp
-C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\interfaz.cpp(181,16): error C2039: "crearSolicitudAlquiler": no es un miembro de "Interfaz"
-      C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\Interfaz.h(14,7):
-      vea la declaración de 'Interfaz'
-  
-C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\interfaz.cpp(184,16): error C2039: "mostrarSolicitudesPorSucursal": no es un miembro de "Interfaz"
-      C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\Interfaz.h(14,7):
-      vea la declaración de 'Interfaz'
-  
-C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\interfaz.cpp(187,16): error C2039: "mostrarSolicitudEspecifica": no es un miembro de "Interfaz"
-      C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\Interfaz.h(14,7):
-      vea la declaración de 'Interfaz'
-  
-C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\interfaz.cpp(190,16): error C2039: "aprobarRechazarSolicitud": no es un miembro de "Interfaz"
-      C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\Interfaz.h(14,7):
-      vea la declaración de 'Interfaz'
-  
-C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\interfaz.cpp(193,16): error C2039: "recibirVehiculoAlquilado": no es un miembro de "Interfaz"
-      C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\Interfaz.h(14,7):
-      vea la declaración de 'Interfaz'
-  
-C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\interfaz.cpp(196,16): error C2039: "generarReporteContratos": no es un miembro de "Interfaz"
-      C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\Interfaz.h(14,7):
-      vea la declaración de 'Interfaz'
-  
-C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\interfaz.cpp(201,20): error C2039: "agregarCliente": no es un miembro de "Interfaz"
-      C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\Interfaz.h(14,7):
-      vea la declaración de 'Interfaz'
-  
-C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\interfaz.cpp(206,18): error C2039: "mostrarCliente": no es un miembro de "Interfaz"
-      C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\Interfaz.h(14,7):
-      vea la declaración de 'Interfaz'
-  
-C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\interfaz.cpp(210,16): error C2039: "eliminarCliente": no es un miembro de "Interfaz"
-      C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\Interfaz.h(14,7):
-      vea la declaración de 'Interfaz'
-  
-C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\interfaz.cpp(213,16): error C2039: "historialAlquileresCliente": no es un miembro de "Interfaz"
-      C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\Interfaz.h(14,7):
-      vea la declaración de 'Interfaz'
-  
-C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\interfaz.cpp(216,16): error C2039: "reporteCantidadContratosPorCliente": no es un miembro de "Interfaz"
-      C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\Interfaz.h(14,7):
-      vea la declaración de 'Interfaz'
-  
+  espacioEstacionamiento.cpp
+  Interfaz.cpp
+C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\Interfaz.cpp(302,20): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
   inventarioVehiculos.cpp
+  listaEstacionamiento.cpp
+  main.cpp
+  matriz.cpp
+  personaFisica.cpp
+  personaJuridica.cpp
+  plantel.cpp
+C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\plantel.cpp(203,16): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
+  registroBitacora.cpp
+  SistemaRentACar.cpp
+  solicitudAlquiler.cpp
   sucursal.cpp
+  Generando código...
+  Compilando...
+  utiles.cpp
   vehiculo.cpp
   Generando código...
+  Proyecto2.vcxproj -> C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\x64\Debug\Proyecto2.exe

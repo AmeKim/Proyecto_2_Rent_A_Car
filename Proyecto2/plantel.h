@@ -5,46 +5,56 @@
 #include <vector>
 #include "matriz.h"
 #include "espacioEstacionamiento.h"
+#include "vehiculo.h"
 
 using namespace std;
 
 class plantel {
 private:
-    string nombre;
-    int tipo;  // 1: Techado y asfaltado, 2: Techado y lastreado, 3: Asfaltado, 4: Lastreado
-    int capacidadMax;
+    char letra;
+    int capacidad;
+    int tipo; // 1: Techado y asfaltado, 2: Techado y lastreado, 3: Asfaltado, 4: Lastreado
     int filas;
     int columnas;
     matriz* espacios;
+    int espaciosOcupados;
+
+    string obtenerTipoTexto() const;
+    int contarVecinosOcupados(int f, int c) const;
 
 public:
     plantel();
-    plantel(string nombre, int tipo, int filas, int columnas);
+    plantel(char letra, int capacidad, int tipo, int filas, int columnas);
     ~plantel();
 
-    string getNombre() const;
-    void setNombre(string nombre);
+    char getLetra() const;
+    int getCapacidad() const;
     int getTipo() const;
-    void setTipo(int tipo);
-    int getCapacidadMax() const;
-    matriz* getEspacios() const;
     int getFilas() const;
     int getColumnas() const;
+    int getEspaciosOcupados() const;
+    int getEspaciosDisponibles() const;
 
-    bool ocuparEspacio(int fila, int col, string placaVehiculo);
-    bool desocuparEspacio(int fila, int col);
-    espacioEstacionamiento* obtenerEspacio(int fila, int col) const;
+    void setLetra(char letra);
+    void setCapacidad(int capacidad);
+    void setTipo(int tipo);
 
-    int contarEspaciosLibres() const;
-    double calcularPorcentajeOcupacion() const;
+    // Gestión de espacios
+    bool asignarVehiculo(int fila, int columna, vehiculo* v);
+    bool liberarEspacio(int fila, int columna);
+    espacioEstacionamiento* obtenerEspacio(int fila, int columna) const;
+    espacioEstacionamiento* buscarEspacioPorCodigo(const string& codigo) const;
+    string obtenerPlacaEnEspacio(const string& codigo) const;
 
-    // NUEVOS MÉTODOS REQUERIDOS
+    // Recomendación de espacios
     vector<string> recomendarEspacios() const;
-    bool asignarEspacioManual(string codigoEspacio, string placaVehiculo);
-    bool liberarEspacio(string codigoEspacio);
-    string getVehiculo(string codigoEspacio) const;
 
-    string obtenerCodigoEspacio(int fila, int col) const;
-    string mostrarGrafico() const;
+    // Visualización
+    string mostrarVistaGrafica() const;
+    string mostrarDetalle() const;
     string toString() const;
+
+    // Utilidades
+    double getPorcentajeOcupacion() const;
+    bool estaLleno() const;
 };

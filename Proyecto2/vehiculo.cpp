@@ -6,7 +6,7 @@ vehiculo::vehiculo() {
     marca = "";
     tipoLicencia = "";
     precio = 0.0;
-    estado = "Disponible";
+    estado = "Revision";
     categoria = 'A';
     ubicacionPlantel = "";
     bitacora = new listaBase<registroBitacora>();
@@ -45,7 +45,10 @@ double vehiculo::getPrecio() const { return precio; }
 void vehiculo::setPrecio(double precio) { this->precio = precio; }
 
 string vehiculo::getEstado() const { return estado; }
-void vehiculo::setEstado(string estado) { this->estado = estado; }
+
+void vehiculo::setEstado(string estado) {
+    this->estado = estado;
+}
 
 char vehiculo::getCategoria() const { return categoria; }
 void vehiculo::setCategoria(char categoria) { this->categoria = categoria; }
@@ -54,7 +57,7 @@ string vehiculo::getUbicacionPlantel() const { return ubicacionPlantel; }
 void vehiculo::setUbicacionPlantel(string ubicacionPlantel) { this->ubicacionPlantel = ubicacionPlantel; }
 
 bool vehiculo::cambiarEstado(string nuevoEstado, string fecha, colaborador* responsable) {
-    // Validar transiciones válidas según la tabla del documento
+    // Validar transición de estado según la tabla del proyecto
     bool transicionValida = false;
 
     if (estado == "Disponible") {
@@ -91,22 +94,28 @@ bool vehiculo::cambiarEstado(string nuevoEstado, string fecha, colaborador* resp
     registroBitacora* registro = new registroBitacora(estado, nuevoEstado, fecha, responsable);
     bitacora->agregarFinal(registro);
 
-    // Cambiar el estado
+    // Cambiar estado
     estado = nuevoEstado;
 
     return true;
 }
 
 string vehiculo::mostrarBitacora() const {
-    stringstream s;
-    s << "\n===== BITACORA DE ESTADOS - VEHICULO " << placa << " =====\n\n";
-
     if (bitacora->estaVacia()) {
-        s << "No hay registros en la bitacora.\n";
-        return s.str();
+        return "No hay registros en la bitacora.\n";
     }
 
-    s << bitacora->toStringLista();
+    stringstream s;
+    s << "\n===== BITACORA DE VEHICULO " << placa << " =====\n\n";
+
+    nodoBase<registroBitacora>* actual = bitacora->retornarPrimero();
+    int i = 1;
+    while (actual != nullptr) {
+        s << i << ". " << actual->getElemento()->toString() << "\n";
+        actual = actual->getSiguiente();
+        i++;
+    }
+
     return s.str();
 }
 
@@ -117,7 +126,9 @@ string vehiculo::toString() const {
     s << "Modelo: " << modelo << " | ";
     s << "Categoria: " << categoria << " | ";
     s << "Estado: " << estado << " | ";
-    s << "Precio/dia: $" << precio << " | ";
-    s << "Plantel: " << ubicacionPlantel;
+    s << "Precio/dia: $" << precio;
+    if (ubicacionPlantel != "") {
+        s << " | Ubicacion: " << ubicacionPlantel;
+    }
     return s.str();
 }

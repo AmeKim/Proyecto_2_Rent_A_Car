@@ -1,36 +1,39 @@
 #pragma once
 #include <iostream>
-#include<sstream>
+#include <sstream>
 #include "interfaz.h"
-#include "espacioEstacionamiento.h"
 #include "SistemaRentACar.h"
-#include "listaEstacionamiento.h"
-#include "conjuntoColaboradores.h"
-#include "carteraClientes.h"
-#include "inventarioVehiculos.h"
 #include "sucursal.h"
+#include "plantel.h"
+#include "vehiculo.h"
+#include "cliente.h"
+#include "personaFisica.h"
+#include "personaJuridica.h"
+#include "colaborador.h"
+#include "solicitudAlquiler.h"
+#include "contratoAlquiler.h"
 #include "utiles.h"
 
 using namespace std;
 
 class controller {
 private:
-	SistemaRentACar* sucursales;
-	conjuntoColaboradores* colaboradores;
-	carteraClientes* clientes;
-	inventarioVehiculos* vehiculos;
+    SistemaRentACar* sistema;
 
-	//metodos privados para gestionar cada modulo
-	void gestionarSucursales();
-	void gestionarColaboradores();
-	void gestionarVehiculos();
-	void gestionarSolicitudes();
-	void gestionarClientes();
+    // Métodos privados para gestionar cada módulo
+    void gestionarSucursales();
+    void gestionarColaboradores();
+    void gestionarVehiculos();
+    void gestionarSolicitudes();
+    void gestionarClientes();
 
-	int seleccionarSucursal();
+    // Métodos auxiliares
+    int seleccionarSucursal();
+    sucursal* obtenerSucursal();
+    void cargarDatosQuemados(); // Para pruebas rápidas
+
 public:
-	controller();
-	virtual ~controller();
-	int iniciarSistema();
-
+    controller();
+    virtual ~controller();
+    int iniciarSistema();
 };

@@ -9,7 +9,7 @@ contratoAlquiler::contratoAlquiler(const solicitudAlquiler& solicitudAprobada)
     : solicitudAlquiler(solicitudAprobada) {
     estadoContrato = "Aprobado en alquiler";
     diasRealesUso = 0;
-    estado = "Aprobada";
+    estado = "Aprobada"; // Heredado de solicitudAlquiler
 }
 
 string contratoAlquiler::getEstadoContrato() const {
@@ -38,42 +38,64 @@ void contratoAlquiler::finalizarContrato(int diasUtilizados) {
 }
 
 double contratoAlquiler::calcularMontoFinal() const {
-    if (estadoContrato == "Finalizado con reintegro") {
-        // Reintegro del 70% por días no utilizados
-        int diasNoUtilizados = dias - diasRealesUso;
-        double reintegro = diasNoUtilizados * precioDia * 0.70;
+    if (diasRealesUso == 0) {
+        return precioTotal;
+    }
+
+    if (diasRealesUso < dias) {
+        // Reintegro del 70% por cada día no utilizado
+        int diasNoUsados = dias - diasRealesUso;
+        double reintegro = diasNoUsados * precioDia * 0.70;
         return precioTotal - reintegro;
     }
-    else if (estadoContrato == "Finalizado con multa") {
-        // Multa del 130% por días de atraso
+    else if (diasRealesUso > dias) {
+        // Multa del 130% por cada día de atraso
         int diasAtraso = diasRealesUso - dias;
         double multa = diasAtraso * precioDia * 1.30;
         return precioTotal + multa;
     }
+
     return precioTotal;
 }
 
 string contratoAlquiler::toString() const {
     stringstream s;
-    s << "\n===== CONTRATO DE ALQUILER =====\n";
-    s << "Codigo: " << codigo << endl;
-    s << "Estado del Contrato: " << estadoContrato << endl;
-    s << "Cliente: " << (cli ? cli->getNombre() : "N/A") << " (ID: " << (cli ? cli->getCedula() : "N/A") << ")\n";
-    s << "Colaborador: " << (col ? col->getNombre() : "N/A") << endl;
-    s << "Vehiculo: " << (veh ? veh->getPlaca() : "N/A") << endl;
-    s << "Dias contratados: " << dias << endl;
+    s << "===== CONTRATO DE ALQUILER =====\n";
+    s << "Codigo: " << codigo << "\n";
+    s << "Estado Contrato: " << estadoContrato << "\n";
 
-    if (diasRealesUso > 0) {
-        s << "Dias reales de uso: " << diasRealesUso << endl;
+    if (cli != nullptr) {
+        s << "Cliente: " << cli->getNombre() << " (ID: " << cli->getCedula() << ")\n";
     }
 
-    s << "Fecha de inicio: " << fechaInicio << endl;
-    s << "Fecha de entrega programada: " << fechaEntrega << endl;
-    s << "Precio por dia: $" << precioDia << endl;
-    s << "Precio total inicial: $" << precioTotal << endl;
+    if (veh != nullptr) {
+        s << "Vehiculo: " << veh->getPlaca() << " - " << veh->getMarca() << " " << veh->getModelo() << "\n";
+    }
 
-    if (estadoContrato.find("Finalizado") != string::npos) {
-        s << "Monto final: $" << calcularMontoFinal() << endl;
+    if (col != nullptr) {
+        s << "Colaborador: " << col->getNombre() << " (ID: " << col->getCedula() << ")\n";
+    }
+
+    s << "Dias contratados: " << dias << "\n";
+
+    if (diasRealesUso > 0) {
+        s << "Dias realmente usados: " << diasRealesUso << "\n";
+    }
+
+    s << "Fecha inicio: " << fechaInicio << "\n";
+    s << "Fecha entrega programada: " << fechaEntrega << "\n";
+    s << "Precio por dia: $" << precioDia << "\n";
+    s << "Precio contratado: $" << precioTotal << "\n";
+
+    if (diasRealesUso > 0) {
+        s << "Monto final a pagar: $" << calcularMontoFinal() << "\n";
+
+        if (diasRealesUso < dias) {
+            s << "Reintegro aplicado (70% por dia no usado)\n";
+        }
+        else if (diasRealesUso > dias) {
+            s << "Multa aplicada (130% por dia de atraso)\n";
+        }
     }
 
     return s.str();

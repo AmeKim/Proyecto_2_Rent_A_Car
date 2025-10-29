@@ -4,7 +4,7 @@ matriz::matriz(int f, int c) {
     filas = f;
     columnas = c;
 
-    // Crear matriz dinámica
+    // Crear matriz dinámica de punteros void
     Matriz = new void** [filas];
     for (int i = 0; i < filas; i++) {
         Matriz[i] = new void* [columnas];
@@ -15,7 +15,8 @@ matriz::matriz(int f, int c) {
 }
 
 matriz::~matriz() {
-    // No eliminar los objetos apuntados, solo la estructura de la matriz
+    // Nota: No eliminamos los objetos apuntados, solo la estructura
+    // Los objetos deben ser eliminados por quien los creó
     for (int i = 0; i < filas; i++) {
         delete[] Matriz[i];
     }
@@ -23,10 +24,10 @@ matriz::~matriz() {
 }
 
 void* matriz::getValor(int f, int c) {
-    if (f >= 0 && f < filas && c >= 0 && c < columnas) {
-        return Matriz[f][c];
+    if (f < 0 || f >= filas || c < 0 || c >= columnas) {
+        return nullptr;
     }
-    return nullptr;
+    return Matriz[f][c];
 }
 
 void matriz::setValor(int f, int c, void* valor) {
@@ -65,7 +66,7 @@ string matriz::mostrarMatrizTexto(string(*mostrarFn)(void*)) {
                 s << mostrarFn(Matriz[i][j]) << " ";
             }
             else {
-                s << "[NULL] ";
+                s << "[---] ";
             }
         }
         s << "\n";

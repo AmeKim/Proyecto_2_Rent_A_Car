@@ -1,30 +1,32 @@
-#include "Interfaz.h"
+#include "interfaz.h"
 
-
-
-void Interfaz::imprimirMensaje(string m) { cout << m << endl; }
+void Interfaz::imprimirMensaje(string m) {
+    cout << m << endl;
+}
 
 void Interfaz::imprimirTitulo(string t) {
     limpiar();
-    cout << "-------------" << t << "-------------" << endl;
+    cout << "\n========================================" << endl;
+    cout << "  " << t << endl;
+    cout << "========================================\n" << endl;
 }
 
 int Interfaz::menuPrincipal() {
     int opcion;
     limpiar();
-    print("========================================\n");
-    cout << "   GESTI" << char(224) << "N DE D - R - T CAR RENTAL\n";
-    print("========================================\n");
-    cout << "Men" << char(163) << " Principal\n";
-    print("========================================\n");
-    cout << "(1) Submen" << char(163) << " de Sucursales\n";
-    cout << "(2) Submen" << char(163) << " de Clientes\n";
-    cout << "(3) Submen" << char(163) << " de Colaboradores\n";
-    cout << "(4) Submen" << char(163) << " de Veh" << char(161) << "culos y Planteles\n";
-    cout << "(5) Submen" << char(163) << " de Solicitudes y Contratos\n";
-    print("(0) Salir\n");
-    print("========================================\n");
-    cout << "Digite la opci" << char(162) << "n deseada : ";
+    cout << "========================================" << endl;
+    cout << "   GESTION DE D - R - T CAR RENTAL" << endl;
+    cout << "========================================" << endl;
+    cout << "Menu Principal" << endl;
+    cout << "========================================" << endl;
+    cout << "(1) Submenu de Sucursales" << endl;
+    cout << "(2) Submenu de Clientes" << endl;
+    cout << "(3) Submenu de Colaboradores" << endl;
+    cout << "(4) Submenu de Vehiculos y Planteles" << endl;
+    cout << "(5) Submenu de Solicitudes y Contratos" << endl;
+    cout << "(0) Salir" << endl;
+    cout << "========================================" << endl;
+    cout << "Digite la opcion deseada: ";
     opcion = digNum();
     return opcion;
 }
@@ -32,15 +34,15 @@ int Interfaz::menuPrincipal() {
 int Interfaz::submenuSucursal() {
     int opcion;
     limpiar();
-    print("========================================\n");
-    cout << "         SUBMEN" << char(233) << " DE SUCURSALES\n";
-    print("========================================\n");
-    print("(1) Agregar Sucursal\n");
-    print("(2) Mostrar Sucursales\n");
-    print("(3) Eliminar Sucursal\n");
-    cout << "(0) Volver al Men" << char(163) << " Principal\n";
-    print("========================================\n");
-    cout << "Digite la opci" << char(162) << "n deseada : ";
+    cout << "========================================" << endl;
+    cout << "         SUBMENU DE SUCURSALES" << endl;
+    cout << "========================================" << endl;
+    cout << "(1) Ingresar Sucursal" << endl;
+    cout << "(2) Mostrar Sucursales" << endl;
+    cout << "(3) Eliminar Sucursal" << endl;
+    cout << "(0) Regresar Menu Principal" << endl;
+    cout << "========================================" << endl;
+    cout << "Digite la opcion deseada: ";
     opcion = digNum();
     return opcion;
 }
@@ -48,16 +50,16 @@ int Interfaz::submenuSucursal() {
 int Interfaz::submenuColaborador() {
     int opcion;
     limpiar();
-    print("========================================\n");
-    cout << "       SUBMEN" << char(233) << " DE COLABORADORES\n";
-    print("========================================\n");
-    print("(1) Agregar Colaborador\n");
-    print("(2) Mostrar Colaborador Especifico\n");
-    print("(3) Eliminar Colaborador\n");
-    print("(4) Reportes por Colaborador\n");
-    cout << "(0) Volver al Men" << char(163) << " Principal\n";
-    print("========================================\n");
-    cout << "Digite la opci" << char(162) << "n deseada : ";
+    cout << "========================================" << endl;
+    cout << "       SUBMENU DE COLABORADORES" << endl;
+    cout << "========================================" << endl;
+    cout << "(1) Incluir Colaborador en Sucursal" << endl;
+    cout << "(2) Mostrar Colaborador" << endl;
+    cout << "(3) Eliminar Colaborador" << endl;
+    cout << "(4) Reporte de Alquileres por Colaborador" << endl;
+    cout << "(0) Regresar al Menu Principal" << endl;
+    cout << "========================================" << endl;
+    cout << "Digite la opcion deseada: ";
     opcion = digNum();
     return opcion;
 }
@@ -65,22 +67,22 @@ int Interfaz::submenuColaborador() {
 int Interfaz::submenuVehiculosYPlanteles() {
     int opcion;
     limpiar();
-    print("========================================\n");
-    cout << "   SUBMEN" << char(233) << " DE VEH" << char(214) << "CULOS Y PLANTELES\n";
-    print("========================================\n");
-    print("(1) Agregar Plantel\n");
-    print("(2) Visualizar Plantel\n");
-    cout << "(3) Agregar Veh" << char(161) << "culo\n";
-    cout << "(4) Visualizar Veh" << char(161) << "culo\n";
-    cout << "(5) Eliminar Veh" << char(161) << "culo\n";
-    cout << "(6) Reasignar Veh" << char(161) << "culo\n";
-    cout << "(7) Cambiar Estado del Veh" << char(161) << "culo\n";
-    cout << "(8) Visualizar Estado de un Veh" << char(161) << "culo Especi" << char(161) << "fico\n";
-    cout << "(9) Generar Reporte Porcentaje Ocupaci" << char(162) << "on de los planteles\n";
-    cout << "(10) Traslado Veh" << char(161) << "culos a Sucursal\n";
-    cout << "(0) Volver al Men" << char(163) << " Principal\n";
-    print("========================================\n");
-    cout << "Digite la opci" << char(162) << "n deseada : ";
+    cout << "========================================" << endl;
+    cout << "   SUBMENU DE VEHICULOS Y PLANTELES" << endl;
+    cout << "========================================" << endl;
+    cout << "(1) Crear Plantel" << endl;
+    cout << "(2) Visualizacion Grafica de Plantel" << endl;
+    cout << "(3) Ingreso de Vehiculo" << endl;
+    cout << "(4) Visualizacion de Vehiculo" << endl;
+    cout << "(5) Eliminacion de Vehiculo" << endl;
+    cout << "(6) Reasignacion de vehiculo en Plantel" << endl;
+    cout << "(7) Cambio de Estado de Vehiculo" << endl;
+    cout << "(8) Estados de un vehiculo especifico" << endl;
+    cout << "(9) Reporte de porcentaje de ocupacion de los planteles" << endl;
+    cout << "(10) Traslado de vehiculos a sucursal (OPCIONAL)" << endl;
+    cout << "(0) Regresar al Menu Principal" << endl;
+    cout << "========================================" << endl;
+    cout << "Digite la opcion deseada: ";
     opcion = digNum();
     return opcion;
 }
@@ -88,18 +90,18 @@ int Interfaz::submenuVehiculosYPlanteles() {
 int Interfaz::submenuSolicitudesYContratos() {
     int opcion;
     limpiar();
-    print("========================================\n");
-    cout << " SUBMEN" << char(233) << " DE SOLICITUDES Y CONTRATOS\n";
-    print("========================================\n");
-    print("(1) Crear Solicitud de Alquiler\n");
-    print("(2) Mostrar Solicitudes por Sucursal\n");
-    cout << "(3) Mostrar Solicitud Espec" << char(161) << "fica\n";
-    print("(4) Aprobar/Rechazar Solicitud\n");
-    cout << "(5) Recibir Veh" << char(161) << "culo Alquilado\n";
-    print("(6) Generar Reporte de Contratos\n");
-    cout << "(0) Volver al Men" << char(163) << " Principal\n";
-    print("========================================\n");
-    cout << "Digite la opci" << char(162) << "n deseada : ";
+    cout << "========================================" << endl;
+    cout << " SUBMENU DE SOLICITUDES Y CONTRATOS" << endl;
+    cout << "========================================" << endl;
+    cout << "(1) Creacion de Solicitud" << endl;
+    cout << "(2) Visualizacion de Solicitudes/Contratos por Sucursal" << endl;
+    cout << "(3) Visualizacion de Solicitud/Contratos Especifica" << endl;
+    cout << "(4) Aprobacion/Rechazo de Solicitud" << endl;
+    cout << "(5) Recepcion de Vehiculo en Prestado" << endl;
+    cout << "(6) Reporte de Contratos para Vehiculo Especifico" << endl;
+    cout << "(0) Regresar al Menu Principal" << endl;
+    cout << "========================================" << endl;
+    cout << "Digite la opcion deseada: ";
     opcion = digNum();
     return opcion;
 }
@@ -107,112 +109,204 @@ int Interfaz::submenuSolicitudesYContratos() {
 int Interfaz::submenuClientes() {
     int opcion;
     limpiar();
-    print("========================================\n");
-    print("        SUBMENU DE CLIENTES\n");
-    print("========================================\n");
-    print("(1) Agregar Cliente\n");
-    print("(2) Mostrar Cliente\n");
-    print("(3) Eliminar Cliente\n");
-    print("(4) Historial de Alquileres del Cliente\n");
-    print("(5) Reporte de Cantidad de Contratos por Cliente\n");
-    cout << "(0) Volver al Men" << char(163) << " Principal\n";
-    print("========================================\n");
-    cout << "Digite la opci" << char(162) << "n deseada : ";
+    cout << "========================================" << endl;
+    cout << "        SUBMENU DE CLIENTES" << endl;
+    cout << "========================================" << endl;
+    cout << "(1) Ingresar Cliente" << endl;
+    cout << "(2) Mostrar Cliente" << endl;
+    cout << "(3) Eliminar Cliente" << endl;
+    cout << "(4) Historial del Cliente" << endl;
+    cout << "(5) Reporte de Clientes por Cantidad de Contratos" << endl;
+    cout << "(0) Regresar al Menu Principal" << endl;
+    cout << "========================================" << endl;
+    cout << "Digite la opcion deseada: ";
     opcion = digNum();
     return opcion;
 }
 
-//--------------------Metodos para Sucursales--------------------------
+// ==================== METODOS PARA SUCURSALES ====================
+
 sucursal* Interfaz::capturarDatosSucursal() {
-    print("Ingrese el ID de la sucursal: ");
+    limpiar();
+    imprimirTitulo("CAPTURA DE DATOS DE SUCURSAL");
+
+    cout << "Ingrese el ID de la sucursal: ";
     int id = digNum();
-    limpiar();
-    print("Ingrese el nombre de la sucursal: ");
-    string nombre;
-    getline(cin, nombre);
-    limpiar();
-    print("Ingrese la provincia de la sucursal: ");
-    string provincia;
-    getline(cin, provincia);
-    limpiar();
+
+    cout << "Ingrese el nombre de la sucursal: ";
+    string nombre = digPalabra();
+
+    cout << "Ingrese la provincia de la sucursal: ";
+    string provincia = digPalabra();
 
     sucursal* nuevaSucursal = new sucursal(id, nombre, provincia);
-
     return nuevaSucursal;
 }
 
 int Interfaz::solicitarIDSucursal() {
-    print("Ingrese el ID de la Sucursal: ");
+    cout << "\nIngrese el ID de la Sucursal: ";
     int id = digNum();
-    limpiar();
     return id;
 }
 
-//--------------------Metodos para Colaboradores-----------------------
+// ==================== METODOS PARA COLABORADORES ====================
+
 colaborador* Interfaz::capturarDatosColaborador() {
-    print("Ingrese el nombre del Colaborador: ");
+    limpiar();
+    imprimirTitulo("CAPTURA DE DATOS DE COLABORADOR");
+
+    cout << "Ingrese el nombre del Colaborador: ";
     string nombre = digPalabra();
-    limpiar();
-    print("Ingrese el ID del Colaborador: ");
-    string id = digPalabra();
-    print("Ingrese la Fecha de Ingreso del Colaborador (DD/MM/AAAA): ");
+
+    cout << "Ingrese la cedula del Colaborador: ";
+    string cedula = digPalabra();
+
+    cout << "Ingrese la Fecha de Ingreso (DD/MM/AAAA): ";
     string fechaIngreso = digPalabra();
-    limpiar();
 
-    colaborador* nuevoColaborador = new colaborador(nombre, id, fechaIngreso);
-
+    colaborador* nuevoColaborador = new colaborador(nombre, cedula, fechaIngreso);
     return nuevoColaborador;
 }
 
 string Interfaz::solicitarIDColaborador() {
-    print("Ingrese el ID del Colaborador: ");
+    cout << "\nIngrese la cedula del Colaborador: ";
     string id = digPalabra();
-    limpiar();
     return id;
 }
 
-//------------------Metodos para Carros y Planteles---------------------
-void Interfaz::capturarDatosPlantel() {
-    print("Ingrese el nombre del Plantel: ");
+// ==================== METODOS PARA VEHICULOS Y PLANTELES ====================
+
+vehiculo* Interfaz::capturarDatosVehiculo() {
+    limpiar();
+    imprimirTitulo("CAPTURA DE DATOS DE VEHICULO");
+
+    cout << "Ingrese la placa del vehiculo: ";
+    string placa = digPalabra();
+
+    cout << "Ingrese la marca del vehiculo: ";
+    string marca = digPalabra();
+
+    cout << "Ingrese el modelo del vehiculo: ";
+    string modelo = digPalabra();
+
+    cout << "Ingrese el tipo de licencia requerida: ";
+    string tipoLicencia = digPalabra();
+
+    cout << "Ingrese la categoria del vehiculo (A/B/C/D): ";
+    string catStr = digPalabra();
+    char categoria = (catStr.length() > 0) ? catStr[0] : 'A';
+
+    cout << "Ingrese el precio por dia de alquiler: ";
+    double precio = digDouble();
+
+    // Estado inicial siempre es "Revision" cuando se ingresa un vehículo nuevo
+    vehiculo* nuevoVehiculo = new vehiculo(placa, modelo, marca, tipoLicencia,
+        precio, "Revision", categoria, "");
+
+    return nuevoVehiculo;
 }
 
-//--------------Metodos para Solicitudes y Contratos--------------------
+plantel* Interfaz::capturarDatosPlantel() {
+    limpiar();
+    imprimirTitulo("CAPTURA DE DATOS DE PLANTEL");
 
-void Interfaz::crearSolicitudAlquiler() {
-    // Implementacion pendiente
-}
-void Interfaz::mostrarSolicitudesPorSucursal() {
-    // Implementacion pendiente
-}
-void Interfaz::mostrarSolicitudEspecifica() {
-    // Implementacion pendiente
-}
-void Interfaz::aprobarRechazarSolicitud() {
-    // Implementacion pendiente
-}
-void Interfaz::recibirVehiculoAlquilado() {
-    // Implementacion pendiente
-}
-void Interfaz::generarReporteContratos() {
-    // Implementacion pendiente
+    cout << "Ingrese la letra identificadora del plantel: ";
+    string letraStr = digPalabra();
+    char letra = (letraStr.length() > 0) ? letraStr[0] : 'A';
+
+    cout << "Ingrese la capacidad maxima del plantel: ";
+    int capacidad = digNum();
+
+    cout << "\nTipos de plantel:" << endl;
+    cout << "(1) Techado y asfaltado" << endl;
+    cout << "(2) Techado y lastreado" << endl;
+    cout << "(3) Asfaltado" << endl;
+    cout << "(4) Lastreado" << endl;
+    cout << "Seleccione el tipo de plantel: ";
+    int tipo = digNum();
+
+    cout << "Ingrese el numero de filas para los espacios: ";
+    int filas = digNum();
+
+    cout << "Ingrese el numero de columnas para los espacios: ";
+    int columnas = digNum();
+
+    plantel* nuevoPlantel = new plantel(letra, capacidad, tipo, filas, columnas);
+    return nuevoPlantel;
 }
 
-//----------------------Metodos para Clientes----------------------------
-cliente* Interfaz::agregarCliente() {
-    //Implementacion pendiente
+// ==================== METODOS PARA CLIENTES ====================
+
+cliente* Interfaz::capturarDatosCliente() {
+    limpiar();
+    imprimirTitulo("CAPTURA DE DATOS DE CLIENTE");
+
+    cout << "Tipo de cliente:" << endl;
+    cout << "(1) Persona Fisica" << endl;
+    cout << "(2) Persona Juridica" << endl;
+    cout << "Seleccione: ";
+    int tipo = digNum();
+
+    if (tipo == 1) {
+        return capturarDatosPersonaFisica();
+    }
+    else if (tipo == 2) {
+        return capturarDatosPersonaJuridica();
+    }
+    else {
+        imprimirMensaje("Opcion invalida. Se creara persona fisica por defecto.");
+        return capturarDatosPersonaFisica();
+    }
+}
+
+personaFisica* Interfaz::capturarDatosPersonaFisica() {
+    limpiar();
+    imprimirTitulo("CAPTURA DE DATOS - PERSONA FISICA");
+
+    cout << "Ingrese la cedula: ";
+    string cedula = digPalabra();
+
+    cout << "Ingrese el nombre completo: ";
+    string nombre = digPalabra();
+
+    cout << "Ingrese el pais de residencia: ";
+    string pais = digPalabra();
+
+    cout << "Ingrese el tipo de licencia: ";
+    string tipoLicencia = digPalabra();
+
+    personaFisica* nuevaPersonaFisica = new personaFisica(cedula, nombre, pais, tipoLicencia);
+    return nuevaPersonaFisica;
+}
+
+personaJuridica* Interfaz::capturarDatosPersonaJuridica() {
+    limpiar();
+    imprimirTitulo("CAPTURA DE DATOS - PERSONA JURIDICA");
+
+    cout << "Ingrese la cedula juridica: ";
+    string cedula = digPalabra();
+
+    cout << "Ingrese el nombre de la empresa: ";
+    string nombre = digPalabra();
+
+    cout << "Ingrese el pais de residencia: ";
+    string pais = digPalabra();
+
+    cout << "Ingrese la actividad economica: ";
+    string actividad = digPalabra();
+
+    cout << "Ingrese el porcentaje de descuento (0-100): ";
+    double descuento = digDouble();
+
+    personaJuridica* nuevaPersonaJuridica = new personaJuridica(cedula, nombre, pais,
+        actividad, descuento);
+    return nuevaPersonaJuridica;
+}
+
+// ==================== METODOS PARA SOLICITUDES ====================
+
+solicitudAlquiler* Interfaz::capturarDatosSolicitud() {
+    // Este método se implementa directamente en el controller
+    // porque necesita acceso a las colecciones de clientes, vehículos y colaboradores
     return nullptr;
-}
-
-string Interfaz::mostrarCliente() {
-    //Implementacion pendiente
-    return "";
-}
-void Interfaz::eliminarCliente() {
-    //Implementacion pendiente
-}
-void Interfaz::historialAlquileresCliente() {
-    //Implementacion pendiente
-}
-void Interfaz::reporteCantidadContratosPorCliente() {
-    //Implementacion pendiente
 }

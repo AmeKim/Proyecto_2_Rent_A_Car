@@ -131,7 +131,7 @@
     <ClCompile Include="controller.cpp" />
     <ClCompile Include="entradaBitacora.cpp" />
     <ClCompile Include="espacioEstacionamiento.cpp" />
-    <ClCompile Include="interfaz.cpp" />
+    <ClCompile Include="Interfaz.cpp" />
     <ClCompile Include="inventarioVehiculos.cpp" />
     <ClCompile Include="listaEstacionamiento.cpp" />
     <ClCompile Include="main.cpp" />
@@ -155,7 +155,7 @@
     <ClInclude Include="controller.h" />
     <ClInclude Include="entradaBitacora.h" />
     <ClInclude Include="espacioEstacionamiento.h" />
-    <ClInclude Include="interfaz.h" />
+    <ClInclude Include="Interfaz.h" />
     <ClInclude Include="inventarioVehiculos.h" />
     <ClInclude Include="listaEstacionamiento.h" />
     <ClInclude Include="listaBase.h" />

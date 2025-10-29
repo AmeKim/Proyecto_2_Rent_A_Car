@@ -14,7 +14,8 @@ solicitudAlquiler::solicitudAlquiler() {
 }
 
 solicitudAlquiler::solicitudAlquiler(const string& cod, cliente* cliente, colaborador* colaborador,
-    vehiculo* vehiculo, int dias, const string& fInicio, const string& fEntrega, double pDia) {
+    vehiculo* vehiculo, int dias, const string& fInicio,
+    const string& fEntrega, double pDia) {
     this->codigo = cod;
     this->cli = cliente;
     this->col = colaborador;
@@ -23,23 +24,19 @@ solicitudAlquiler::solicitudAlquiler(const string& cod, cliente* cliente, colabo
     this->fechaInicio = fInicio;
     this->fechaEntrega = fEntrega;
     this->precioDia = pDia;
+    this->estado = "Pendiente";
 
-    // Aplicar descuento si es persona jurídica
+    // Calcular precio total considerando descuento para personas jurídicas
+    precioTotal = precioDia * dias;
+
     personaJuridica* pj = dynamic_cast<personaJuridica*>(cliente);
     if (pj != nullptr) {
         double descuento = pj->getPorcDescuento() / 100.0;
-        this->precioTotal = (pDia * dias) * (1.0 - descuento);
+        precioTotal = precioTotal * (1.0 - descuento);
     }
-    else {
-        this->precioTotal = pDia * dias;
-    }
-
-    this->estado = "Pendiente";
 }
 
-solicitudAlquiler::~solicitudAlquiler() {
-    // No eliminar cli, col, veh porque son manejados por otras estructuras
-}
+solicitudAlquiler::~solicitudAlquiler() {}
 
 string solicitudAlquiler::getCodigo() const { return codigo; }
 string solicitudAlquiler::getEstado() const { return estado; }
@@ -66,16 +63,27 @@ void solicitudAlquiler::anular() {
 
 string solicitudAlquiler::toString() const {
     stringstream s;
-    s << "\n===== SOLICITUD DE ALQUILER =====\n";
-    s << "Codigo: " << codigo << endl;
-    s << "Estado: " << estado << endl;
-    s << "Cliente: " << (cli ? cli->getNombre() : "N/A") << " (ID: " << (cli ? cli->getCedula() : "N/A") << ")\n";
-    s << "Colaborador: " << (col ? col->getNombre() : "N/A") << endl;
-    s << "Vehiculo: " << (veh ? veh->getPlaca() : "N/A") << endl;
-    s << "Dias de alquiler: " << dias << endl;
-    s << "Fecha de inicio: " << fechaInicio << endl;
-    s << "Fecha de entrega: " << fechaEntrega << endl;
-    s << "Precio por dia: $" << precioDia << endl;
-    s << "Precio total: $" << precioTotal << endl;
+    s << "===== SOLICITUD DE ALQUILER =====\n";
+    s << "Codigo: " << codigo << "\n";
+    s << "Estado: " << estado << "\n";
+
+    if (cli != nullptr) {
+        s << "Cliente: " << cli->getNombre() << " (ID: " << cli->getCedula() << ")\n";
+    }
+
+    if (veh != nullptr) {
+        s << "Vehiculo: " << veh->getPlaca() << " - " << veh->getMarca() << " " << veh->getModelo() << "\n";
+    }
+
+    if (col != nullptr) {
+        s << "Colaborador: " << col->getNombre() << " (ID: " << col->getCedula() << ")\n";
+    }
+
+    s << "Dias de alquiler: " << dias << "\n";
+    s << "Fecha inicio: " << fechaInicio << "\n";
+    s << "Fecha entrega: " << fechaEntrega << "\n";
+    s << "Precio por dia: $" << precioDia << "\n";
+    s << "Precio total: $" << precioTotal << "\n";
+
     return s.str();
 }
