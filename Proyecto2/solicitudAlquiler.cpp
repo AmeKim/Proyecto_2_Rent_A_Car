@@ -13,10 +13,8 @@ solicitudAlquiler::solicitudAlquiler() {
     estado = "Pendiente";
 }
 
-solicitudAlquiler::solicitudAlquiler(const string& cod, cliente* cliente,
-    colaborador* colaborador, vehiculo* vehiculo,
-    int dias, const string& fInicio,
-    const string& fEntrega, double pDia) {
+solicitudAlquiler::solicitudAlquiler(const string& cod, cliente* cliente, colaborador* colaborador,
+    vehiculo* vehiculo, int dias, const string& fInicio, const string& fEntrega, double pDia) {
     this->codigo = cod;
     this->cli = cliente;
     this->col = colaborador;
@@ -30,7 +28,7 @@ solicitudAlquiler::solicitudAlquiler(const string& cod, cliente* cliente,
     personaJuridica* pj = dynamic_cast<personaJuridica*>(cliente);
     if (pj != nullptr) {
         double descuento = pj->getPorcDescuento() / 100.0;
-        this->precioTotal = pDia * dias * (1.0 - descuento);
+        this->precioTotal = (pDia * dias) * (1.0 - descuento);
     }
     else {
         this->precioTotal = pDia * dias;
@@ -39,7 +37,9 @@ solicitudAlquiler::solicitudAlquiler(const string& cod, cliente* cliente,
     this->estado = "Pendiente";
 }
 
-solicitudAlquiler::~solicitudAlquiler() {}
+solicitudAlquiler::~solicitudAlquiler() {
+    // No eliminar cli, col, veh porque son manejados por otras estructuras
+}
 
 string solicitudAlquiler::getCodigo() const { return codigo; }
 string solicitudAlquiler::getEstado() const { return estado; }
@@ -66,17 +66,16 @@ void solicitudAlquiler::anular() {
 
 string solicitudAlquiler::toString() const {
     stringstream s;
-    s << "===== Solicitud de Alquiler =====\n";
+    s << "\n===== SOLICITUD DE ALQUILER =====\n";
     s << "Codigo: " << codigo << endl;
-    s << "Cliente: " << (cli ? cli->getNombre() : "N/A") << " (ID: "
-        << (cli ? cli->getCedula() : "N/A") << ")" << endl;
+    s << "Estado: " << estado << endl;
+    s << "Cliente: " << (cli ? cli->getNombre() : "N/A") << " (ID: " << (cli ? cli->getCedula() : "N/A") << ")\n";
     s << "Colaborador: " << (col ? col->getNombre() : "N/A") << endl;
     s << "Vehiculo: " << (veh ? veh->getPlaca() : "N/A") << endl;
-    s << "Dias: " << dias << endl;
-    s << "Fecha Inicio: " << fechaInicio << endl;
-    s << "Fecha Entrega: " << fechaEntrega << endl;
-    s << "Precio por Dia: " << precioDia << endl;
-    s << "Precio Total: " << precioTotal << endl;
-    s << "Estado: " << estado << endl;
+    s << "Dias de alquiler: " << dias << endl;
+    s << "Fecha de inicio: " << fechaInicio << endl;
+    s << "Fecha de entrega: " << fechaEntrega << endl;
+    s << "Precio por dia: $" << precioDia << endl;
+    s << "Precio total: $" << precioTotal << endl;
     return s.str();
 }

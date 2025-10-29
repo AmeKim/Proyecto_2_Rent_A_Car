@@ -3,6 +3,8 @@
 matriz::matriz(int f, int c) {
     filas = f;
     columnas = c;
+
+    // Crear matriz dinámica
     Matriz = new void** [filas];
     for (int i = 0; i < filas; i++) {
         Matriz[i] = new void* [columnas];
@@ -13,8 +15,7 @@ matriz::matriz(int f, int c) {
 }
 
 matriz::~matriz() {
-    // No eliminar el contenido de las celdas, solo la estructura
-    // El contenido lo maneja quien lo creó
+    // No eliminar los objetos apuntados, solo la estructura de la matriz
     for (int i = 0; i < filas; i++) {
         delete[] Matriz[i];
     }
@@ -43,31 +44,28 @@ int matriz::getColumnas() const {
 }
 
 void matriz::mostrar(string(*mostrarFn)(void*)) {
-    cout << "\n";
     for (int i = 0; i < filas; i++) {
         for (int j = 0; j < columnas; j++) {
             if (Matriz[i][j] != nullptr && mostrarFn != nullptr) {
                 cout << mostrarFn(Matriz[i][j]) << " ";
             }
             else {
-                cout << "[ ] ";
+                cout << "[NULL] ";
             }
         }
         cout << endl;
     }
-    cout << endl;
 }
 
 string matriz::mostrarMatrizTexto(string(*mostrarFn)(void*)) {
     stringstream s;
-    s << "\n";
     for (int i = 0; i < filas; i++) {
         for (int j = 0; j < columnas; j++) {
             if (Matriz[i][j] != nullptr && mostrarFn != nullptr) {
                 s << mostrarFn(Matriz[i][j]) << " ";
             }
             else {
-                s << "[ ] ";
+                s << "[NULL] ";
             }
         }
         s << "\n";

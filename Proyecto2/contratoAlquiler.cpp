@@ -5,19 +5,11 @@ contratoAlquiler::contratoAlquiler() : solicitudAlquiler() {
     diasRealesUso = 0;
 }
 
-contratoAlquiler::contratoAlquiler(const solicitudAlquiler& solicitudAprobada) {
-    this->codigo = solicitudAprobada.getCodigo();
-    this->cli = solicitudAprobada.getCliente();
-    this->col = solicitudAprobada.getColaborador();
-    this->veh = solicitudAprobada.getVehiculo();
-    this->dias = solicitudAprobada.getDias();
-    this->fechaInicio = solicitudAprobada.getFechaInicio();
-    this->fechaEntrega = solicitudAprobada.getFechaEntrega();
-    this->precioDia = solicitudAprobada.getPrecioDia();
-    this->precioTotal = solicitudAprobada.getPrecioTotal();
-    this->estado = "Aprobada";
-    this->estadoContrato = "Aprobado pendiente de ejecucion";
-    this->diasRealesUso = 0;
+contratoAlquiler::contratoAlquiler(const solicitudAlquiler& solicitudAprobada)
+    : solicitudAlquiler(solicitudAprobada) {
+    estadoContrato = "Aprobado en alquiler";
+    diasRealesUso = 0;
+    estado = "Aprobada";
 }
 
 string contratoAlquiler::getEstadoContrato() const {
@@ -32,43 +24,57 @@ void contratoAlquiler::finalizarContrato(int diasUtilizados) {
     diasRealesUso = diasUtilizados;
 
     if (diasUtilizados < dias) {
-        // Devolución anticipada: reintegro del 70%
-        int diasNoUsados = dias - diasUtilizados;
-        double reintegro = diasNoUsados * precioDia * 0.70;
-        precioTotal = precioTotal - reintegro;
+        // Entrega anticipada - reintegro del 70%
         estadoContrato = "Finalizado con reintegro";
     }
     else if (diasUtilizados > dias) {
-        // Devolución tardía: multa del 130%
-        int diasAtraso = diasUtilizados - dias;
-        double multa = diasAtraso * precioDia * 1.30;
-        precioTotal = precioTotal + multa;
+        // Entrega tardía - multa del 130%
         estadoContrato = "Finalizado con multa";
     }
     else {
-        // Devolución a tiempo
+        // Entrega a tiempo
         estadoContrato = "Finalizado sin cargos adicionales";
     }
 }
 
 double contratoAlquiler::calcularMontoFinal() const {
+    if (estadoContrato == "Finalizado con reintegro") {
+        // Reintegro del 70% por días no utilizados
+        int diasNoUtilizados = dias - diasRealesUso;
+        double reintegro = diasNoUtilizados * precioDia * 0.70;
+        return precioTotal - reintegro;
+    }
+    else if (estadoContrato == "Finalizado con multa") {
+        // Multa del 130% por días de atraso
+        int diasAtraso = diasRealesUso - dias;
+        double multa = diasAtraso * precioDia * 1.30;
+        return precioTotal + multa;
+    }
     return precioTotal;
 }
 
 string contratoAlquiler::toString() const {
     stringstream s;
-    s << "===== Contrato de Alquiler =====\n";
+    s << "\n===== CONTRATO DE ALQUILER =====\n";
     s << "Codigo: " << codigo << endl;
-    s << "Cliente: " << (cli ? cli->getNombre() : "N/A") << " (ID: "
-        << (cli ? cli->getCedula() : "N/A") << ")" << endl;
+    s << "Estado del Contrato: " << estadoContrato << endl;
+    s << "Cliente: " << (cli ? cli->getNombre() : "N/A") << " (ID: " << (cli ? cli->getCedula() : "N/A") << ")\n";
     s << "Colaborador: " << (col ? col->getNombre() : "N/A") << endl;
     s << "Vehiculo: " << (veh ? veh->getPlaca() : "N/A") << endl;
-    s << "Dias Contratados: " << dias << endl;
-    s << "Dias Reales de Uso: " << diasRealesUso << endl;
-    s << "Fecha Inicio: " << fechaInicio << endl;
-    s << "Fecha Entrega: " << fechaEntrega << endl;
-    s << "Precio por Dia: " << precioDia << endl;
-    s << "Precio Total Final: " << precioTotal << endl;
-    s << "Estado Contrato: " << estadoContrato << endl;
+    s << "Dias contratados: " << dias << endl;
+
+    if (diasRealesUso > 0) {
+        s << "Dias reales de uso: " << diasRealesUso << endl;
+    }
+
+    s << "Fecha de inicio: " << fechaInicio << endl;
+    s << "Fecha de entrega programada: " << fechaEntrega << endl;
+    s << "Precio por dia: $" << precioDia << endl;
+    s << "Precio total inicial: $" << precioTotal << endl;
+
+    if (estadoContrato.find("Finalizado") != string::npos) {
+        s << "Monto final: $" << calcularMontoFinal() << endl;
+    }
+
     return s.str();
 }

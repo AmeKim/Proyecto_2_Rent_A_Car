@@ -6,8 +6,8 @@ vehiculo::vehiculo() {
     marca = "";
     tipoLicencia = "";
     precio = 0.0;
-    estado = "Revision";  // Estado inicial según el proyecto
-    categoria = ' ';
+    estado = "Disponible";
+    categoria = 'A';
     ubicacionPlantel = "";
     bitacora = new listaBase<registroBitacora>();
 }
@@ -51,63 +51,73 @@ char vehiculo::getCategoria() const { return categoria; }
 void vehiculo::setCategoria(char categoria) { this->categoria = categoria; }
 
 string vehiculo::getUbicacionPlantel() const { return ubicacionPlantel; }
-void vehiculo::setUbicacionPlantel(string ubicacionPlantel) {
-    this->ubicacionPlantel = ubicacionPlantel;
-}
+void vehiculo::setUbicacionPlantel(string ubicacionPlantel) { this->ubicacionPlantel = ubicacionPlantel; }
 
 bool vehiculo::cambiarEstado(string nuevoEstado, string fecha, colaborador* responsable) {
-    // Validar transiciones según la tabla del proyecto
+    // Validar transiciones válidas según la tabla del documento
+    bool transicionValida = false;
+
     if (estado == "Disponible") {
-        if (nuevoEstado != "Alquilado" && nuevoEstado != "Revision" && nuevoEstado != "Lavado") {
-            return false;
+        if (nuevoEstado == "Alquilado" || nuevoEstado == "Revision" || nuevoEstado == "Lavado") {
+            transicionValida = true;
         }
     }
     else if (estado == "Alquilado") {
-        if (nuevoEstado != "Devuelto") {
-            return false;
+        if (nuevoEstado == "Devuelto") {
+            transicionValida = true;
         }
     }
     else if (estado == "Devuelto") {
-        if (nuevoEstado != "Revision" && nuevoEstado != "Lavado") {
-            return false;
+        if (nuevoEstado == "Revision" || nuevoEstado == "Lavado") {
+            transicionValida = true;
         }
     }
     else if (estado == "Revision") {
-        if (nuevoEstado != "Lavado") {
-            return false;
+        if (nuevoEstado == "Lavado") {
+            transicionValida = true;
         }
     }
     else if (estado == "Lavado") {
-        if (nuevoEstado != "Disponible" && nuevoEstado != "Revision") {
-            return false;
+        if (nuevoEstado == "Disponible" || nuevoEstado == "Revision") {
+            transicionValida = true;
         }
+    }
+
+    if (!transicionValida) {
+        return false;
     }
 
     // Registrar en bitácora
     registroBitacora* registro = new registroBitacora(estado, nuevoEstado, fecha, responsable);
     bitacora->agregarFinal(registro);
 
+    // Cambiar el estado
     estado = nuevoEstado;
+
     return true;
 }
 
 string vehiculo::mostrarBitacora() const {
+    stringstream s;
+    s << "\n===== BITACORA DE ESTADOS - VEHICULO " << placa << " =====\n\n";
+
     if (bitacora->estaVacia()) {
-        return "No hay registros en la bitacora.\n";
+        s << "No hay registros en la bitacora.\n";
+        return s.str();
     }
-    return bitacora->toStringLista();
+
+    s << bitacora->toStringLista();
+    return s.str();
 }
 
 string vehiculo::toString() const {
     stringstream s;
-    s << "===== Vehiculo =====\n";
-    s << "Placa: " << placa << endl;
-    s << "Modelo: " << modelo << endl;
-    s << "Marca: " << marca << endl;
-    s << "Tipo de Licencia: " << tipoLicencia << endl;
-    s << "Precio: " << precio << endl;
-    s << "Estado: " << estado << endl;
-    s << "Categoria: " << categoria << endl;
-    s << "Ubicacion en Plantel: " << ubicacionPlantel << endl;
+    s << "Placa: " << placa << " | ";
+    s << "Marca: " << marca << " | ";
+    s << "Modelo: " << modelo << " | ";
+    s << "Categoria: " << categoria << " | ";
+    s << "Estado: " << estado << " | ";
+    s << "Precio/dia: $" << precio << " | ";
+    s << "Plantel: " << ubicacionPlantel;
     return s.str();
 }

@@ -1,12 +1,12 @@
 #include "Interfaz.h"
 
-
-
-void Interfaz::imprimirMensaje(string m) { cout << m << endl; }
+void Interfaz::imprimirMensaje(string m) {
+    cout << m << endl;
+}
 
 void Interfaz::imprimirTitulo(string t) {
     limpiar();
-    cout << "-------------" << t << "-------------" << endl;
+    cout << "=============" << t << "=============" << endl;
 }
 
 int Interfaz::menuPrincipal() {
@@ -15,12 +15,12 @@ int Interfaz::menuPrincipal() {
     print("========================================\n");
     cout << "   GESTI" << char(224) << "N DE D - R - T CAR RENTAL\n";
     print("========================================\n");
-    cout << "Men" <<char(163) <<" Principal\n";
+    cout << "Men" << char(163) << " Principal\n";
     print("========================================\n");
     cout << "(1) Submen" << char(163) << " de Sucursales\n";
     cout << "(2) Submen" << char(163) << " de Clientes\n";
     cout << "(3) Submen" << char(163) << " de Colaboradores\n";
-    cout << "(4) Submen" << char(163) << " de Veh" << char(161)<< "culos y Planteles\n";
+    cout << "(4) Submen" << char(163) << " de Veh" << char(161) << "culos y Planteles\n";
     cout << "(5) Submen" << char(163) << " de Solicitudes y Contratos\n";
     print("(0) Salir\n");
     print("========================================\n");
@@ -33,14 +33,14 @@ int Interfaz::submenuSucursal() {
     int opcion;
     limpiar();
     print("========================================\n");
-    cout << "         SUBMEN" << char(233)<< " DE SUCURSALES\n";
+    cout << "         SUBMEN" << char(233) << " DE SUCURSALES\n";
     print("========================================\n");
     print("(1) Agregar Sucursal\n");
     print("(2) Mostrar Sucursales\n");
     print("(3) Eliminar Sucursal\n");
     cout << "(0) Volver al Men" << char(163) << " Principal\n";
     print("========================================\n");
-	cout << "Digite la opci" << char(162) << "n deseada : ";
+    cout << "Digite la opci" << char(162) << "n deseada : ";
     opcion = digNum();
     return opcion;
 }
@@ -71,7 +71,7 @@ int Interfaz::submenuVehiculosYPlanteles() {
     print("(1) Agregar Plantel\n");
     print("(2) Visualizar Plantel\n");
     cout << "(3) Agregar Veh" << char(161) << "culo\n";
-	cout << "(4) Visualizar Veh" << char(161) << "culo\n";
+    cout << "(4) Visualizar Veh" << char(161) << "culo\n";
     cout << "(5) Eliminar Veh" << char(161) << "culo\n";
     cout << "(6) Reasignar Veh" << char(161) << "culo\n";
     cout << "(7) Cambiar Estado del Veh" << char(161) << "culo\n";
@@ -123,7 +123,7 @@ int Interfaz::submenuClientes() {
 }
 
 //--------------------Metodos para Sucursales--------------------------
-sucursal* Interfaz::capturarDatosSucursal(){
+sucursal* Interfaz::capturarDatosSucursal() {
     print("Ingrese el ID de la sucursal: ");
     int id = digNum();
     limpiar();
@@ -141,7 +141,7 @@ sucursal* Interfaz::capturarDatosSucursal(){
     return nuevaSucursal;
 }
 
-int Interfaz::solicitarIDSucursal(){
+int Interfaz::solicitarIDSucursal() {
     print("Ingrese el ID de la Sucursal: ");
     int id = digNum();
     limpiar();
@@ -170,51 +170,3 @@ string Interfaz::solicitarIDColaborador() {
     limpiar();
     return id;
 }
-
-//------------------Metodos para Carros y Planteles---------------------
-void Interfaz::capturarDatosPlantel() {
-	print("Ingrese el nombre del Plantel: ");
-}
-
-//--------------Metodos para Solicitudes y Contratos--------------------
-
-void Interfaz::crearSolicitudAlquiler() {
-    // Implementacion pendiente
-}
-void Interfaz::mostrarSolicitudesPorSucursal() {
-    // Implementacion pendiente
-}
-void Interfaz::mostrarSolicitudEspecifica() {
-    // Implementacion pendiente
-}
-void Interfaz::aprobarRechazarSolicitud() {
-    // Implementacion pendiente
-}
-void Interfaz::recibirVehiculoAlquilado() {
-    // Implementacion pendiente
-}
-void Interfaz::generarReporteContratos() {
-    // Implementacion pendiente
-}
-
-//----------------------Metodos para Clientes----------------------------
-cliente* Interfaz::agregarCliente() {
-    //Implementacion pendiente
-    return nullptr;
-}
-
-string Interfaz::mostrarCliente() {
-    //Implementacion pendiente
-    return "";
-}
-void Interfaz::eliminarCliente() {
-    //Implementacion pendiente
-}
-void Interfaz::historialAlquileresCliente() {
-    //Implementacion pendiente
-}
-void Interfaz::reporteCantidadContratosPorCliente() {
-    //Implementacion pendiente
-}
-
-

@@ -20,11 +20,6 @@ bool inventarioVehiculos::eliminarVehiculoPorPlaca(string placa) {
 
     while (actual != nullptr) {
         if (actual->getElemento()->getPlaca() == placa) {
-            // Verificar que no esté alquilado
-            if (actual->getElemento()->getEstado() == "Alquilado") {
-                return false; // No se puede eliminar un vehículo alquilado
-            }
-
             if (anterior == nullptr) {
                 primero = actual->getSiguiente();
             }
@@ -39,7 +34,6 @@ bool inventarioVehiculos::eliminarVehiculoPorPlaca(string placa) {
         anterior = actual;
         actual = actual->getSiguiente();
     }
-
     return false;
 }
 
@@ -59,9 +53,9 @@ string inventarioVehiculos::mostrarVehiculos() const {
         return "No hay vehiculos registrados.\n";
     }
 
-    nodoBase<vehiculo>* actual = primero;
     stringstream s;
     s << "\n===== INVENTARIO DE VEHICULOS =====\n\n";
+    nodoBase<vehiculo>* actual = primero;
     int i = 1;
     while (actual != nullptr) {
         s << i << ". " << actual->getElemento()->toString() << endl;
@@ -72,59 +66,53 @@ string inventarioVehiculos::mostrarVehiculos() const {
 }
 
 string inventarioVehiculos::mostrarVehiculosDisponibles() const {
-    nodoBase<vehiculo>* actual = primero;
     stringstream s;
     s << "\n===== VEHICULOS DISPONIBLES =====\n\n";
+
+    nodoBase<vehiculo>* actual = primero;
     int i = 1;
+    bool hayDisponibles = false;
+
     while (actual != nullptr) {
         if (actual->getElemento()->getEstado() == "Disponible") {
             s << i << ". " << actual->getElemento()->toString() << endl;
+            hayDisponibles = true;
             i++;
         }
         actual = actual->getSiguiente();
     }
-    if (i == 1) {
+
+    if (!hayDisponibles) {
         s << "No hay vehiculos disponibles.\n";
     }
+
     return s.str();
 }
 
 string inventarioVehiculos::mostrarTotalDeEstados() {
     stringstream s;
-    int disponibles = 0;
-    int revision = 0;
-    int alquilados = 0;
-    int devueltos = 0;
-    int lavados = 0;
+    s << "\n===== RESUMEN DE ESTADOS DE VEHICULOS =====\n\n";
+
+    int disponibles = 0, alquilados = 0, devueltos = 0, revision = 0, lavado = 0;
 
     nodoBase<vehiculo>* actual = primero;
     while (actual != nullptr) {
         string estado = actual->getElemento()->getEstado();
-        if (estado == "Disponible") {
-            disponibles++;
-        }
-        else if (estado == "Revision") {
-            revision++;
-        }
-        else if (estado == "Alquilado") {
-            alquilados++;
-        }
-        else if (estado == "Devuelto") {
-            devueltos++;
-        }
-        else if (estado == "Lavado") {
-            lavados++;
-        }
+        if (estado == "Disponible") disponibles++;
+        else if (estado == "Alquilado") alquilados++;
+        else if (estado == "Devuelto") devueltos++;
+        else if (estado == "Revision") revision++;
+        else if (estado == "Lavado") lavado++;
+
         actual = actual->getSiguiente();
     }
 
-    s << "\n===== TOTAL DE VEHICULOS POR ESTADO =====\n\n";
     s << "Disponibles: " << disponibles << endl;
-    s << "En Revision: " << revision << endl;
     s << "Alquilados: " << alquilados << endl;
     s << "Devueltos: " << devueltos << endl;
-    s << "En Lavado: " << lavados << endl;
-    s << "\nTotal: " << cantidad << endl;
+    s << "En Revision: " << revision << endl;
+    s << "En Lavado: " << lavado << endl;
+    s << "Total: " << cantidad << endl;
 
     return s.str();
 }
