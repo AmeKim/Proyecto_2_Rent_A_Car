@@ -206,6 +206,12 @@ vehiculo* Interfaz::capturarDatosVehiculo() {
     return nuevoVehiculo;
 }
 
+string Interfaz::solicitarPlacaVehiculo() {
+    cout << "\nIngrese la placa del vehiculo: ";
+    string placa = digPalabra();
+    return placa;
+}
+
 plantel* Interfaz::capturarDatosPlantel() {
     limpiar();
     imprimirTitulo("CAPTURA DE DATOS DE PLANTEL");
@@ -233,6 +239,18 @@ plantel* Interfaz::capturarDatosPlantel() {
 
     plantel* nuevoPlantel = new plantel(letra, capacidad, tipo, filas, columnas);
     return nuevoPlantel;
+}
+
+char Interfaz::solicitarLetraPlantel() {
+    cout << "\nIngrese la letra del plantel: ";
+    string letra = digPalabra();
+    return (letra.length() > 0) ? letra[0] : 'A';
+}
+
+string Interfaz::solicitarCodigoEspacio() {
+    cout << "\nIngrese el codigo del espacio (ej: A01, B05): ";
+    string codigo = digPalabra();
+    return codigo;
 }
 
 // ==================== METODOS PARA CLIENTES ====================
@@ -303,10 +321,229 @@ personaJuridica* Interfaz::capturarDatosPersonaJuridica() {
     return nuevaPersonaJuridica;
 }
 
+string Interfaz::solicitarIDCliente() {
+    cout << "\nIngrese la cedula del cliente: ";
+    string id = digPalabra();
+    return id;
+}
+
 // ==================== METODOS PARA SOLICITUDES ====================
 
-solicitudAlquiler* Interfaz::capturarDatosSolicitud() {
-    // Este método se implementa directamente en el controller
-    // porque necesita acceso a las colecciones de clientes, vehículos y colaboradores
-    return nullptr;
+DatosSolicitud Interfaz::capturarDatosSolicitud() {
+    limpiar();
+    imprimirTitulo("CAPTURA DE DATOS DE SOLICITUD DE ALQUILER");
+
+    DatosSolicitud datos;
+
+    cout << "Ingrese el codigo de la solicitud: ";
+    datos.codigo = digPalabra();
+
+    cout << "Ingrese la cedula del cliente: ";
+    datos.idCliente = digPalabra();
+
+    cout << "Ingrese la cedula del colaborador responsable: ";
+    datos.idColaborador = digPalabra();
+
+    cout << "Ingrese la placa del vehiculo: ";
+    datos.placaVehiculo = digPalabra();
+
+    cout << "Ingrese la cantidad de dias de alquiler: ";
+    datos.dias = digNum();
+
+    cout << "Ingrese la fecha de inicio (DD/MM/AAAA): ";
+    datos.fechaInicio = digPalabra();
+
+    cout << "Ingrese la fecha de entrega (DD/MM/AAAA): ";
+    datos.fechaEntrega = digPalabra();
+
+    cout << "Ingrese el precio por dia: ";
+    datos.precioDia = digDouble();
+
+    return datos;
+}
+
+string Interfaz::solicitarCodigoSolicitud() {
+    cout << "\nIngrese el codigo de la solicitud/contrato: ";
+    string codigo = digPalabra();
+    return codigo;
+}
+
+int Interfaz::solicitarDiasAlquiler() {
+    cout << "\nIngrese la cantidad de dias de alquiler: ";
+    int dias = digNum();
+    return dias;
+}
+
+int Interfaz::solicitarDiasUtilizados() {
+    cout << "\nIngrese la cantidad de dias que se utilizo el vehiculo: ";
+    int dias = digNum();
+    return dias;
+}
+
+string Interfaz::solicitarFecha(string tipoFecha) {
+    cout << "\nIngrese la " << tipoFecha << " (DD/MM/AAAA): ";
+    string fecha = digPalabra();
+    return fecha;
+}
+
+int Interfaz::menuAprobarRechazar() {
+    cout << "\n========================================" << endl;
+    cout << "Que desea hacer con la solicitud?" << endl;
+    cout << "(1) Aprobar" << endl;
+    cout << "(2) Rechazar" << endl;
+    cout << "(0) Cancelar" << endl;
+    cout << "========================================" << endl;
+    cout << "Seleccione: ";
+    int opcion = digNum();
+    return opcion;
+}
+
+// ==================== METODOS PARA CAMBIO DE ESTADO ====================
+
+string Interfaz::menuCambioEstado(string estadoActual) {
+    limpiar();
+    imprimirTitulo("CAMBIO DE ESTADO DE VEHICULO");
+
+    cout << "Estado actual: " << estadoActual << endl;
+    cout << "\nEstados disponibles:" << endl;
+
+    // Mostrar estados según tabla de transiciones
+    if (estadoActual == "Disponible") {
+        cout << "(1) Alquilado" << endl;
+        cout << "(2) Revision" << endl;
+        cout << "(3) Lavado" << endl;
+    }
+    else if (estadoActual == "Alquilado") {
+        cout << "(1) Devuelto" << endl;
+    }
+    else if (estadoActual == "Devuelto") {
+        cout << "(1) Revision" << endl;
+        cout << "(2) Lavado" << endl;
+    }
+    else if (estadoActual == "Revision") {
+        cout << "(1) Lavado" << endl;
+    }
+    else if (estadoActual == "Lavado") {
+        cout << "(1) Disponible" << endl;
+        cout << "(2) Revision" << endl;
+    }
+
+    cout << "(0) Cancelar" << endl;
+    cout << "========================================" << endl;
+    cout << "Seleccione el nuevo estado: ";
+    int opcion = digNum();
+
+    // Convertir opción a estado según contexto
+    if (estadoActual == "Disponible") {
+        if (opcion == 1) return "Alquilado";
+        if (opcion == 2) return "Revision";
+        if (opcion == 3) return "Lavado";
+    }
+    else if (estadoActual == "Alquilado") {
+        if (opcion == 1) return "Devuelto";
+    }
+    else if (estadoActual == "Devuelto") {
+        if (opcion == 1) return "Revision";
+        if (opcion == 2) return "Lavado";
+    }
+    else if (estadoActual == "Revision") {
+        if (opcion == 1) return "Lavado";
+    }
+    else if (estadoActual == "Lavado") {
+        if (opcion == 1) return "Disponible";
+        if (opcion == 2) return "Revision";
+    }
+
+    return ""; // Cancelar
+}
+
+// ==================== METODOS PARA VISUALIZACION ====================
+
+void Interfaz::mostrarTablaEstados() {
+    cout << "\n========================================" << endl;
+    cout << "    TABLA DE TRANSICIONES DE ESTADOS" << endl;
+    cout << "========================================" << endl;
+    cout << "Disponible   -> Alquilado, Revision, Lavado" << endl;
+    cout << "Alquilado    -> Devuelto" << endl;
+    cout << "Devuelto     -> Revision, Lavado" << endl;
+    cout << "Revision     -> Lavado" << endl;
+    cout << "Lavado       -> Disponible, Revision" << endl;
+    cout << "========================================\n" << endl;
+}
+
+void Interfaz::mostrarEncabezadoPlantel(char letra, int tipo, int capacidad) {
+    cout << "\n========================================" << endl;
+    cout << "  PLANTEL " << letra << endl;
+    cout << "========================================" << endl;
+    cout << "Tipo: ";
+    switch (tipo) {
+    case 1: cout << "Techado y asfaltado"; break;
+    case 2: cout << "Techado y lastreado"; break;
+    case 3: cout << "Asfaltado"; break;
+    case 4: cout << "Lastreado"; break;
+    default: cout << "Desconocido";
+    }
+    cout << endl;
+    cout << "Capacidad: " << capacidad << " vehiculos" << endl;
+    cout << "========================================\n" << endl;
+}
+
+void Interfaz::mostrarSeparador() {
+    cout << "========================================" << endl;
+}
+
+void Interfaz::mostrarMensajeExito(string mensaje) {
+    cout << "\n[EXITO] " << mensaje << endl;
+}
+
+void Interfaz::mostrarMensajeError(string mensaje) {
+    cout << "\n[ERROR] " << mensaje << endl;
+}
+
+void Interfaz::mostrarMensajeAdvertencia(string mensaje) {
+    cout << "\n[ADVERTENCIA] " << mensaje << endl;
+}
+
+// ==================== METODOS PARA CONFIRMACION ====================
+
+bool Interfaz::confirmarAccion(string mensaje) {
+    cout << "\n" << mensaje << " (S/N): ";
+    string respuesta = digPalabra();
+    return (respuesta == "S" || respuesta == "s" ||
+        respuesta == "SI" || respuesta == "si");
+}
+
+int Interfaz::seleccionarOpcionDeLista(int cantidadOpciones) {
+    cout << "\nSeleccione una opcion (1-" << cantidadOpciones << ") o 0 para cancelar: ";
+    int opcion = digNum();
+    return opcion;
+}
+
+// ==================== METODOS PARA REPORTES ====================
+
+void Interfaz::mostrarEncabezadoReporte(string tituloReporte) {
+    limpiar();
+    cout << "\n========================================" << endl;
+    cout << "  " << tituloReporte << endl;
+    cout << "========================================\n" << endl;
+}
+
+void Interfaz::mostrarPieReporte() {
+    cout << "\n========================================" << endl;
+    cout << "         FIN DEL REPORTE" << endl;
+    cout << "========================================" << endl;
+}
+
+// ==================== METODOS PARA TRASLADO ====================
+
+int Interfaz::solicitarIDSucursalDestino() {
+    cout << "\nIngrese el ID de la sucursal destino: ";
+    int id = digNum();
+    return id;
+}
+
+int Interfaz::solicitarCantidadVehiculosTraslado() {
+    cout << "\nIngrese la cantidad de vehiculos a trasladar: ";
+    int cantidad = digNum();
+    return cantidad;
 }
