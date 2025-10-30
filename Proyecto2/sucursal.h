@@ -66,11 +66,17 @@ public:
     bool aprobarSolicitud(const string& codigo);
     bool rechazarSolicitud(const string& codigo);
 
+    // NUEVO: Getter público para solicitudes
+    listaBase<solicitudAlquiler>* getSolicitudes() { return solicitudes; }
+
     // Gestión de contratos
     bool agregarContrato(contratoAlquiler* contrato);
     contratoAlquiler* buscarContrato(const string& codigo);
     string mostrarContratos() const;
     string mostrarContratosOrdenados() const;
+
+    // NUEVO: Getter público para contratos
+    listaBase<contratoAlquiler>* getContratos() { return contratos; }
 
     // Reportes
     string reporteContratosVehiculo(const string& placa) const;

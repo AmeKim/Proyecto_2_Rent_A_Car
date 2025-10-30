@@ -41,6 +41,8 @@ void sucursal::setIdSucursal(int id) { idSucursal = id; }
 void sucursal::setNombre(const string& nombre) { this->nombre = nombre; }
 void sucursal::setProvincia(const string& provincia) { this->provincia = provincia; }
 
+// ==================== GESTION DE PLANTELES ====================
+
 bool sucursal::agregarPlantel(plantel* p) {
     if (p == nullptr) return false;
     return planteles->agregarFinal(p);
@@ -110,16 +112,35 @@ string sucursal::reportePorcentajeOcupacion() const {
         plantel* p = actual->getElemento();
         s << "Plantel " << p->getLetra() << ": ";
         s << p->getEspaciosOcupados() << "/" << p->getCapacidad() << " espacios ";
-        s << "(" << p->getPorcentajeOcupacion() << "%)\n";
+
+        // Formatear porcentaje con 2 decimales
+        double porcentaje = p->getPorcentajeOcupacion();
+        s.precision(2);
+        s << fixed << "(" << porcentaje << "%)\n";
+
         actual = actual->getSiguiente();
     }
 
     return s.str();
 }
 
-carteraClientes* sucursal::getClientes() { return clientes; }
-conjuntoColaboradores* sucursal::getColaboradores() { return colaboradores; }
-inventarioVehiculos* sucursal::getVehiculos() { return vehiculos; }
+// ==================== GESTION DE CLIENTES ====================
+
+carteraClientes* sucursal::getClientes() {
+    return clientes;
+}
+
+// ==================== GESTION DE COLABORADORES ====================
+
+conjuntoColaboradores* sucursal::getColaboradores() {
+    return colaboradores;
+}
+
+// ==================== GESTION DE VEHICULOS ====================
+
+inventarioVehiculos* sucursal::getVehiculos() {
+    return vehiculos;
+}
 
 bool sucursal::agregarVehiculoASucursal(vehiculo* v, char letraPlantel, int fila, int columna) {
     if (v == nullptr) return false;
@@ -142,10 +163,11 @@ bool sucursal::eliminarVehiculoDeSucursal(const string& placa) {
 
     // Liberar el espacio en el plantel
     string ubicacion = v->getUbicacionPlantel();
-    // Formato: "A-0-1"
-    if (ubicacion.length() > 0) {
+
+    if (ubicacion.length() >= 5) {  // Formato: "A-0-1"
         char letra = ubicacion[0];
         plantel* p = buscarPlantel(letra);
+
         if (p != nullptr) {
             // Extraer fila y columna
             int fila = ubicacion[2] - '0';
@@ -165,9 +187,11 @@ bool sucursal::reubicarVehiculo(const string& placa, char nuevoPlantel, int fila
 
     // Liberar espacio anterior
     string ubicacionAnterior = v->getUbicacionPlantel();
-    if (ubicacionAnterior.length() > 0) {
+
+    if (ubicacionAnterior.length() >= 5) {
         char letraAnterior = ubicacionAnterior[0];
         plantel* pAnterior = buscarPlantel(letraAnterior);
+
         if (pAnterior != nullptr) {
             int filaAnt = ubicacionAnterior[2] - '0';
             int colAnt = ubicacionAnterior[4] - '0';
@@ -183,6 +207,8 @@ bool sucursal::reubicarVehiculo(const string& placa, char nuevoPlantel, int fila
 
     return false;
 }
+
+// ==================== GESTION DE SOLICITUDES ====================
 
 bool sucursal::agregarSolicitud(solicitudAlquiler* sol) {
     if (sol == nullptr) return false;
@@ -207,6 +233,7 @@ string sucursal::mostrarSolicitudes() const {
 
     stringstream s;
     s << "\n===== SOLICITUDES DE ALQUILER =====\n\n";
+
     nodoBase<solicitudAlquiler>* actual = solicitudes->retornarPrimero();
     int i = 1;
     while (actual != nullptr) {
@@ -245,6 +272,8 @@ bool sucursal::rechazarSolicitud(const string& codigo) {
     return true;
 }
 
+// ==================== GESTION DE CONTRATOS ====================
+
 bool sucursal::agregarContrato(contratoAlquiler* contrato) {
     if (contrato == nullptr) return false;
     return contratos->agregarFinal(contrato);
@@ -268,6 +297,7 @@ string sucursal::mostrarContratos() const {
 
     stringstream s;
     s << "\n===== CONTRATOS DE ALQUILER =====\n\n";
+
     nodoBase<contratoAlquiler>* actual = contratos->retornarPrimero();
     int i = 1;
     while (actual != nullptr) {
@@ -279,10 +309,10 @@ string sucursal::mostrarContratos() const {
 }
 
 string sucursal::mostrarContratosOrdenados() const {
-    // Implementación simple: copiar a array y ordenar
-    // En producción se usaría una lista ordenada
     return mostrarContratos();
 }
+
+// ==================== REPORTES ====================
 
 string sucursal::reporteContratosVehiculo(const string& placa) const {
     stringstream s;
@@ -295,7 +325,18 @@ string sucursal::reporteContratosVehiculo(const string& placa) const {
     while (actual != nullptr) {
         contratoAlquiler* c = actual->getElemento();
         if (c->getVehiculo() != nullptr && c->getVehiculo()->getPlaca() == placa) {
-            s << i << ". " << c->toString() << "\n";
+            s << i << ". Codigo: " << c->getCodigo() << "\n";
+
+            if (c->getCliente() != nullptr) {
+                s << "   Cliente: " << c->getCliente()->getNombre();
+                s << " (ID: " << c->getCliente()->getCedula() << ")\n";
+            }
+
+            s << "   Dias: " << c->getDias() << "\n";
+            s << "   Fecha inicio: " << c->getFechaInicio() << "\n";
+            s << "   Fecha devolucion: " << c->getFechaEntrega() << "\n";
+            s << "   Estado: " << c->getEstadoContrato() << "\n\n";
+
             encontrado = true;
             i++;
         }
@@ -311,7 +352,19 @@ string sucursal::reporteContratosVehiculo(const string& placa) const {
 
 string sucursal::reporteAlquileresColaborador(const string& idColaborador) const {
     stringstream s;
-    s << "\n===== ALQUILERES POR COLABORADOR " << idColaborador << " =====\n\n";
+
+    // Buscar el colaborador primero
+    colaborador* col = colaboradores->buscarColaborador(idColaborador);
+
+    if (col == nullptr) {
+        s << "Colaborador no encontrado.\n";
+        return s.str();
+    }
+
+    s << "\n===== ALQUILERES POR COLABORADOR =====\n\n";
+    s << "ID: " << col->getCedula() << "\n";
+    s << "Nombre: " << col->getNombre() << "\n\n";
+    s << "Contratos realizados:\n\n";
 
     bool encontrado = false;
     nodoBase<contratoAlquiler>* actual = contratos->retornarPrimero();
@@ -319,15 +372,23 @@ string sucursal::reporteAlquileresColaborador(const string& idColaborador) const
 
     while (actual != nullptr) {
         contratoAlquiler* c = actual->getElemento();
-        if (c->getColaborador() != nullptr && c->getColaborador()->getCedula() == idColaborador) {
-            s << i << ". Codigo: " << c->getCodigo();
+
+        if (c->getColaborador() != nullptr &&
+            c->getColaborador()->getCedula() == idColaborador) {
+
+            s << i << ". Codigo contrato: " << c->getCodigo() << "\n";
+
             if (c->getVehiculo() != nullptr) {
-                s << " - Placa: " << c->getVehiculo()->getPlaca();
+                s << "   Placa vehiculo: " << c->getVehiculo()->getPlaca() << "\n";
             }
+
             if (c->getCliente() != nullptr) {
-                s << " - Cliente: " << c->getCliente()->getCedula();
+                s << "   ID Cliente: " << c->getCliente()->getCedula() << "\n";
             }
-            s << "\n";
+
+            s << "   Estado: " << c->getEstadoContrato() << "\n";
+            s << "   Precio total: $" << c->getPrecioTotal() << "\n\n";
+
             encontrado = true;
             i++;
         }
@@ -335,7 +396,10 @@ string sucursal::reporteAlquileresColaborador(const string& idColaborador) const
     }
 
     if (!encontrado) {
-        s << "No hay alquileres para este colaborador.\n";
+        s << "No hay alquileres registrados para este colaborador.\n";
+    }
+    else {
+        s << "Total de alquileres: " << (i - 1) << "\n";
     }
 
     return s.str();

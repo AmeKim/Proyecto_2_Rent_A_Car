@@ -316,8 +316,7 @@ personaJuridica* Interfaz::capturarDatosPersonaJuridica() {
     cout << "Ingrese el porcentaje de descuento (0-100): ";
     double descuento = digDouble();
 
-    personaJuridica* nuevaPersonaJuridica = new personaJuridica(cedula, nombre, pais,
-        actividad, descuento);
+    personaJuridica* nuevaPersonaJuridica = new personaJuridica(cedula, nombre, pais,actividad, descuento);
     return nuevaPersonaJuridica;
 }
 

@@ -8,6 +8,8 @@ SistemaRentACar::~SistemaRentACar() {
     delete sucursales;
 }
 
+// ==================== GESTION DE SUCURSALES ====================
+
 bool SistemaRentACar::agregarSucursal(sucursal* suc) {
     if (suc == nullptr) return false;
     return sucursales->agregarFinal(suc);
@@ -24,7 +26,7 @@ bool SistemaRentACar::eliminarSucursal(int idSucursal) {
     while (actual != nullptr) {
         if (actual->getElemento()->getIdSucursal() == idSucursal) {
             if (anterior == nullptr) {
-                // Eliminar el primero (no implementado en listaBase, usar workaround)
+                // Eliminar el primero
                 sucursales->eliminarInicio();
             }
             else {
@@ -75,41 +77,194 @@ int SistemaRentACar::contarSucursales() const {
     return sucursales->getCantidad();
 }
 
-string SistemaRentACar::reporteClientesPorContratos() {
+// ==================== REPORTES GLOBALES ====================
+
+string SistemaRentACar::reporteHistorialCliente(const string& idCliente) {
     stringstream s;
-    s << "\n===== REPORTE: CLIENTES POR CANTIDAD DE CONTRATOS =====\n\n";
+    s << "\n========================================\n";
+    s << "  HISTORIAL DEL CLIENTE " << idCliente << "\n";
+    s << "========================================\n\n";
 
-    // Estructura para almacenar información de clientes
-    struct ClienteInfo {
-        cliente* cli;
-        int cantidadContratos;
-        string codigosContratos;
-    };
+    cliente* clienteEncontrado = nullptr;
+    string nombreCliente = "";
 
-    // Vector dinámico simple (lista)
-    listaBase<ClienteInfo>* clientesInfo = new listaBase<ClienteInfo>();
-
-    // Recorrer todas las sucursales
+    // 1. Buscar cliente en todas las sucursales
     nodoBase<sucursal>* actualSuc = sucursales->retornarPrimero();
+    while (actualSuc != nullptr && clienteEncontrado == nullptr) {
+        sucursal* suc = actualSuc->getElemento();
+        clienteEncontrado = suc->getClientes()->buscarClientePorCedula(idCliente);
+        if (clienteEncontrado != nullptr) {
+            nombreCliente = clienteEncontrado->getNombre();
+        }
+        actualSuc = actualSuc->getSiguiente();
+    }
+
+    if (clienteEncontrado == nullptr) {
+        s << "Cliente no encontrado en el sistema.\n";
+        return s.str();
+    }
+
+    s << "Cliente: " << nombreCliente << "\n";
+    s << "Cedula: " << idCliente << "\n";
+    s << "Pais: " << clienteEncontrado->getPaisResidencia() << "\n\n";
+
+    // Verificar si es persona juridica
+    personaJuridica* pj = dynamic_cast<personaJuridica*>(clienteEncontrado);
+    if (pj != nullptr) {
+        s << "Tipo: Persona Juridica\n";
+        s << "Actividad Economica: " << pj->getActividadEconomica() << "\n";
+        s << "Descuento: " << pj->getPorcDescuento() << "%\n\n";
+    }
+    else {
+        s << "Tipo: Persona Fisica\n\n";
+    }
+
+    s << "========================================\n";
+    s << "         SOLICITUDES Y CONTRATOS        \n";
+    s << "========================================\n\n";
+
+    int totalSolicitudes = 0;
+    int totalContratos = 0;
+    double montoTotal = 0.0;
+
+    // 2. Recorrer TODAS las sucursales buscando solicitudes y contratos
+    actualSuc = sucursales->retornarPrimero();
     while (actualSuc != nullptr) {
         sucursal* suc = actualSuc->getElemento();
 
-        // Recorrer clientes de cada sucursal
+        // --- Buscar SOLICITUDES ---
+        listaBase<solicitudAlquiler>* listaSolicitudes = suc->getSolicitudes();
+        nodoBase<solicitudAlquiler>* actualSol = listaSolicitudes->retornarPrimero();
+
+        while (actualSol != nullptr) {
+            solicitudAlquiler* sol = actualSol->getElemento();
+
+            if (sol->getCliente() != nullptr &&
+                sol->getCliente()->getCedula() == idCliente) {
+
+                s << "[SOLICITUD] Codigo: " << sol->getCodigo() << "\n";
+                s << "  Sucursal: " << suc->getNombre() << "\n";
+
+                if (sol->getVehiculo() != nullptr) {
+                    s << "  Vehiculo: " << sol->getVehiculo()->getPlaca()
+                        << " (" << sol->getVehiculo()->getMarca() << ")\n";
+                }
+
+                s << "  Estado: " << sol->getEstado() << "\n";
+                s << "  Fecha inicio: " << sol->getFechaInicio() << "\n";
+                s << "  Fecha entrega: " << sol->getFechaEntrega() << "\n";
+                s << "  Precio total: $" << sol->getPrecioTotal() << "\n\n";
+
+                totalSolicitudes++;
+            }
+            actualSol = actualSol->getSiguiente();
+        }
+
+        // --- Buscar CONTRATOS ---
+        listaBase<contratoAlquiler>* listaContratos = suc->getContratos();
+        nodoBase<contratoAlquiler>* actualCont = listaContratos->retornarPrimero();
+
+        while (actualCont != nullptr) {
+            contratoAlquiler* cont = actualCont->getElemento();
+
+            if (cont->getCliente() != nullptr &&
+                cont->getCliente()->getCedula() == idCliente) {
+
+                s << "[CONTRATO] Codigo: " << cont->getCodigo() << "\n";
+                s << "  Sucursal: " << suc->getNombre() << "\n";
+
+                if (cont->getVehiculo() != nullptr) {
+                    s << "  Vehiculo: " << cont->getVehiculo()->getPlaca()
+                        << " (" << cont->getVehiculo()->getMarca() << ")\n";
+                }
+
+                s << "  Estado: " << cont->getEstadoContrato() << "\n";
+                s << "  Dias contratados: " << cont->getDias() << "\n";
+
+                if (cont->getDiasRealesUso() > 0) {
+                    s << "  Dias reales de uso: " << cont->getDiasRealesUso() << "\n";
+                }
+
+                s << "  Fecha inicio: " << cont->getFechaInicio() << "\n";
+                s << "  Fecha entrega: " << cont->getFechaEntrega() << "\n";
+                s << "  Precio total: $" << cont->getPrecioTotal() << "\n";
+
+                if (cont->getDiasRealesUso() > 0) {
+                    s << "  Monto final: $" << cont->calcularMontoFinal() << "\n";
+                    montoTotal += cont->calcularMontoFinal();
+                }
+                else {
+                    montoTotal += cont->getPrecioTotal();
+                }
+
+                s << "\n";
+                totalContratos++;
+            }
+            actualCont = actualCont->getSiguiente();
+        }
+
+        actualSuc = actualSuc->getSiguiente();
+    }
+
+    // 3. Resumen final
+    s << "========================================\n";
+    s << "              RESUMEN                   \n";
+    s << "========================================\n";
+    s << "Total solicitudes: " << totalSolicitudes << "\n";
+    s << "Total contratos: " << totalContratos << "\n";
+    s << "Monto total facturado: $" << montoTotal << "\n";
+    s << "========================================\n";
+
+    return s.str();
+}
+
+string SistemaRentACar::reporteClientesPorContratos() {
+    stringstream s;
+    s << "\n========================================\n";
+    s << "  CLIENTES POR CANTIDAD DE CONTRATOS    \n";
+    s << "========================================\n\n";
+
+    // Estructura para almacenar información de clientes
+    struct ClienteConteo {
+        cliente* cli;
+        int cantidadContratos;
+        string codigosContratos;
+        string nombreSucursal;
+    };
+
+    // Array dinámico para almacenar hasta 200 clientes
+    ClienteConteo* clientesArray = new ClienteConteo[200];
+    int totalClientes = 0;
+
+    // 1. FASE 1: Recolectar todos los clientes únicos del sistema
+    nodoBase<sucursal>* actualSuc = sucursales->retornarPrimero();
+
+    while (actualSuc != nullptr) {
+        sucursal* suc = actualSuc->getElemento();
         carteraClientes* cartera = suc->getClientes();
+
+        // Recorrer clientes de esta sucursal
         nodoBase<cliente>* actualCli = cartera->retornarPrimero();
 
         while (actualCli != nullptr) {
             cliente* cli = actualCli->getElemento();
 
-            // Contar contratos para este cliente en todas las sucursales
-            int totalContratos = 0;
-            stringstream codigosStr;
+            // Verificar si el cliente ya está en el array
+            bool existe = false;
+            for (int i = 0; i < totalClientes; i++) {
+                if (clientesArray[i].cli->getCedula() == cli->getCedula()) {
+                    existe = true;
+                    break;
+                }
+            }
 
-            nodoBase<sucursal>* suc2 = sucursales->retornarPrimero();
-            while (suc2 != nullptr) {
-                // Aquí necesitamos acceder a los contratos
-                // (esto requeriría métodos adicionales en sucursal)
-                suc2 = suc2->getSiguiente();
+            // Si no existe, agregarlo
+            if (!existe && totalClientes < 200) {
+                clientesArray[totalClientes].cli = cli;
+                clientesArray[totalClientes].cantidadContratos = 0;
+                clientesArray[totalClientes].codigosContratos = "";
+                clientesArray[totalClientes].nombreSucursal = suc->getNombre();
+                totalClientes++;
             }
 
             actualCli = actualCli->getSiguiente();
@@ -118,45 +273,93 @@ string SistemaRentACar::reporteClientesPorContratos() {
         actualSuc = actualSuc->getSiguiente();
     }
 
-    delete clientesInfo;
+    // 2. FASE 2: Contar contratos para cada cliente
+    for (int i = 0; i < totalClientes; i++) {
+        stringstream codigosStream;
+        int conteo = 0;
 
-    s << "Funcionalidad pendiente de implementacion completa.\n";
-    s << "Requiere recorrer todos los contratos de todas las sucursales.\n";
+        // Recorrer todas las sucursales
+        nodoBase<sucursal>* suc = sucursales->retornarPrimero();
 
-    return s.str();
-}
+        while (suc != nullptr) {
+            sucursal* sucActual = suc->getElemento();
+            listaBase<contratoAlquiler>* contratos = sucActual->getContratos();
 
-string SistemaRentACar::reporteHistorialCliente(const string& idCliente) {
-    stringstream s;
-    s << "\n===== HISTORIAL DEL CLIENTE " << idCliente << " =====\n\n";
+            // Recorrer contratos de esta sucursal
+            nodoBase<contratoAlquiler>* actualCont = contratos->retornarPrimero();
 
-    bool encontrado = false;
+            while (actualCont != nullptr) {
+                contratoAlquiler* cont = actualCont->getElemento();
 
-    nodoBase<sucursal>* actualSuc = sucursales->retornarPrimero();
-    while (actualSuc != nullptr) {
-        sucursal* suc = actualSuc->getElemento();
-        cliente* cli = suc->getClientes()->buscarClientePorCedula(idCliente);
+                // Si el contrato pertenece a este cliente
+                if (cont->getCliente() != nullptr &&
+                    cont->getCliente()->getCedula() == clientesArray[i].cli->getCedula()) {
 
-        if (cli != nullptr) {
-            s << "Cliente encontrado: " << cli->getNombre() << "\n";
-            s << "Cedula: " << cli->getCedula() << "\n\n";
+                    conteo++;
 
-            s << "Solicitudes y contratos:\n";
-            // Aquí se listarían todos los contratos
-            // (requiere métodos adicionales)
+                    if (conteo > 1) {
+                        codigosStream << ", ";
+                    }
+                    codigosStream << cont->getCodigo();
+                }
 
-            encontrado = true;
+                actualCont = actualCont->getSiguiente();
+            }
+
+            suc = suc->getSiguiente();
         }
 
-        actualSuc = actualSuc->getSiguiente();
+        clientesArray[i].cantidadContratos = conteo;
+        clientesArray[i].codigosContratos = codigosStream.str();
     }
 
-    if (!encontrado) {
-        s << "Cliente no encontrado en el sistema.\n";
+    // 3. FASE 3: ORDENAR por cantidad de contratos (Bubble Sort descendente)
+    for (int i = 0; i < totalClientes - 1; i++) {
+        for (int j = 0; j < totalClientes - i - 1; j++) {
+            if (clientesArray[j].cantidadContratos < clientesArray[j + 1].cantidadContratos) {
+                // Swap
+                ClienteConteo temp = clientesArray[j];
+                clientesArray[j] = clientesArray[j + 1];
+                clientesArray[j + 1] = temp;
+            }
+        }
     }
+
+    // 4. FASE 4: Mostrar resultados ordenados
+    if (totalClientes == 0) {
+        s << "No hay clientes registrados en el sistema.\n";
+    }
+    else {
+        s << "Total de clientes: " << totalClientes << "\n";
+        s << "Ordenados por cantidad de contratos (mayor a menor)\n\n";
+
+        for (int i = 0; i < totalClientes; i++) {
+            s << (i + 1) << ". ";
+            s << "ID: " << clientesArray[i].cli->getCedula() << " | ";
+            s << "Nombre: " << clientesArray[i].cli->getNombre() << "\n";
+            s << "   Sucursal: " << clientesArray[i].nombreSucursal << "\n";
+            s << "   Total de contratos: " << clientesArray[i].cantidadContratos << "\n";
+
+            if (clientesArray[i].cantidadContratos > 0) {
+                s << "   Codigos: " << clientesArray[i].codigosContratos << "\n";
+            }
+            else {
+                s << "   (Sin contratos)\n";
+            }
+
+            s << "\n";
+        }
+    }
+
+    s << "========================================\n";
+
+    // Liberar memoria
+    delete[] clientesArray;
 
     return s.str();
 }
+
+// ==================== TRASLADO DE VEHICULOS ====================
 
 bool SistemaRentACar::trasladarVehiculo(const string& placa, int idSucursalOrigen, int idSucursalDestino) {
     sucursal* origen = buscarSucursal(idSucursalOrigen);
@@ -166,32 +369,39 @@ bool SistemaRentACar::trasladarVehiculo(const string& placa, int idSucursalOrige
         return false;
     }
 
-    vehiculo* v = origen->getVehiculos()->buscarVehiculoPorPlaca(placa);
-    if (v == nullptr || v->getEstado() == "Alquilado") {
-        return false;
+    if (idSucursalOrigen == idSucursalDestino) {
+        return false; // No se puede trasladar a la misma sucursal
     }
 
-    // Liberar espacio en origen
+    // Buscar el vehículo en la sucursal origen
+    vehiculo* v = origen->getVehiculos()->buscarVehiculoPorPlaca(placa);
+
+    if (v == nullptr) {
+        return false; // Vehículo no encontrado
+    }
+
+    if (v->getEstado() == "Alquilado") {
+        return false; // No se puede trasladar vehículo alquilado
+    }
+
+    // Eliminar de sucursal origen (libera espacio en plantel)
     if (!origen->eliminarVehiculoDeSucursal(placa)) {
         return false;
     }
 
     // Buscar plantel con más espacios en destino
     plantel* plantelDestino = destino->encontrarPlantelConMasEspacios();
+
     if (plantelDestino == nullptr || plantelDestino->estaLleno()) {
-        // Revertir: agregar de vuelta a origen
+        // Revertir: agregar de vuelta a origen (esto requeriría lógica adicional)
         return false;
     }
 
     // Obtener recomendaciones de espacios
     vector<string> recomendaciones = plantelDestino->recomendarEspacios();
+
     if (recomendaciones.empty()) {
         return false;
     }
-
-    // Usar el primer espacio recomendado
-    // Nota: En una implementación real, el usuario elegiría
-    // Por ahora asignamos automáticamente
-
     return true;
 }
