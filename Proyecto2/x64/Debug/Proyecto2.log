@@ -1,2 +1,5 @@
-﻿  main.cpp
+﻿  controller.cpp
+C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\Proyecto2\controller.cpp(801,92): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+  main.cpp
+  Generando código...
   Proyecto2.vcxproj -> C:\Users\amega\OneDrive\Documentos\GitHub\Proyecto_2_Rent_A_Car\x64\Debug\Proyecto2.exe

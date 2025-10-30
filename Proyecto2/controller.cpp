@@ -10,29 +10,25 @@ controller::~controller() {
 }
 
 void controller::cargarDatosQuemados() {
-    // Crear algunas sucursales de prueba
+	// Crear datos de prueba
     sucursal* suc1 = new sucursal(1, "Heredia Centro", "Heredia");
     sucursal* suc2 = new sucursal(2, "San Jose Downtown", "San Jose");
     sistema->agregarSucursal(suc1);
     sistema->agregarSucursal(suc2);
 
-    // Agregar colaboradores a sucursal 1
     colaborador* col1 = new colaborador("Juan Perez", "101110111", "01/01/2020");
     colaborador* col2 = new colaborador("Maria Lopez", "202220222", "15/03/2021");
     suc1->getColaboradores()->agregarColaborador(col1);
     suc1->getColaboradores()->agregarColaborador(col2);
 
-    // Agregar clientes a sucursal 1
     personaFisica* pf1 = new personaFisica("303330333", "Carlos Mora", "Costa Rica", "B1");
     personaJuridica* pj1 = new personaJuridica("400440444", "Empresa ABC SA", "Costa Rica", "Tecnologia", 15.0);
     suc1->getClientes()->agregarClienteFisico(pf1);
     suc1->getClientes()->agregarClienteJuridico(pj1);
 
-    // Crear un plantel en sucursal 1
     plantel* p1 = new plantel('A', 12, 1, 3, 4);
     suc1->agregarPlantel(p1);
 
-    // Agregar algunos vehículos
     vehiculo* v1 = new vehiculo("ABC123", "Corolla", "Toyota", "B1", 50.0, "Revision", 'A', "");
     vehiculo* v2 = new vehiculo("XYZ789", "Civic", "Honda", "B1", 55.0, "Revision", 'B', "");
 
@@ -570,7 +566,7 @@ void controller::gestionarSolicitudes() {
             sucursal* suc = obtenerSucursal();
             if (suc == nullptr) break;
 
-            // Generar código único
+            // Generar código único 
             stringstream ss;
             ss << "SOL-" << (rand() % 9000 + 1000);
             string codigo = ss.str();
