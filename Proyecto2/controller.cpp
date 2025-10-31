@@ -231,26 +231,12 @@ void controller::gestionarVehiculos() {
             sucursal* suc = obtenerSucursal();
             if (suc == nullptr) break;
 
-            print("Ingrese la letra del plantel: ");
-            char letra = digPalabra()[0];
-            print("Ingrese la capacidad del plantel: ");
-            int capacidad = digNum();
-            print("Tipo de plantel:\n");
-            print("(1) Techado y asfaltado\n");
-            print("(2) Techado y lastreado\n");
-            print("(3) Asfaltado\n");
-            print("(4) Lastreado\n");
-            print("Seleccione: ");
-            int tipo = digNum();
-            print("Ingrese numero de filas: ");
-            int filas = digNum();
-            print("Ingrese numero de columnas: ");
-            int columnas = digNum();
+            plantel* nuevoPlantel = Interfaz::capturarDatosPlantel(); 
 
-            plantel* nuevoPlantel = new plantel(letra, capacidad, tipo, filas, columnas);
-            suc->agregarPlantel(nuevoPlantel);
+            if (nuevoPlantel == nullptr) {
+                Interfaz::imprimirMensaje("No se pudo agregar el plantel");
+            }
 
-            limpiar();
             Interfaz::imprimirMensaje("Plantel creado exitosamente!");
             Interfaz::imprimirMensaje(nuevoPlantel->mostrarVistaGrafica());
             limpiarEnter();
@@ -264,17 +250,16 @@ void controller::gestionarVehiculos() {
             if (suc == nullptr) break;
 
             Interfaz::imprimirMensaje(suc->mostrarPlanteles());
-            print("Ingrese la letra del plantel a visualizar: ");
-            char letra = digPalabra()[0];
 
+            char letra = Interfaz::solicitarLetraPlantel();
+            
             plantel* p = suc->buscarPlantel(letra);
             if (p != nullptr) {
                 limpiar();
                 Interfaz::imprimirMensaje(p->mostrarVistaGrafica());
 
                 if (Interfaz::confirmarAccion("¿Desea ver detalles de un espacio especifico?")) {
-                    print("Ingrese el codigo del espacio (ej: A01): ");
-                    string codigo = digPalabra();
+                    string codigo = Interfaz::solicitarCodigoEspacio(); 
                     string placa = p->obtenerPlacaEnEspacio(codigo);
                     print("Resultado: ");
                     print(placa);
@@ -345,8 +330,7 @@ void controller::gestionarVehiculos() {
 
             Interfaz::imprimirMensaje(suc->getVehiculos()->mostrarVehiculos());
             
-            print("Ingrese la placa del vehiculo: ");
-            string placa = digPalabra();
+            string placa = Interfaz::solicitarPlacaVehiculo();
 
             vehiculo* v = suc->getVehiculos()->buscarVehiculoPorPlaca(placa);
             if (v != nullptr) {
@@ -368,8 +352,7 @@ void controller::gestionarVehiculos() {
             if (suc == nullptr) break;
 
             Interfaz::imprimirMensaje(suc->getVehiculos()->mostrarVehiculos());
-            print("Ingrese la placa del vehiculo a eliminar: ");
-            string placa = digPalabra();
+            string placa = Interfaz::solicitarPlacaVehiculo();
 
             if (suc->eliminarVehiculoDeSucursal(placa)) {
                 Interfaz::imprimirMensaje("Vehiculo eliminado exitosamente!");
@@ -388,8 +371,7 @@ void controller::gestionarVehiculos() {
             if (suc == nullptr) break;
 
             Interfaz::imprimirMensaje(suc->getVehiculos()->mostrarVehiculos());
-            print("Ingrese la placa del vehiculo a reubicar: ");
-            string placa = digPalabra();
+            string placa = Interfaz::solicitarPlacaVehiculo();
 
             vehiculo* v = suc->getVehiculos()->buscarVehiculoPorPlaca(placa);
             if (v == nullptr) {
@@ -529,8 +511,9 @@ void controller::gestionarVehiculos() {
         case 10: { // Traslado entre sucursales (OPCIONAL)
             limpiar();
             Interfaz::imprimirTitulo("TRASLADO DE VEHICULO ENTRE SUCURSALES");
-
-            
+			Interfaz::imprimirMensaje(sistema->mostrarSucursales());
+			int idSucDestino = Interfaz::solicitarIDSucursalDestino();
+                       
             break;
         }
         case 0:
@@ -563,8 +546,7 @@ void controller::gestionarSolicitudes() {
 
             // Seleccionar cliente
             Interfaz::imprimirMensaje(suc->getClientes()->mostrarTodosLosClientes());
-            print("Ingrese cedula del cliente: ");
-            string idCliente = digPalabra();
+            string idCliente = Interfaz::solicitarIDCliente();
             cliente* cli = suc->getClientes()->buscarClientePorCedula(idCliente);
 
             if (cli == nullptr) {
@@ -575,8 +557,7 @@ void controller::gestionarSolicitudes() {
 
             // Seleccionar vehículo disponible
             Interfaz::imprimirMensaje(suc->getVehiculos()->mostrarVehiculosDisponibles());
-            print("Ingrese placa del vehiculo: ");
-            string placa = digPalabra();
+            string placa = Interfaz::solicitarPlacaVehiculo();
             vehiculo* veh = suc->getVehiculos()->buscarVehiculoPorPlaca(placa);
 
             if (veh == nullptr || veh->getEstado() != "Disponible") {
@@ -635,8 +616,7 @@ void controller::gestionarSolicitudes() {
 
             Interfaz::imprimirMensaje(suc->mostrarContratos());
             
-            print("Ingrese codigo de solicitud/contrato: ");
-            string codigo = digPalabra();
+            string codigo = Interfaz::solicitarCodigoSolicitud();
 
             solicitudAlquiler* sol = suc->buscarSolicitud(codigo);
             if (sol != nullptr) {
@@ -662,8 +642,7 @@ void controller::gestionarSolicitudes() {
             if (suc == nullptr) break;
 
             Interfaz::imprimirMensaje(suc->mostrarSolicitudes());
-            print("Ingrese codigo de solicitud: ");
-            string codigo = digPalabra();
+            string codigo = Interfaz::solicitarCodigoSolicitud();
 
             print("1. Aprobar\n2. Rechazar\nSeleccione: ");
             int accion = digNum();
@@ -695,8 +674,7 @@ void controller::gestionarSolicitudes() {
             if (suc == nullptr) break;
 
             Interfaz::imprimirMensaje(suc->mostrarContratos());
-            print("Ingrese codigo del contrato: ");
-            string codigo = digPalabra();
+            string codigo = Interfaz::solicitarCodigoSolicitud();
 
             contratoAlquiler* contrato = suc->buscarContrato(codigo);
             if (contrato == nullptr) {
@@ -729,8 +707,8 @@ void controller::gestionarSolicitudes() {
             sucursal* suc = obtenerSucursal();
             if (suc == nullptr) break;
 
-            print("Ingrese placa del vehiculo: ");
-            string placa = digPalabra();
+			Interfaz::imprimirMensaje(suc->getVehiculos()->mostrarVehiculos());
+            string placa = Interfaz::solicitarPlacaVehiculo();
 
             Interfaz::imprimirMensaje(suc->reporteContratosVehiculo(placa));
             limpiarEnter();
@@ -871,8 +849,7 @@ void controller::gestionarClientes() {
 
             Interfaz::imprimirMensaje(suc->getClientes()->mostrarTodosLosClientes());
             
-            print("Ingrese cedula del cliente: ");
-            string cedula = digPalabra();
+            string cedula = Interfaz::solicitarIDCliente();
 
             Interfaz::imprimirMensaje(sistema->reporteHistorialCliente(cedula));
             limpiarEnter();

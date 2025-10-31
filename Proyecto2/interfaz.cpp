@@ -221,8 +221,7 @@ plantel* Interfaz::capturarDatosPlantel() {
     imprimirTitulo("CAPTURA DE DATOS DE PLANTEL");
 
     cout << "Ingrese la letra identificadora del plantel: ";
-    string letraStr = digPalabra();
-    char letra = (letraStr.length() > 0) ? letraStr[0] : 'A';
+    char letra = digPalabra()[0];
 
     cout << "Ingrese la capacidad maxima del plantel: ";
     int capacidad = digNum();
@@ -246,9 +245,9 @@ plantel* Interfaz::capturarDatosPlantel() {
 }
 
 char Interfaz::solicitarLetraPlantel() {
-    cout << "\nIngrese la letra del plantel: ";
-    string letra = digPalabra();
-    return (letra.length() > 0) ? letra[0] : 'A';
+    print("Ingrese la letra del plantel a visualizar: ");
+    char letra = digPalabra()[0];
+    return letra;
 }
 
 string Interfaz::solicitarCodigoEspacio() {
