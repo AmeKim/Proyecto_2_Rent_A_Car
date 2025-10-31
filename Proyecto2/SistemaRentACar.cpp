@@ -232,9 +232,7 @@ string SistemaRentACar::reporteClientesPorContratos() {
         string nombreSucursal;
     };
 
-    // Array dinámico para almacenar hasta 200 clientes
-    ClienteConteo* clientesArray = new ClienteConteo[200];
-    int totalClientes = 0;
+    listaBase<ClienteConteo>* listaClientes = new listaBase<ClienteConteo>();
 
     // 1. FASE 1: Recolectar todos los clientes únicos del sistema
     nodoBase<sucursal>* actualSuc = sucursales->retornarPrimero();
@@ -249,22 +247,26 @@ string SistemaRentACar::reporteClientesPorContratos() {
         while (actualCli != nullptr) {
             cliente* cli = actualCli->getElemento();
 
-            // Verificar si el cliente ya está en el array
+            // Verificar si el cliente ya está en la lista
             bool existe = false;
-            for (int i = 0; i < totalClientes; i++) {
-                if (clientesArray[i].cli->getCedula() == cli->getCedula()) {
+            nodoBase<ClienteConteo>* temp = listaClientes->retornarPrimero();
+
+            while (temp != nullptr) {
+                if (temp->getElemento()->cli->getCedula() == cli->getCedula()) {
                     existe = true;
                     break;
                 }
+                temp = temp->getSiguiente();
             }
 
             // Si no existe, agregarlo
-            if (!existe && totalClientes < 200) {
-                clientesArray[totalClientes].cli = cli;
-                clientesArray[totalClientes].cantidadContratos = 0;
-                clientesArray[totalClientes].codigosContratos = "";
-                clientesArray[totalClientes].nombreSucursal = suc->getNombre();
-                totalClientes++;
+            if (!existe) {
+                ClienteConteo* nuevoConteo = new ClienteConteo();
+                nuevoConteo->cli = cli;
+                nuevoConteo->cantidadContratos = 0;
+                nuevoConteo->codigosContratos = "";
+                nuevoConteo->nombreSucursal = suc->getNombre();
+                listaClientes->agregarFinal(nuevoConteo);
             }
 
             actualCli = actualCli->getSiguiente();
@@ -274,7 +276,10 @@ string SistemaRentACar::reporteClientesPorContratos() {
     }
 
     // 2. FASE 2: Contar contratos para cada cliente
-    for (int i = 0; i < totalClientes; i++) {
+    nodoBase<ClienteConteo>* nodoCliente = listaClientes->retornarPrimero();
+
+    while (nodoCliente != nullptr) {
+        ClienteConteo* clienteActual = nodoCliente->getElemento();
         stringstream codigosStream;
         int conteo = 0;
 
@@ -293,7 +298,7 @@ string SistemaRentACar::reporteClientesPorContratos() {
 
                 // Si el contrato pertenece a este cliente
                 if (cont->getCliente() != nullptr &&
-                    cont->getCliente()->getCedula() == clientesArray[i].cli->getCedula()) {
+                    cont->getCliente()->getCedula() == clienteActual->cli->getCedula()) {
 
                     conteo++;
 
@@ -309,52 +314,70 @@ string SistemaRentACar::reporteClientesPorContratos() {
             suc = suc->getSiguiente();
         }
 
-        clientesArray[i].cantidadContratos = conteo;
-        clientesArray[i].codigosContratos = codigosStream.str();
+        clienteActual->cantidadContratos = conteo;
+        clienteActual->codigosContratos = codigosStream.str();
+
+        nodoCliente = nodoCliente->getSiguiente();
     }
 
     // 3. FASE 3: ORDENAR por cantidad de contratos (Bubble Sort descendente)
-    for (int i = 0; i < totalClientes - 1; i++) {
-        for (int j = 0; j < totalClientes - i - 1; j++) {
-            if (clientesArray[j].cantidadContratos < clientesArray[j + 1].cantidadContratos) {
-                // Swap
-                ClienteConteo temp = clientesArray[j];
-                clientesArray[j] = clientesArray[j + 1];
-                clientesArray[j + 1] = temp;
+    if (!listaClientes->estaVacia()) {
+        nodoBase<ClienteConteo>* i = listaClientes->retornarPrimero();
+
+        while (i != nullptr) {
+            nodoBase<ClienteConteo>* j = i->getSiguiente();
+
+            while (j != nullptr) {
+                if (j->getElemento()->cantidadContratos > i->getElemento()->cantidadContratos) {
+                    // Intercambiar elementos
+                    ClienteConteo temp = *(i->getElemento());
+                    *(i->getElemento()) = *(j->getElemento());
+                    *(j->getElemento()) = temp;
+                }
+                j = j->getSiguiente();
             }
+            i = i->getSiguiente();
         }
     }
 
     // 4. FASE 4: Mostrar resultados ordenados
-    if (totalClientes == 0) {
+    if (listaClientes->estaVacia()) {
         s << "No hay clientes registrados en el sistema.\n";
     }
     else {
-        s << "Total de clientes: " << totalClientes << "\n";
+        s << "Total de clientes: " << listaClientes->getCantidad() << "\n";
         s << "Ordenados por cantidad de contratos (mayor a menor)\n\n";
 
-        for (int i = 0; i < totalClientes; i++) {
-            s << (i + 1) << ". ";
-            s << "ID: " << clientesArray[i].cli->getCedula() << " | ";
-            s << "Nombre: " << clientesArray[i].cli->getNombre() << "\n";
-            s << "   Sucursal: " << clientesArray[i].nombreSucursal << "\n";
-            s << "   Total de contratos: " << clientesArray[i].cantidadContratos << "\n";
+        nodoBase<ClienteConteo>* actual = listaClientes->retornarPrimero();
+        int i = 1;
 
-            if (clientesArray[i].cantidadContratos > 0) {
-                s << "   Codigos: " << clientesArray[i].codigosContratos << "\n";
+        while (actual != nullptr) {
+            ClienteConteo* c = actual->getElemento();
+
+            s << i << ". ";
+            s << "ID: " << c->cli->getCedula() << " | ";
+            s << "Nombre: " << c->cli->getNombre() << "\n";
+            s << "   Sucursal: " << c->nombreSucursal << "\n";
+            s << "   Total de contratos: " << c->cantidadContratos << "\n";
+
+            if (c->cantidadContratos > 0) {
+                s << "   Codigos: " << c->codigosContratos << "\n";
             }
             else {
                 s << "   (Sin contratos)\n";
             }
 
             s << "\n";
+
+            actual = actual->getSiguiente();
+            i++;
         }
     }
 
     s << "========================================\n";
 
     // Liberar memoria
-    delete[] clientesArray;
+    delete listaClientes;
 
     return s.str();
 }
@@ -393,15 +416,23 @@ bool SistemaRentACar::trasladarVehiculo(const string& placa, int idSucursalOrige
     plantel* plantelDestino = destino->encontrarPlantelConMasEspacios();
 
     if (plantelDestino == nullptr || plantelDestino->estaLleno()) {
-        // Revertir: agregar de vuelta a origen (esto requeriría lógica adicional)
+        // No hay espacio en destino
         return false;
     }
 
     // Obtener recomendaciones de espacios
-    vector<string> recomendaciones = plantelDestino->recomendarEspacios();
+    listaBase<string>* recomendaciones = plantelDestino->recomendarEspacios();
 
-    if (recomendaciones.empty()) {
+    if (recomendaciones->estaVacia()) {
+        delete recomendaciones;
         return false;
     }
+
+    // Aquí deberías implementar la lógica para:
+    // 1. Seleccionar un espacio de las recomendaciones
+    // 2. Agregar el vehículo al plantel destino en ese espacio
+    // Por ahora, solo limpiamos y retornamos true como ejemplo básico
+
+    delete recomendaciones;
     return true;
 }

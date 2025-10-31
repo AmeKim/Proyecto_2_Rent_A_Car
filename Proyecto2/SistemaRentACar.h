@@ -15,17 +15,20 @@ public:
     SistemaRentACar();
     ~SistemaRentACar();
 
+    // Gestión de sucursales
     bool agregarSucursal(sucursal* suc);
     bool eliminarSucursal(int idSucursal);
     sucursal* buscarSucursal(int idSucursal);
-
     string mostrarSucursales() const;
     int contarSucursales() const;
 
     // Reportes globales
-    string reporteClientesPorContratos();
     string reporteHistorialCliente(const string& idCliente);
+    string reporteClientesPorContratos();
 
-    // Traslado de vehículos entre sucursales
+    // Traslado de vehículos (opcional)
     bool trasladarVehiculo(const string& placa, int idSucursalOrigen, int idSucursalDestino);
+
+    // Acceso a la lista de sucursales
+    listaBase<sucursal>* getSucursales() { return sucursales; }
 };

@@ -161,9 +161,10 @@ int plantel::contarVecinosOcupados(int f, int c) const {
     return count;
 }
 
-vector<string> plantel::recomendarEspacios() const {
-    vector<string> recomendaciones;
+listaBase<string>* plantel::recomendarEspacios() const {
+    listaBase<string>* recomendaciones = new listaBase<string>();
 
+    // Estructura auxiliar para trabajar con espacios
     struct EspacioScore {
         string codigo;
         int fila;
@@ -171,40 +172,57 @@ vector<string> plantel::recomendarEspacios() const {
         int vecinos;
     };
 
-    vector<EspacioScore> espaciosLibres;
+    // Lista para almacenar espacios libres con su score
+    listaBase<EspacioScore>* espaciosLibres = new listaBase<EspacioScore>();
 
     // Buscar todos los espacios libres y contar vecinos
     for (int i = 0; i < filas; i++) {
         for (int j = 0; j < columnas; j++) {
             espacioEstacionamiento* espacio = (espacioEstacionamiento*)espacios->getValor(i, j);
             if (espacio != nullptr && !espacio->estaOcupado()) {
-                EspacioScore score;
-                score.codigo = espacio->getCodigo();
-                score.fila = i;
-                score.columna = j;
-                score.vecinos = contarVecinosOcupados(i, j);
-                espaciosLibres.push_back(score);
+                EspacioScore* score = new EspacioScore();
+                score->codigo = espacio->getCodigo();
+                score->fila = i;
+                score->columna = j;
+                score->vecinos = contarVecinosOcupados(i, j);
+                espaciosLibres->agregarFinal(score);
             }
         }
     }
 
-    // Ordenar por menor cantidad de vecinos (bubble sort simple)
-    for (size_t i = 0; i < espaciosLibres.size(); i++) {
-        for (size_t j = i + 1; j < espaciosLibres.size(); j++) {
-            if (espaciosLibres[j].vecinos < espaciosLibres[i].vecinos) {
-                EspacioScore temp = espaciosLibres[i];
-                espaciosLibres[i] = espaciosLibres[j];
-                espaciosLibres[j] = temp;
+    // Ordenar por menor cantidad de vecinos (bubble sort)
+    if (!espaciosLibres->estaVacia()) {
+        nodoBase<EspacioScore>* actual = espaciosLibres->retornarPrimero();
+
+        while (actual != nullptr) {
+            nodoBase<EspacioScore>* siguiente = actual->getSiguiente();
+
+            while (siguiente != nullptr) {
+                if (siguiente->getElemento()->vecinos < actual->getElemento()->vecinos) {
+                    // Intercambiar elementos
+                    EspacioScore temp = *(actual->getElemento());
+                    *(actual->getElemento()) = *(siguiente->getElemento());
+                    *(siguiente->getElemento()) = temp;
+                }
+                siguiente = siguiente->getSiguiente();
             }
+            actual = actual->getSiguiente();
         }
     }
 
     // Retornar los 3 mejores (o menos si no hay suficientes)
-    int limite = (espaciosLibres.size() < 3) ? espaciosLibres.size() : 3;
-    for (int i = 0; i < limite; i++) {
-        recomendaciones.push_back(espaciosLibres[i].codigo);
+    int contador = 0;
+    int limite = 3;
+    nodoBase<EspacioScore>* actual = espaciosLibres->retornarPrimero();
+
+    while (actual != nullptr && contador < limite) {
+        string* codigoStr = new string(actual->getElemento()->codigo);
+        recomendaciones->agregarFinal(codigoStr);
+        contador++;
+        actual = actual->getSiguiente();
     }
 
+    delete espaciosLibres;
     return recomendaciones;
 }
 

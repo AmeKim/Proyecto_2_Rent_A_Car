@@ -291,14 +291,21 @@ void controller::gestionarVehiculos() {
                 print("\n\n");
                 Interfaz::imprimirMensaje(plantelMasEspacios->mostrarVistaGrafica());
 
-                vector<string> recomendaciones = plantelMasEspacios->recomendarEspacios();
+                listaBase<string>* recomendaciones = plantelMasEspacios->recomendarEspacios();
                 print("\nEspacios recomendados (menos vecinos ocupados):\n");
-                for (size_t i = 0; i < recomendaciones.size(); i++) {
-                    print((int)(i + 1));
+
+                nodoBase<string>* actual = recomendaciones->retornarPrimero();
+                int i = 1;
+                while (actual != nullptr) {
+                    print(i);
                     print(". ");
-                    print(recomendaciones[i]);
+                    print(*(actual->getElemento()));
                     print("\n");
+                    actual = actual->getSiguiente();
+                    i++;
                 }
+
+                delete recomendaciones; 
 
                 print("\nIngrese fila para estacionar: ");
                 int fila = digNum();

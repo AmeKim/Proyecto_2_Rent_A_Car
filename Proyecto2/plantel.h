@@ -2,10 +2,10 @@
 #include <iostream>
 #include <string>
 #include <sstream>
-#include <vector>
 #include "matriz.h"
 #include "espacioEstacionamiento.h"
 #include "vehiculo.h"
+#include "listaBase.h"
 
 using namespace std;
 
@@ -47,7 +47,7 @@ public:
     string obtenerPlacaEnEspacio(const string& codigo) const;
 
     // Recomendación de espacios
-    vector<string> recomendarEspacios() const;
+    listaBase<string>* recomendarEspacios() const;
 
     // Visualización
     string mostrarVistaGrafica() const;
