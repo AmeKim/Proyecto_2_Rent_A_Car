@@ -25,6 +25,8 @@ private:
     listaBase<solicitudAlquiler>* solicitudes;
     listaBase<contratoAlquiler>* contratos;
 
+	int compararFechas(const string& fecha1, const string& fecha2) const;
+
 public:
     sucursal();
     sucursal(int id, const string& nombre, const string& provincia);
@@ -81,6 +83,7 @@ public:
     // Reportes
     string reporteContratosVehiculo(const string& placa) const;
     string reporteAlquileresColaborador(const string& idColaborador) const;
+
 
     string toString() const;
 };

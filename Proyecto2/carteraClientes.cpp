@@ -47,6 +47,13 @@ bool carteraClientes::eliminarCliente(string id) {
     return false;
 }
 
+bool carteraClientes::estaVacio(){
+	if(primero == nullptr){
+        return true;
+	}
+    return false;
+}
+
 personaFisica* carteraClientes::buscarporCedula(string id) {
     nodoBase<cliente>* actual = primero;
     while (actual != nullptr) {
@@ -130,6 +137,7 @@ string carteraClientes::mostrarTodosLosClientes() {
     }
     if (i == 1) {
         s << "No hay clientes registrados.\n";
+        
     }
     return s.str();
 }

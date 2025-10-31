@@ -23,6 +23,10 @@ public:
         return dato;
     }
 
+    void setElemento(T* elemento) {
+        this->dato = elemento;
+	}
+
     void setSiguiente(nodoBase<T>* siguiente) {
         this->siguiente = siguiente;
     }

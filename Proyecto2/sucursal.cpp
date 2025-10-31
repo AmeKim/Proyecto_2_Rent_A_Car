@@ -1,5 +1,26 @@
 #include "sucursal.h"
 
+int sucursal::compararFechas(const string& fecha1, const string& fecha2) const{
+	int dia1, mes1, anio1;
+	int dia2, mes2, anio2;
+	char separador;
+
+    stringstream s1(fecha1);
+    s1 >> dia1 >> separador >> mes1 >> separador >> anio1;
+
+	stringstream s2(fecha2);
+	s2 >> dia2 >> separador >> mes2 >> separador >> anio2;
+
+	// Comparar años
+	if (anio1 != anio2) { return anio1 - anio2; }
+
+	// Comparar meses
+	if (mes1 != mes2) { return mes1 - mes2; }
+
+	// Comparar días
+    if (dia1 != dia2) { return dia1 - dia2; }
+}
+
 sucursal::sucursal() {
     idSucursal = 0;
     nombre = "";
@@ -309,7 +330,56 @@ string sucursal::mostrarContratos() const {
 }
 
 string sucursal::mostrarContratosOrdenados() const {
-    return mostrarContratos();
+    stringstream s;
+    if (sucursal::contratos->estaVacia()) {
+        return "No hay contratos registrados.\n";
+    }
+
+    //crear lista temporal para ordenar contratos
+    listaBase<contratoAlquiler>* contratosOrdenados = new listaBase<contratoAlquiler>();
+
+    //copiar contratos a lista temp
+    contratos->reiniciar();
+    contratoAlquiler* cont = contratos->siguiente();
+    while (cont != nullptr) {
+        contratosOrdenados->agregarFinal(cont);
+        cont = contratos->siguiente();
+    }
+
+    //ordenar del mas reciente al mas antiguo
+    bool cambio = true;
+    while (cambio) {
+        cambio = false;
+        nodoBase<contratoAlquiler>* actual = contratosOrdenados->retornarPrimero();
+
+        while (actual != nullptr && actual->getSiguiente() != nullptr) {
+        }       contratoAlquiler* c1 = actual->getElemento();
+        contratoAlquiler* c2 = actual->getSiguiente()->getElemento();
+
+        //comparar fechas 
+        if (compararFechas(c1->getFechaInicio(), c2->getFechaInicio()) < 0) {
+            actual->setElemento(c2);
+            actual->getSiguiente()->setElemento(c1);
+            cambio = true;
+        }
+        actual = actual->getSiguiente();
+    }
+    s << "\n===== CONTRATOS DE LA SUCURSAL (DEL MAS RECIENTE AL MAS ANTIGUO) =====\n\n";
+
+    int pos = 1;
+    contratosOrdenados->reiniciar();
+    contratoAlquiler* c = contratosOrdenados->siguiente();
+
+    while (c != nullptr) {
+        s << "--- CONTRATO #" << pos << " ---\n";
+        s << c->toString(); // ¡REUTILIZAMOS EL toString() EXISTENTE!
+        s << "\n";
+        pos++;
+        c = contratosOrdenados->siguiente();
+    }
+
+    delete contratosOrdenados;
+    return s.str();
 }
 
 // ==================== REPORTES ====================

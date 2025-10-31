@@ -59,7 +59,10 @@ int controller::iniciarSistema() {
             gestionarSolicitudes();
             break;
         case 0:
-            Interfaz::imprimirMensaje("Saliendo del sistema...");
+			limpiarEnter();
+            Interfaz::imprimirTitulo("\tSaliendo del sistema");
+			Interfaz::imprimirMensaje("Gracias por usar el sistema de Rent-A-Car.");
+			Interfaz::imprimirMensaje("Hasta luego! :D"); 
             break;
         default:
             Interfaz::imprimirMensaje("Opcion invalida. Intente de nuevo.");
@@ -198,6 +201,8 @@ void controller::gestionarColaboradores() {
             sucursal* suc = obtenerSucursal();
             if (suc == nullptr) break;
 
+            Interfaz::imprimirMensaje(suc->getColaboradores()->mostrarColaboradores());
+
             string idCol = Interfaz::solicitarIDColaborador();
             Interfaz::imprimirMensaje(suc->reporteAlquileresColaborador(idCol));
             limpiarEnter();
@@ -267,9 +272,7 @@ void controller::gestionarVehiculos() {
                 limpiar();
                 Interfaz::imprimirMensaje(p->mostrarVistaGrafica());
 
-                print("\n¿Desea ver detalles de un espacio especifico? (S/N): ");
-                string resp = digPalabra();
-                if (resp == "S" || resp == "s") {
+                if (Interfaz::confirmarAccion("¿Desea ver detalles de un espacio especifico?")) {
                     print("Ingrese el codigo del espacio (ej: A01): ");
                     string codigo = digPalabra();
                     string placa = p->obtenerPlacaEnEspacio(codigo);
@@ -291,21 +294,7 @@ void controller::gestionarVehiculos() {
             sucursal* suc = obtenerSucursal();
             if (suc == nullptr) break;
 
-            print("Ingrese la placa: ");
-            string placa = digPalabra();
-            print("Ingrese la marca: ");
-            string marca = digPalabra();
-            print("Ingrese el modelo: ");
-            string modelo = digPalabra();
-            print("Ingrese tipo de licencia requerida: ");
-            string licencia = digPalabra();
-            print("Ingrese categoria (A/B/C/D): ");
-            char cat = digPalabra()[0];
-            print("Ingrese precio por dia: ");
-            double precio = digDouble();
-
-            vehiculo* nuevoVeh = new vehiculo(placa, modelo, marca, licencia,
-                precio, "Revision", cat, "");
+            vehiculo* nuevoVeh = Interfaz::capturarDatosVehiculo();
 
             Interfaz::imprimirMensaje(suc->mostrarPlanteles());
             plantel* plantelMasEspacios = suc->encontrarPlantelConMasEspacios();
@@ -354,6 +343,8 @@ void controller::gestionarVehiculos() {
             sucursal* suc = obtenerSucursal();
             if (suc == nullptr) break;
 
+            Interfaz::imprimirMensaje(suc->getVehiculos()->mostrarVehiculos());
+            
             print("Ingrese la placa del vehiculo: ");
             string placa = digPalabra();
 
@@ -447,8 +438,7 @@ void controller::gestionarVehiculos() {
             if (suc == nullptr) break;
 
             Interfaz::imprimirMensaje(suc->getVehiculos()->mostrarVehiculos());
-            print("Ingrese la placa del vehiculo: ");
-            string placa = digPalabra();
+            string placa= Interfaz::solicitarPlacaVehiculo();
 
             vehiculo* v = suc->getVehiculos()->buscarVehiculoPorPlaca(placa);
             if (v == nullptr) {
@@ -486,6 +476,7 @@ void controller::gestionarVehiculos() {
             print("Ingrese fecha del cambio (DD/MM/AAAA): ");
             string fecha = digPalabra();
 
+            Interfaz::imprimirMensaje(suc->getColaboradores()->mostrarColaboradores());
             string idCol = Interfaz::solicitarIDColaborador();
             colaborador* col = suc->getColaboradores()->buscarColaborador(idCol);
 
@@ -511,8 +502,8 @@ void controller::gestionarVehiculos() {
             sucursal* suc = obtenerSucursal();
             if (suc == nullptr) break;
 
-            print("Ingrese la placa del vehiculo: ");
-            string placa = digPalabra();
+            Interfaz::imprimirMensaje(suc->getVehiculos()->mostrarVehiculos());
+            string placa = Interfaz::solicitarPlacaVehiculo();
 
             vehiculo* v = suc->getVehiculos()->buscarVehiculoPorPlaca(placa);
             if (v != nullptr) {
@@ -539,8 +530,7 @@ void controller::gestionarVehiculos() {
             limpiar();
             Interfaz::imprimirTitulo("TRASLADO DE VEHICULO ENTRE SUCURSALES");
 
-            Interfaz::imprimirMensaje("Funcionalidad opcional en desarrollo.");
-            limpiarEnter();
+            
             break;
         }
         case 0:
@@ -643,6 +633,8 @@ void controller::gestionarSolicitudes() {
             sucursal* suc = obtenerSucursal();
             if (suc == nullptr) break;
 
+            Interfaz::imprimirMensaje(suc->mostrarContratos());
+            
             print("Ingrese codigo de solicitud/contrato: ");
             string codigo = digPalabra();
 
@@ -843,8 +835,15 @@ void controller::gestionarClientes() {
             sucursal* suc = obtenerSucursal();
             if (suc == nullptr) break;
 
+            if(suc->getClientes()->estaVacio()) {
+                Interfaz::imprimirMensaje("No hay clientes para eliminar.");
+                limpiarEnter();
+                break;
+			}
+            
             Interfaz::imprimirMensaje(suc->getClientes()->mostrarTodosLosClientes());
-            print("Ingrese cedula del cliente a eliminar: ");
+
+           print("Ingrese cedula del cliente a eliminar: ");
             string cedula = digPalabra();
 
             if (suc->getClientes()->eliminarCliente(cedula)) {
@@ -861,6 +860,17 @@ void controller::gestionarClientes() {
             limpiar();
             Interfaz::imprimirTitulo("HISTORIAL DE ALQUILERES DEL CLIENTE");
 
+            sucursal* suc = obtenerSucursal();
+            if (suc == nullptr) break;
+
+            if (suc->getClientes()->estaVacio()) {
+                Interfaz::imprimirMensaje("No hay clientes para eliminar.");
+                limpiarEnter();
+                break;
+            }
+
+            Interfaz::imprimirMensaje(suc->getClientes()->mostrarTodosLosClientes());
+            
             print("Ingrese cedula del cliente: ");
             string cedula = digPalabra();
 

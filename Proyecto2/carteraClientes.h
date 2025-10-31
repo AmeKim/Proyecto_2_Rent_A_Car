@@ -17,6 +17,7 @@ public:
     bool agregarClienteFisico(personaFisica* fis);
     bool agregarClienteJuridico(personaJuridica* jur);
     bool eliminarCliente(string id);
+    bool estaVacio();
 
     personaFisica* buscarporCedula(string id);
     personaJuridica* buscarporCedulaJuridica(string id);

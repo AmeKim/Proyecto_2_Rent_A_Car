@@ -7,7 +7,7 @@ void Interfaz::imprimirMensaje(string m) {
 void Interfaz::imprimirTitulo(string t) {
     limpiar();
     cout << "\n========================================" << endl;
-    cout << "  " << t << endl;
+    cout << " " << t << endl;
     cout << "========================================\n" << endl;
 }
 
@@ -192,16 +192,20 @@ vehiculo* Interfaz::capturarDatosVehiculo() {
     cout << "Ingrese el tipo de licencia requerida: ";
     string tipoLicencia = digPalabra();
 
-    cout << "Ingrese la categoria del vehiculo (A/B/C/D): ";
-    string catStr = digPalabra();
-    char categoria = (catStr.length() > 0) ? catStr[0] : 'A';
+    cout << "\nCateforias disponibles:" << endl;
+    cout << "(A) Economico" << endl;
+    cout << "(B) Estandar" << endl;
+    cout << "(C) Lujo" << endl;
+    cout << "(D) 4x4" << endl;
+    cout << "Ingrese la categoria del vehiculo (A/B/C/D): " ;
+    char cat = digPalabra()[0];
 
     cout << "Ingrese el precio por dia de alquiler: ";
     double precio = digDouble();
 
     // Estado inicial siempre es "Revision" cuando se ingresa un vehículo nuevo
     vehiculo* nuevoVehiculo = new vehiculo(placa, modelo, marca, tipoLicencia,
-        precio, "Revision", categoria, "");
+        precio, "Revision", cat, "");
 
     return nuevoVehiculo;
 }
