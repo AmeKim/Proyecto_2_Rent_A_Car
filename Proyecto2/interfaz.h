@@ -67,7 +67,6 @@ public:
     static string solicitarIDCliente();
 
     // ==================== METODOS PARA SOLICITUDES ====================
-    static DatosSolicitud capturarDatosSolicitud();
     static string solicitarCodigoSolicitud();
     static int solicitarDiasAlquiler();
     static int solicitarDiasUtilizados();

@@ -18,22 +18,30 @@ void controller::cargarDatosQuemados() {
 
     colaborador* col1 = new colaborador("Juan Perez", "101110111", "01/01/2020");
     colaborador* col2 = new colaborador("Maria Lopez", "202220222", "15/03/2021");
+	colaborador* col3 = new colaborador("Ana Gomez", "303330333", "20/06/2019");
     suc1->getColaboradores()->agregarColaborador(col1);
     suc1->getColaboradores()->agregarColaborador(col2);
+	suc2->getColaboradores()->agregarColaborador(col3);
 
     personaFisica* pf1 = new personaFisica("303330333", "Carlos Mora", "Costa Rica", "B1");
     personaJuridica* pj1 = new personaJuridica("400440444", "Empresa ABC SA", "Costa Rica", "Tecnologia", 15.0);
+	personaFisica* pf2 = new personaFisica("404040404", "Luisa Fernandez", "Costa Rica", "A2");
     suc1->getClientes()->agregarClienteFisico(pf1);
     suc1->getClientes()->agregarClienteJuridico(pj1);
+	suc2->getClientes()->agregarClienteFisico(pf2);
 
     plantel* p1 = new plantel('A', 12, 1, 3, 4);
+	plantel* p2 = new plantel('A', 8, 2, 2, 4);
     suc1->agregarPlantel(p1);
+	suc2->agregarPlantel(p2);
 
     vehiculo* v1 = new vehiculo("ABC123", "Corolla", "Toyota", "B1", 50.0, "Revision", 'A', "");
     vehiculo* v2 = new vehiculo("XYZ789", "Civic", "Honda", "B1", 55.0, "Revision", 'B', "");
+	vehiculo* v3 = new vehiculo("LMN456", "Model S", "Tesla", "C1", 150.0, "Disponible", 'C', "");
 
     suc1->agregarVehiculoASucursal(v1, 'A', 0, 0);
     suc1->agregarVehiculoASucursal(v2, 'A', 0, 1);
+	suc2->agregarVehiculoASucursal(v3, 'A', 0, 0);
 }
 
 int controller::iniciarSistema() {
@@ -264,14 +272,10 @@ void controller::gestionarVehiculos() {
                 print("\n¿Desea ver detalles de un espacio especifico? (S/N): ");
                 char respuesta;
                 cin >> respuesta;
-                cin.ignore(1000, '\n'); // Limpiar TODO el buffer
+                cin.ignore(1000, '\n');
 
                 if (respuesta == 'S' || respuesta == 's') {
-                    print("\nIngrese el codigo del espacio (ej: A01): ");
-                    string codigo;
-                    getline(cin, codigo); // Usa getline en lugar de cin >>
-
-                    limpiar();
+					string codigo = Interfaz::solicitarCodigoEspacio();
                     string resultado = p->obtenerPlacaEnEspacio(codigo);
                     Interfaz::imprimirMensaje(resultado);
                 }
@@ -329,10 +333,6 @@ void controller::gestionarVehiculos() {
                     Interfaz::imprimirMensaje("\nError al agregar vehiculo.");
                     delete nuevoVeh;
                 }
-            }
-            else {
-                Interfaz::imprimirMensaje("No hay planteles disponibles.");
-                delete nuevoVeh;
             }
 
             limpiarEnter();
@@ -556,24 +556,23 @@ void controller::gestionarVehiculos() {
                 break;
             }
 
-            // Verificar que haya vehículos disponibles para traslado
+            // Verificar vehículos disponibles
             listaBase<vehiculo>* vehiculosDisponibles = sucOrigen->obtenerVehiculosDisponiblesParaTraslado();
 
             if (vehiculosDisponibles->estaVacia()) {
-                Interfaz::imprimirMensaje("No hay vehiculos disponibles para traslado en esta sucursal.");
+                Interfaz::imprimirMensaje("No hay vehiculos disponibles para traslado.");
                 delete vehiculosDisponibles;
                 limpiarEnter();
                 break;
             }
 
+            //Mostrar vehículos y solicitar cantidad
             limpiar();
             Interfaz::imprimirTitulo("VEHICULOS DISPONIBLES PARA TRASLADO");
 
-            // Mostrar vehículos disponibles
             stringstream ss;
             nodoBase<vehiculo>* temp = vehiculosDisponibles->retornarPrimero();
             int contador = 1;
-
             while (temp != nullptr) {
                 ss << contador << ". " << temp->getElemento()->toString() << "\n";
                 temp = temp->getSiguiente();
@@ -581,9 +580,7 @@ void controller::gestionarVehiculos() {
             }
             Interfaz::imprimirMensaje(ss.str());
 
-            // CORREGIDO: Usar getCantidad()
             int cantidadDisponibles = vehiculosDisponibles->getCantidad();
-
             print("\n¿Cuantos vehiculos desea trasladar? (1-");
             print(cantidadDisponibles);
             print("): ");
@@ -596,7 +593,7 @@ void controller::gestionarVehiculos() {
                 break;
             }
 
-            // Seleccionar sucursal destino
+            //Seleccionar sucursal destino
             limpiar();
             Interfaz::imprimirMensaje(sistema->mostrarSucursales());
             print("Seleccione ID de sucursal DESTINO: ");
@@ -617,7 +614,6 @@ void controller::gestionarVehiculos() {
                 break;
             }
 
-            // Verificar que haya planteles en destino
             if (sucDestino->mostrarPlanteles().find("No hay planteles") != string::npos) {
                 Interfaz::imprimirMensaje("La sucursal destino no tiene planteles.");
                 delete vehiculosDisponibles;
@@ -625,10 +621,7 @@ void controller::gestionarVehiculos() {
                 break;
             }
 
-            // Realizar traslados
-            limpiar();
-            Interfaz::imprimirTitulo("PROCESANDO TRASLADOS");
-
+            //Procesar traslados
             int trasladosExitosos = 0;
             int trasladosFallidos = 0;
 
@@ -641,10 +634,8 @@ void controller::gestionarVehiculos() {
                 print(" ==========\n\n");
 
                 // Mostrar vehículos restantes
-                Interfaz::imprimirMensaje("Vehiculos disponibles:\n");
                 temp = vehiculosDisponibles->retornarPrimero();
                 contador = 1;
-
                 while (temp != nullptr) {
                     print(contador);
                     print(". ");
@@ -654,10 +645,10 @@ void controller::gestionarVehiculos() {
                     contador++;
                 }
 
-                print("\nSeleccione numero de vehiculo a trasladar: ");
+                // Seleccionar vehículo
+                print("\nSeleccione numero de vehiculo: ");
                 int seleccion = digNum();
 
-                // CORREGIDO: Usar getCantidad()
                 if (seleccion < 1 || seleccion > vehiculosDisponibles->getCantidad()) {
                     Interfaz::imprimirMensaje("Seleccion invalida. Saltando...");
                     trasladosFallidos++;
@@ -665,75 +656,68 @@ void controller::gestionarVehiculos() {
                     continue;
                 }
 
-                // Obtener el vehículo seleccionado
+                // Obtener vehículo seleccionado
                 temp = vehiculosDisponibles->retornarPrimero();
                 for (int j = 1; j < seleccion; j++) {
                     temp = temp->getSiguiente();
                 }
                 vehiculo* vehSeleccionado = temp->getElemento();
 
-                // Buscar plantel con más espacios en destino
+                // Buscar plantel destino
                 plantel* plantelDestino = sucDestino->encontrarPlantelConMasEspacios();
 
                 if (plantelDestino == nullptr || plantelDestino->getEspaciosDisponibles() <= 0) {
-                    Interfaz::imprimirMensaje("\nNo hay espacios disponibles en la sucursal destino.");
+                    Interfaz::imprimirMensaje("No hay espacios disponibles en destino.");
                     trasladosFallidos++;
                     limpiarEnter();
                     continue;
                 }
 
+                // Mostrar info del plantel destino
                 limpiar();
-                print("\n========== VEHICULO SELECCIONADO ==========\n");
-                print(vehSeleccionado->toString());
-                print("\n==========================================\n\n");
-
-                print("Plantel recomendado en destino: ");
+                print("Vehiculo: ");
+                print(vehSeleccionado->getPlaca());
+                print(" -> Plantel ");
                 print(plantelDestino->getLetra());
                 print("\n\n");
                 Interfaz::imprimirMensaje(plantelDestino->mostrarVistaGrafica());
 
-                // Mostrar espacios recomendados
+                // Espacios recomendados
                 listaBase<string>* recomendaciones = plantelDestino->recomendarEspacios();
                 if (recomendaciones != nullptr && !recomendaciones->estaVacia()) {
-                    print("\nEspacios recomendados:\n");
+                    print("\nEspacios recomendados: ");
                     nodoBase<string>* rec = recomendaciones->retornarPrimero();
                     int idx = 1;
                     while (rec != nullptr && idx <= 3) {
-                        print(idx);
-                        print(". ");
                         print(*(rec->getElemento()));
-                        print("\n");
+                        if (idx < 3 && rec->getSiguiente() != nullptr) print(", ");
                         rec = rec->getSiguiente();
                         idx++;
                     }
+                    print("\n");
                     delete recomendaciones;
                 }
 
-                print("\nIngrese fila para estacionar (0-");
+                // Solicitar ubicación
+                print("\nFila (0-");
                 print(plantelDestino->getFilas() - 1);
                 print("): ");
                 int fila = digNum();
 
-                print("Ingrese columna para estacionar (0-");
+                print("Columna (0-");
                 print(plantelDestino->getColumnas() - 1);
                 print("): ");
                 int columna = digNum();
 
-                // Realizar el traslado
+                // Realizar traslado
                 if (sucOrigen->trasladarVehiculoA(vehSeleccionado, sucDestino,
                     plantelDestino->getLetra(), fila, columna)) {
-                    print("\n[EXITO] Vehiculo ");
-                    print(vehSeleccionado->getPlaca());
-                    print(" trasladado exitosamente!\n");
+                    print("\n[EXITO] Vehiculo trasladado!\n");
                     trasladosExitosos++;
-
-                    // CORREGIDO: Eliminar de la lista usando el nuevo método
                     vehiculosDisponibles->eliminarElementoSinBorrar(vehSeleccionado);
                 }
                 else {
-                    print("\n[ERROR] No se pudo trasladar el vehiculo ");
-                    print(vehSeleccionado->getPlaca());
-                    print("\n");
+                    print("\n[ERROR] No se pudo trasladar el vehiculo\n");
                     trasladosFallidos++;
                 }
 
@@ -742,16 +726,14 @@ void controller::gestionarVehiculos() {
                 }
             }
 
-            // Resumen final
+            //Resumen de traslados
             limpiar();
             Interfaz::imprimirTitulo("RESUMEN DE TRASLADOS");
-            print("\nTraslados exitosos: ");
+            print("Exitosos: ");
             print(trasladosExitosos);
-            print("\nTraslados fallidos: ");
+            print(" | Fallidos: ");
             print(trasladosFallidos);
-            print("\nTotal procesados: ");
-            print(trasladosExitosos + trasladosFallidos);
-            print("\n\n");
+            print("\n");
 
             delete vehiculosDisponibles;
             limpiarEnter();
@@ -821,6 +803,7 @@ void controller::gestionarSolicitudes() {
             }
 
             // Seleccionar colaborador
+            Interfaz::imprimirMensaje(suc->getColaboradores()->mostrarColaboradores());
             string idCol = Interfaz::solicitarIDColaborador();
             colaborador* col = suc->getColaboradores()->buscarColaborador(idCol);
 

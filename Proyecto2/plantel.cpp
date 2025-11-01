@@ -25,12 +25,11 @@ plantel::plantel(char letra, int capacidad, int tipo, int filas, int columnas) {
     for (int i = 0; i < filas; i++) {
         for (int j = 0; j < columnas; j++) {
             if (contador < capacidad) {
-                stringstream ss;
-                ss << letra;
-                if (contador < 10) ss << "0";
-                ss << contador;
+                stringstream s;
+                s << letra << i << j;  // Formato: Letra + Fila + Columna
+                // Ejemplo: A00, A01, A02, A10, A11, A12, etc.
 
-                espacioEstacionamiento* espacio = new espacioEstacionamiento(ss.str(), false);
+                espacioEstacionamiento* espacio = new espacioEstacionamiento(s.str(), false);
                 espacios->setValor(i, j, espacio);
                 contador++;
             }

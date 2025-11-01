@@ -8,6 +8,10 @@ void print(int valor) { cout << valor; }
 
 string digPalabra() {
 	string valor;
+	// Limpiar buffer antes de leer
+	if (cin.rdbuf()->in_avail() > 0) {
+		cin.ignore(1000, '\n');
+	}
 	getline(cin, valor);
 	return valor;
 }
@@ -44,7 +48,7 @@ void limpiar() { system("cls"); }
 
 void limpiarEnter() {
 	print("\nPresione ENTER para continuar\n");
-	cin.ignore(1000, '\n');  // Limpiar buffer antes
-	cin.get();
+	// Consumir todo hasta el Enter, incluyendo el Enter
+	while (cin.get() != '\n');
 	system("cls");
 }

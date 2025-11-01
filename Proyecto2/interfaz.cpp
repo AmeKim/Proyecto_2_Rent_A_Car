@@ -251,7 +251,7 @@ char Interfaz::solicitarLetraPlantel() {
 }
 
 string Interfaz::solicitarCodigoEspacio() {
-    cout << "\nIngrese el codigo del espacio (ej: A01, B05): ";
+    cout << "\nIngrese el codigo del espacio (ej: A00, A12, B23): ";
     string codigo = digPalabra();
     return codigo;
 }
@@ -330,39 +330,6 @@ string Interfaz::solicitarIDCliente() {
 }
 
 // ==================== METODOS PARA SOLICITUDES ====================
-
-DatosSolicitud Interfaz::capturarDatosSolicitud() {
-    limpiar();
-    imprimirTitulo("CAPTURA DE DATOS DE SOLICITUD DE ALQUILER");
-
-    DatosSolicitud datos;
-
-    cout << "Ingrese el codigo de la solicitud: ";
-    datos.codigo = digPalabra();
-
-    cout << "Ingrese la cedula del cliente: ";
-    datos.idCliente = digPalabra();
-
-    cout << "Ingrese la cedula del colaborador responsable: ";
-    datos.idColaborador = digPalabra();
-
-    cout << "Ingrese la placa del vehiculo: ";
-    datos.placaVehiculo = digPalabra();
-
-    cout << "Ingrese la cantidad de dias de alquiler: ";
-    datos.dias = digNum();
-
-    cout << "Ingrese la fecha de inicio (DD/MM/AAAA): ";
-    datos.fechaInicio = digPalabra();
-
-    cout << "Ingrese la fecha de entrega (DD/MM/AAAA): ";
-    datos.fechaEntrega = digPalabra();
-
-    cout << "Ingrese el precio por dia: ";
-    datos.precioDia = digDouble();
-
-    return datos;
-}
 
 string Interfaz::solicitarCodigoSolicitud() {
     cout << "\nIngrese el codigo de la solicitud/contrato: ";
