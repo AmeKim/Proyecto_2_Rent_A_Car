@@ -3,6 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\amega\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.44.35207\\include\\xstring||{3B902123-F8A7-4915-9F01-361F908088D0}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.44.35207\\include\\__msvc_string_view.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|C:\\Users\\amega\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\controller.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{AB73E790-E316-465C-ACBB-02B5EB5CD7C0}|Proyecto2\\Proyecto2.vcxproj|solutionrelative:Proyecto2\\controller.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -190,19 +196,41 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{d3750d8a-574b-4fb3-b7e2-aa8af40e8231}"
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "xstring",
+              "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.44.35207\\include\\xstring",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.44.35207\\include\\xstring",
+              "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.44.35207\\include\\xstring",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.44.35207\\include\\xstring",
+              "ViewState": "AgIAAAgCAAAAAAAAAAAawBICAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-11-01T03:00:16.267Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
+              "Title": "__msvc_string_view.hpp",
+              "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.44.35207\\include\\__msvc_string_view.hpp",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.44.35207\\include\\__msvc_string_view.hpp",
+              "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.44.35207\\include\\__msvc_string_view.hpp",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.44.35207\\include\\__msvc_string_view.hpp",
+              "ViewState": "AgIAADQCAAAAAAAAAAAAAD4CAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-11-01T02:59:40.903Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "sucursal.h",
               "DocumentMoniker": "C:\\Users\\amega\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\sucursal.h",
               "RelativeDocumentMoniker": "Proyecto2\\sucursal.h",
@@ -210,25 +238,24 @@
               "RelativeToolTip": "Proyecto2\\sucursal.h",
               "ViewState": "AgIAAE4AAAAAAAAAAAAAAFsAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-10-12T00:35:28.494Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-12T00:35:28.494Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "controller.cpp",
               "DocumentMoniker": "C:\\Users\\amega\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\controller.cpp",
               "RelativeDocumentMoniker": "Proyecto2\\controller.cpp",
               "ToolTip": "C:\\Users\\amega\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\controller.cpp",
               "RelativeToolTip": "Proyecto2\\controller.cpp",
-              "ViewState": "AgIAAKsAAAAAAAAAAAAAAPcAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAKsAAAAAAAAAAAAAALYAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-10-28T14:11:18.267Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "sucursal.cpp",
               "DocumentMoniker": "C:\\Users\\amega\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\sucursal.cpp",
               "RelativeDocumentMoniker": "Proyecto2\\sucursal.cpp",
@@ -236,12 +263,11 @@
               "RelativeToolTip": "Proyecto2\\sucursal.cpp",
               "ViewState": "AgIAAA8CAAAAAAAAAAAAACUCAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-10-19T22:18:09.431Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-19T22:18:09.431Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "controller.h",
               "DocumentMoniker": "C:\\Users\\amega\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\controller.h",
               "RelativeDocumentMoniker": "Proyecto2\\controller.h",
@@ -249,12 +275,11 @@
               "RelativeToolTip": "Proyecto2\\controller.h",
               "ViewState": "AgIAABIAAAAAAAAAAAAAABoAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-10-27T20:56:57.947Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-27T20:56:57.947Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "vehiculo.cpp",
               "DocumentMoniker": "C:\\Users\\amega\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\vehiculo.cpp",
               "RelativeDocumentMoniker": "Proyecto2\\vehiculo.cpp",
@@ -262,12 +287,11 @@
               "RelativeToolTip": "Proyecto2\\vehiculo.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAIUAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-10-19T22:18:10.085Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-19T22:18:10.085Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "vehiculo.h",
               "DocumentMoniker": "C:\\Users\\amega\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\vehiculo.h",
               "RelativeDocumentMoniker": "Proyecto2\\vehiculo.h",
@@ -275,12 +299,11 @@
               "RelativeToolTip": "Proyecto2\\vehiculo.h",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAAAQAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-10-12T00:36:53.864Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-12T00:36:53.864Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "listaBase.h",
               "DocumentMoniker": "C:\\Users\\amega\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\listaBase.h",
               "RelativeDocumentMoniker": "Proyecto2\\listaBase.h",
@@ -288,12 +311,11 @@
               "RelativeToolTip": "Proyecto2\\listaBase.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAKgAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-10-25T17:10:51.502Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-25T17:10:51.502Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 18,
               "Title": "plantel.h",
               "DocumentMoniker": "C:\\Users\\amega\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\plantel.h",
               "RelativeDocumentMoniker": "Proyecto2\\plantel.h",
@@ -305,7 +327,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "utiles.cpp",
               "DocumentMoniker": "C:\\Users\\amega\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\utiles.cpp",
               "RelativeDocumentMoniker": "Proyecto2\\utiles.cpp",
@@ -313,12 +335,11 @@
               "RelativeToolTip": "Proyecto2\\utiles.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-10-19T23:31:40.263Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-19T23:31:40.263Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "plantel.cpp",
               "DocumentMoniker": "C:\\Users\\amega\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\plantel.cpp",
               "RelativeDocumentMoniker": "Proyecto2\\plantel.cpp",
@@ -326,12 +347,11 @@
               "RelativeToolTip": "Proyecto2\\plantel.cpp",
               "ViewState": "AgIAAEIAAAAAAAAAAAAAAJUAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-10-19T22:17:52.573Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-19T22:17:52.573Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "inventarioVehiculos.h",
               "DocumentMoniker": "C:\\Users\\amega\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\inventarioVehiculos.h",
               "RelativeDocumentMoniker": "Proyecto2\\inventarioVehiculos.h",
@@ -339,12 +359,11 @@
               "RelativeToolTip": "Proyecto2\\inventarioVehiculos.h",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-10-19T23:51:39.783Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-19T23:51:39.783Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 21,
               "Title": "SistemaRentACar.cpp",
               "DocumentMoniker": "C:\\Users\\amega\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\SistemaRentACar.cpp",
               "RelativeDocumentMoniker": "Proyecto2\\SistemaRentACar.cpp",
@@ -356,7 +375,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 22,
               "Title": "carteraClientes.h",
               "DocumentMoniker": "C:\\Users\\amega\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\carteraClientes.h",
               "RelativeDocumentMoniker": "Proyecto2\\carteraClientes.h",
@@ -368,7 +387,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 19,
               "Title": "SistemaRentACar.h",
               "DocumentMoniker": "C:\\Users\\amega\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\SistemaRentACar.h",
               "RelativeDocumentMoniker": "Proyecto2\\SistemaRentACar.h",
@@ -380,7 +399,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "Interfaz.cpp",
               "DocumentMoniker": "C:\\Users\\amega\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\interfaz.cpp",
               "RelativeDocumentMoniker": "Proyecto2\\interfaz.cpp",
@@ -392,7 +411,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 17,
               "Title": "Interfaz.h",
               "DocumentMoniker": "C:\\Users\\amega\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\Interfaz.h",
               "RelativeDocumentMoniker": "Proyecto2\\Interfaz.h",
@@ -404,7 +423,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 26,
               "Title": "solicitudAlquiler.h",
               "DocumentMoniker": "C:\\Users\\amega\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\solicitudAlquiler.h",
               "RelativeDocumentMoniker": "Proyecto2\\solicitudAlquiler.h",
@@ -416,7 +435,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 27,
               "Title": "registroBitacora.cpp",
               "DocumentMoniker": "C:\\Users\\amega\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\registroBitacora.cpp",
               "RelativeDocumentMoniker": "Proyecto2\\registroBitacora.cpp",
@@ -428,7 +447,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 28,
               "Title": "main.cpp",
               "DocumentMoniker": "C:\\Users\\amega\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\main.cpp",
               "RelativeDocumentMoniker": "Proyecto2\\main.cpp",
@@ -440,7 +459,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 20,
               "Title": "inventarioVehiculos.cpp",
               "DocumentMoniker": "C:\\Users\\amega\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\inventarioVehiculos.cpp",
               "RelativeDocumentMoniker": "Proyecto2\\inventarioVehiculos.cpp",
@@ -452,7 +471,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "espacioEstacionamiento.cpp",
               "DocumentMoniker": "C:\\Users\\amega\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\espacioEstacionamiento.cpp",
               "RelativeDocumentMoniker": "Proyecto2\\espacioEstacionamiento.cpp",
@@ -464,7 +483,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 29,
               "Title": "contratoAlquiler.cpp",
               "DocumentMoniker": "C:\\Users\\amega\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\contratoAlquiler.cpp",
               "RelativeDocumentMoniker": "Proyecto2\\contratoAlquiler.cpp",
@@ -476,7 +495,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 23,
               "Title": "solicitudAlquiler.cpp",
               "DocumentMoniker": "C:\\Users\\amega\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\solicitudAlquiler.cpp",
               "RelativeDocumentMoniker": "Proyecto2\\solicitudAlquiler.cpp",
@@ -488,7 +507,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 30,
               "Title": "matriz.cpp",
               "DocumentMoniker": "C:\\Users\\amega\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\matriz.cpp",
               "RelativeDocumentMoniker": "Proyecto2\\matriz.cpp",
@@ -500,7 +519,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 31,
               "Title": "conjuntoColaboradores.cpp",
               "DocumentMoniker": "C:\\Users\\amega\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\conjuntoColaboradores.cpp",
               "RelativeDocumentMoniker": "Proyecto2\\conjuntoColaboradores.cpp",
@@ -512,7 +531,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 32,
               "Title": "conjuntoColaboradores.h",
               "DocumentMoniker": "C:\\Users\\amega\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\conjuntoColaboradores.h",
               "RelativeDocumentMoniker": "Proyecto2\\conjuntoColaboradores.h",
@@ -524,7 +543,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 33,
               "Title": "contratoAlquiler.h",
               "DocumentMoniker": "C:\\Users\\amega\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\contratoAlquiler.h",
               "RelativeDocumentMoniker": "Proyecto2\\contratoAlquiler.h",
@@ -536,7 +555,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 34,
               "Title": "espacioEstacionamiento.h",
               "DocumentMoniker": "C:\\Users\\amega\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\espacioEstacionamiento.h",
               "RelativeDocumentMoniker": "Proyecto2\\espacioEstacionamiento.h",
@@ -548,7 +567,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "matriz.h",
               "DocumentMoniker": "C:\\Users\\amega\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\matriz.h",
               "RelativeDocumentMoniker": "Proyecto2\\matriz.h",
@@ -560,7 +579,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 25,
               "Title": "carteraClientes.cpp",
               "DocumentMoniker": "C:\\Users\\amega\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\carteraClientes.cpp",
               "RelativeDocumentMoniker": "Proyecto2\\carteraClientes.cpp",
@@ -572,7 +591,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 36,
               "Title": "registroBitacora.h",
               "DocumentMoniker": "C:\\Users\\amega\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\registroBitacora.h",
               "RelativeDocumentMoniker": "Proyecto2\\registroBitacora.h",
@@ -584,7 +603,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 46,
               "Title": "utiles.h",
               "DocumentMoniker": "C:\\Users\\amega\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\utiles.h",
               "RelativeDocumentMoniker": "Proyecto2\\utiles.h",
@@ -596,7 +615,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 24,
               "Title": "nodoBase.h",
               "DocumentMoniker": "C:\\Users\\amega\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\nodoBase.h",
               "RelativeDocumentMoniker": "Proyecto2\\nodoBase.h",
@@ -608,7 +627,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "listaEstacionamiento.cpp",
               "DocumentMoniker": "C:\\Users\\amega\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\listaEstacionamiento.cpp",
               "RelativeDocumentMoniker": "Proyecto2\\listaEstacionamiento.cpp",
@@ -620,7 +639,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "listaEstacionamiento.h",
               "DocumentMoniker": "C:\\Users\\amega\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\listaEstacionamiento.h",
               "RelativeDocumentMoniker": "Proyecto2\\listaEstacionamiento.h",
@@ -632,7 +651,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 43,
               "Title": "colaborador.cpp",
               "DocumentMoniker": "C:\\Users\\amega\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\colaborador.cpp",
               "RelativeDocumentMoniker": "Proyecto2\\colaborador.cpp",
@@ -644,7 +663,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 35,
               "Title": "colaborador.h",
               "DocumentMoniker": "C:\\Users\\amega\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\colaborador.h",
               "RelativeDocumentMoniker": "Proyecto2\\colaborador.h",
@@ -656,7 +675,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 44,
               "Title": "entradaBitacora.cpp",
               "DocumentMoniker": "C:\\Users\\amega\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\entradaBitacora.cpp",
               "RelativeDocumentMoniker": "Proyecto2\\entradaBitacora.cpp",
@@ -668,7 +687,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 45,
               "Title": "entradaBitacora.h",
               "DocumentMoniker": "C:\\Users\\amega\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\entradaBitacora.h",
               "RelativeDocumentMoniker": "Proyecto2\\entradaBitacora.h",
@@ -680,7 +699,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 38,
               "Title": "personaJuridica.cpp",
               "DocumentMoniker": "C:\\Users\\amega\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\personaJuridica.cpp",
               "RelativeDocumentMoniker": "Proyecto2\\personaJuridica.cpp",
@@ -692,7 +711,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 37,
               "Title": "personaJuridica.h",
               "DocumentMoniker": "C:\\Users\\amega\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\personaJuridica.h",
               "RelativeDocumentMoniker": "Proyecto2\\personaJuridica.h",
@@ -704,7 +723,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 40,
               "Title": "personaFisica.cpp",
               "DocumentMoniker": "C:\\Users\\amega\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\personaFisica.cpp",
               "RelativeDocumentMoniker": "Proyecto2\\personaFisica.cpp",
@@ -716,7 +735,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 39,
               "Title": "personaFisica.h",
               "DocumentMoniker": "C:\\Users\\amega\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\personaFisica.h",
               "RelativeDocumentMoniker": "Proyecto2\\personaFisica.h",
@@ -728,7 +747,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 41,
               "Title": "cliente.cpp",
               "DocumentMoniker": "C:\\Users\\amega\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\cliente.cpp",
               "RelativeDocumentMoniker": "Proyecto2\\cliente.cpp",
@@ -740,7 +759,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 42,
               "Title": "cliente.h",
               "DocumentMoniker": "C:\\Users\\amega\\OneDrive\\Documentos\\GitHub\\Proyecto_2_Rent_A_Car\\Proyecto2\\cliente.h",
               "RelativeDocumentMoniker": "Proyecto2\\cliente.h",
