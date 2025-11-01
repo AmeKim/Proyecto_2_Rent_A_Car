@@ -88,6 +88,35 @@ public:
         return true;
     }
 
+    // NUEVO: Eliminar un elemento específico sin liberar memoria
+    bool eliminarElementoSinBorrar(T* elemento) {
+        if (estaVacia() || elemento == nullptr) {
+            return false;
+        }
+
+        nodoBase<T>* actual = primero;
+        nodoBase<T>* anterior = nullptr;
+
+        while (actual != nullptr) {
+            if (actual->getElemento() == elemento) {
+                if (anterior == nullptr) {
+                    // Es el primer nodo
+                    primero = actual->getSiguiente();
+                }
+                else {
+                    anterior->setSiguiente(actual->getSiguiente());
+                }
+                // NO eliminamos el elemento, solo el nodo
+                delete actual;
+                cantidad--;
+                return true;
+            }
+            anterior = actual;
+            actual = actual->getSiguiente();
+        }
+        return false;
+    }
+
     bool estaVacia() const {
         return primero == nullptr;
     }

@@ -68,7 +68,7 @@ public:
     bool aprobarSolicitud(const string& codigo);
     bool rechazarSolicitud(const string& codigo);
 
-    // NUEVO: Getter público para solicitudes
+    // Getter público para solicitudes
     listaBase<solicitudAlquiler>* getSolicitudes() { return solicitudes; }
 
     // Gestión de contratos
@@ -77,13 +77,16 @@ public:
     string mostrarContratos() const;
     string mostrarContratosOrdenados() const;
 
-    // NUEVO: Getter público para contratos
+    // Getter público para contratos
     listaBase<contratoAlquiler>* getContratos() { return contratos; }
 
     // Reportes
     string reporteContratosVehiculo(const string& placa) const;
     string reporteAlquileresColaborador(const string& idColaborador) const;
 
-
     string toString() const;
+
+    // Traslado Vehiculos (OPCIONAL)
+    bool trasladarVehiculoA(vehiculo* v, sucursal* destino, char letraPlantel, int fila, int columna);
+    listaBase<vehiculo>* obtenerVehiculosDisponiblesParaTraslado();
 };

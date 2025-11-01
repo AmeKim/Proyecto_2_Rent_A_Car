@@ -481,3 +481,86 @@ string sucursal::toString() const {
     s << "Sucursal #" << idSucursal << " - " << nombre << " (" << provincia << ")";
     return s.str();
 }
+
+bool sucursal::trasladarVehiculoA(vehiculo* v, sucursal* destino, char letraPlantel, int fila, int columna) {
+    if (v == nullptr || destino == nullptr) {
+        return false;
+    }
+
+    // Verificar que el vehículo no esté alquilado
+    if (v->getEstado() == "Alquilado") {
+        return false;
+    }
+
+    // Verificar que el vehículo pertenezca a esta sucursal
+    vehiculo* encontrado = vehiculos->buscarVehiculoPorPlaca(v->getPlaca());
+    if (encontrado == nullptr) {
+        return false;
+    }
+
+    // Guardar información del vehículo
+    string placa = v->getPlaca();
+
+    // Liberar espacio en la sucursal origen
+    string ubicacionActual = v->getUbicacionPlantel();
+    if (ubicacionActual.length() >= 5) {
+        char letraActual = ubicacionActual[0];
+        plantel* pActual = buscarPlantel(letraActual);
+
+        if (pActual != nullptr) {
+            // Extraer fila y columna de la ubicación
+            size_t pos1 = ubicacionActual.find('-');
+            size_t pos2 = ubicacionActual.find('-', pos1 + 1);
+
+            if (pos1 != string::npos && pos2 != string::npos) {
+                int filaActual = stoi(ubicacionActual.substr(pos1 + 1, pos2 - pos1 - 1));
+                int colActual = stoi(ubicacionActual.substr(pos2 + 1));
+                pActual->liberarEspacio(filaActual, colActual);
+            }
+        }
+    }
+
+    // Crear una copia de los datos del vehículo
+    vehiculo* vehCopia = new vehiculo(
+        v->getPlaca(),
+        v->getModelo(),
+        v->getMarca(),
+        v->getTipoLicencia(),
+        v->getPrecio(),
+        v->getEstado(),
+        v->getCategoria(),
+        ""
+    );
+
+    // Eliminar de origen usando el método existente
+    if (!vehiculos->eliminarVehiculoPorPlaca(placa)) {
+        delete vehCopia;
+        return false;
+    }
+
+    // Agregar a destino
+    if (destino->agregarVehiculoASucursal(vehCopia, letraPlantel, fila, columna)) {
+        return true;
+    }
+    else {
+        // Si falla, revertir eliminación agregando de nuevo a origen
+        vehiculos->agregarVehiculo(vehCopia);
+        return false;
+    }
+}
+
+listaBase<vehiculo>* sucursal::obtenerVehiculosDisponiblesParaTraslado() {
+    listaBase<vehiculo>* disponibles = new listaBase<vehiculo>();
+
+    nodoBase<vehiculo>* actual = vehiculos->retornarPrimero();
+
+    while (actual != nullptr) {
+        vehiculo* v = actual->getElemento();
+        if (v != nullptr && v->getEstado() != "Alquilado") {
+            disponibles->agregarFinal(v);
+        }
+        actual = actual->getSiguiente();
+    }
+
+    return disponibles;
+}

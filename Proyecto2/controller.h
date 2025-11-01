@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <sstream>
+#include <string>
 #include "interfaz.h"
 #include "SistemaRentACar.h"
 #include "sucursal.h"

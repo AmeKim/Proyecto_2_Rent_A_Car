@@ -19,4 +19,6 @@ public:
     string mostrarVehiculos() const;
     string mostrarVehiculosDisponibles() const;
     string mostrarTotalDeEstados();
+
+    nodoBase<vehiculo>* getPrimero() { return primero; }
 };
