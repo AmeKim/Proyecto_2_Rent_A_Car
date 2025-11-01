@@ -43,8 +43,8 @@ public:
     bool asignarVehiculo(int fila, int columna, vehiculo* v);
     bool liberarEspacio(int fila, int columna);
     espacioEstacionamiento* obtenerEspacio(int fila, int columna) const;
-    espacioEstacionamiento* buscarEspacioPorCodigo(const string& codigo) const;
-    string obtenerPlacaEnEspacio(const string& codigo) const;
+    espacioEstacionamiento* buscarEspacioPorCodigo(const string codigo) const;
+    string obtenerPlacaEnEspacio(const string codigo) const;
 
     // Recomendación de espacios
     listaBase<string>* recomendarEspacios() const;

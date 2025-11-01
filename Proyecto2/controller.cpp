@@ -237,7 +237,9 @@ void controller::gestionarVehiculos() {
                 Interfaz::imprimirMensaje("No se pudo agregar el plantel");
             }
 
+            suc->agregarPlantel(nuevoPlantel);
             Interfaz::imprimirMensaje("Plantel creado exitosamente!");
+
             Interfaz::imprimirMensaje(nuevoPlantel->mostrarVistaGrafica());
             limpiarEnter();
             break;
@@ -250,20 +252,26 @@ void controller::gestionarVehiculos() {
             if (suc == nullptr) break;
 
             Interfaz::imprimirMensaje(suc->mostrarPlanteles());
-
             char letra = Interfaz::solicitarLetraPlantel();
-            
+
             plantel* p = suc->buscarPlantel(letra);
             if (p != nullptr) {
                 limpiar();
                 Interfaz::imprimirMensaje(p->mostrarVistaGrafica());
 
-                if (Interfaz::confirmarAccion("¿Desea ver detalles de un espacio especifico?")) {
-                    string codigo = Interfaz::solicitarCodigoEspacio(); 
-                    string placa = p->obtenerPlacaEnEspacio(codigo);
-                    print("Resultado: ");
-                    print(placa);
-                    print("\n");
+                print("\n¿Desea ver detalles de un espacio especifico? (S/N): ");
+                char respuesta;
+                cin >> respuesta;
+                cin.ignore(1000, '\n'); // Limpiar TODO el buffer
+
+                if (respuesta == 'S' || respuesta == 's') {
+                    print("\nIngrese el codigo del espacio (ej: A01): ");
+                    string codigo;
+                    getline(cin, codigo); // Usa getline en lugar de cin >>
+
+                    limpiar();
+                    string resultado = p->obtenerPlacaEnEspacio(codigo);
+                    Interfaz::imprimirMensaje(resultado);
                 }
             }
             else {
@@ -336,6 +344,14 @@ void controller::gestionarVehiculos() {
             if (suc == nullptr) break;
 
             Interfaz::imprimirMensaje(suc->getVehiculos()->mostrarVehiculos());
+
+            if (suc->getVehiculos()->estaVacia() == true) {
+                limpiar();
+                break;
+            }
+            else {
+                
+            }
             
             string placa = Interfaz::solicitarPlacaVehiculo();
 
@@ -466,6 +482,12 @@ void controller::gestionarVehiculos() {
             string fecha = digPalabra();
 
             Interfaz::imprimirMensaje(suc->getColaboradores()->mostrarColaboradores());
+
+            if (suc->getColaboradores()->estaVacia() == true) {
+                limpiarEnter();
+                break;
+            }
+
             string idCol = Interfaz::solicitarIDColaborador();
             colaborador* col = suc->getColaboradores()->buscarColaborador(idCol);
 
@@ -553,6 +575,12 @@ void controller::gestionarSolicitudes() {
 
             // Seleccionar cliente
             Interfaz::imprimirMensaje(suc->getClientes()->mostrarTodosLosClientes());
+
+            if (suc->getClientes()->estaVacia() == true) {
+                limpiarEnter();
+                break;
+            }
+
             string idCliente = Interfaz::solicitarIDCliente();
             cliente* cli = suc->getClientes()->buscarClientePorCedula(idCliente);
 
@@ -564,6 +592,12 @@ void controller::gestionarSolicitudes() {
 
             // Seleccionar vehículo disponible
             Interfaz::imprimirMensaje(suc->getVehiculos()->mostrarVehiculosDisponibles());
+
+            if (suc->getVehiculos()->estaVacia() == true) {
+                limpiarEnter();
+                break;
+            }
+
             string placa = Interfaz::solicitarPlacaVehiculo();
             vehiculo* veh = suc->getVehiculos()->buscarVehiculoPorPlaca(placa);
 

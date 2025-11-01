@@ -123,7 +123,7 @@ espacioEstacionamiento* plantel::obtenerEspacio(int fila, int columna) const {
     return (espacioEstacionamiento*)espacios->getValor(fila, columna);
 }
 
-espacioEstacionamiento* plantel::buscarEspacioPorCodigo(const string& codigo) const {
+espacioEstacionamiento* plantel::buscarEspacioPorCodigo(const string codigo) const {
     for (int i = 0; i < filas; i++) {
         for (int j = 0; j < columnas; j++) {
             espacioEstacionamiento* espacio = (espacioEstacionamiento*)espacios->getValor(i, j);
@@ -135,12 +135,19 @@ espacioEstacionamiento* plantel::buscarEspacioPorCodigo(const string& codigo) co
     return nullptr;
 }
 
-string plantel::obtenerPlacaEnEspacio(const string& codigo) const {
+string plantel::obtenerPlacaEnEspacio(const string codigo) const {
     espacioEstacionamiento* espacio = buscarEspacioPorCodigo(codigo);
-    if (espacio != nullptr && espacio->estaOcupado()) {
-        return espacio->getPlacaVehiculo();
+
+    if (espacio != nullptr) {
+        if (espacio->estaOcupado()) {
+            return "Placa del vehiculo: " + espacio->getPlacaVehiculo();
+        }
+        else {
+            return "El espacio esta vacio";
+        }
     }
-    return "Espacio vacio o no encontrado";
+
+    return "Espacio no encontrado";
 }
 
 int plantel::contarVecinosOcupados(int f, int c) const {

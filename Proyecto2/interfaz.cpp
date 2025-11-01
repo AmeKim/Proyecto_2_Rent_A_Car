@@ -510,7 +510,9 @@ void Interfaz::mostrarMensajeAdvertencia(string mensaje) {
 
 bool Interfaz::confirmarAccion(string mensaje) {
     cout << "\n" << mensaje << " (S/N): ";
-    string respuesta = digPalabra();
+    string respuesta;
+    cin >> respuesta;  
+    cin.ignore();      
     return (respuesta == "S" || respuesta == "s" ||
         respuesta == "SI" || respuesta == "si");
 }
