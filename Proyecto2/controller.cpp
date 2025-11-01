@@ -275,9 +275,16 @@ void controller::gestionarVehiculos() {
                 cin.ignore(1000, '\n');
 
                 if (respuesta == 'S' || respuesta == 's') {
-					string codigo = Interfaz::solicitarCodigoEspacio();
+                    string codigo = Interfaz::solicitarCodigoEspacio();
                     string resultado = p->obtenerPlacaEnEspacio(codigo);
-                    Interfaz::imprimirMensaje(resultado);
+
+                    limpiar();
+                    if (resultado.find("no") != string::npos && resultado.find("encontrado") != string::npos) {
+                        Interfaz::mostrarMensajeError("El espacio " + codigo + " no existe en este plantel.");
+                    }
+                    else {
+                        Interfaz::imprimirMensaje(resultado);
+                    }
                 }
             }
             else {
